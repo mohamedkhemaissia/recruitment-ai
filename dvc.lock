@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  export-evaluation-dataset:
+    cmd: node backend/src/scripts/export-evaluation-dataset.js
+    deps:
+    - path: backend/src/evaluation/reference-cases.js
+      hash: md5
+      md5: 8e30af707e001cb177dd02c8c9304b48
+      size: 8458
+    - path: backend/src/scripts/export-evaluation-dataset.js
+      hash: md5
+      md5: d621d628476bbf16ff5c6e3c79c730f2
+      size: 678
+    outs:
+    - path: backend/data/ai-evaluation-dataset.json
+      hash: md5
+      md5: 3b05199d0a699dc0de2bb45cc244bf9f
+      size: 9933

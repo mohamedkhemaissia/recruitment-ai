@@ -1,0 +1,8 @@
+stages:
+  export-evaluation-dataset:
+    cmd: node backend/src/scripts/export-evaluation-dataset.js
+    deps:
+    - backend/src/evaluation/reference-cases.js
+    - backend/src/scripts/export-evaluation-dataset.js
+    outs:
+    - backend/data/ai-evaluation-dataset.json
