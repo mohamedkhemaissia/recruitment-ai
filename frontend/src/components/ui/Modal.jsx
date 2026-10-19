@@ -28,7 +28,7 @@ function Modal({ title, description, children, onClose }) {
             <h2 id="modal-title">{title}</h2>
             {description && <p id="modal-description">{description}</p>}
           </div>
-          <button ref={closeButtonRef} type="button" className="modal-close" aria-label="Fermer" onClick={onClose}>
+          <button ref={closeButtonRef} type="button" className="modal-close" aria-label="Fermer la fenêtre" onClick={onClose}>
             <X size={20} aria-hidden="true" />
           </button>
         </header>

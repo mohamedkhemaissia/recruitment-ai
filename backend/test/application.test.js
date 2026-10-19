@@ -11,6 +11,7 @@ async function startApp({
   extractedText = 'Sami Ben Ali\nDeveloppeur React\nJavaScript SQL',
   analysisJobService = null,
   auditService = null,
+  notificationService = null,
 } = {}) {
   const passwordHash = await bcrypt.hash('Candidat123', 4);
   const users = [
@@ -20,6 +21,7 @@ async function startApp({
   const applications = [];
   const storedFiles = [];
   const removedFiles = [];
+  const notifications = [];
   const userService = {
     async findByEmail(email) {
       return users.find((user) => user.email === email) || null;
@@ -229,6 +231,12 @@ async function startApp({
     semanticMatcher,
     analysisJobService,
     auditService,
+    notificationService: notificationService || {
+      async notifyCandidate(data) {
+        notifications.push(data);
+        return data;
+      },
+    },
   });
   const server = app.listen(0);
 
@@ -239,6 +247,7 @@ async function startApp({
     storedFiles,
     removedFiles,
     applicationService,
+    notifications,
   };
 }
 
@@ -292,8 +301,9 @@ test('un candidat postule à une offre publiée avec un PDF valide', async (cont
 
   assert.equal(response.status, 201);
   assert.equal(body.application.status, 'submitted');
-  assert.equal(body.application.cvExtractionStatus, 'completed');
-  assert.deepEqual(body.application.cvSkills, ['React', 'JavaScript', 'SQL']);
+  assert.equal('cvExtractionStatus' in body.application, false);
+  assert.equal('cvSkills' in body.application, false);
+  assert.equal('aiStatus' in body.application, false);
   assert.equal(applications[0].candidate_user_id, 41);
   assert.match(applications[0].cv_text, /JavaScript SQL/);
   assert.deepEqual(applications[0].cv_skills, ['React', 'JavaScript', 'SQL']);
@@ -320,8 +330,8 @@ test('un echec d extraction du texte ne bloque pas la candidature', async (conte
   const body = await response.json();
 
   assert.equal(response.status, 201);
-  assert.equal(body.application.cvExtractionStatus, 'failed');
-  assert.deepEqual(body.application.cvSkills, []);
+  assert.equal('cvExtractionStatus' in body.application, false);
+  assert.equal('cvSkills' in body.application, false);
   assert.equal(applications[0].cv_text, '');
   assert.equal(applications[0].ai_status, 'unavailable');
 });
@@ -424,6 +434,9 @@ test('le candidat consulte uniquement ses candidatures', async (context) => {
   assert.equal(body.applications[0].interview.durationMinutes, 45);
   assert.equal(body.applications[0].interview.meetingType, 'video');
   assert.equal(body.applications[0].interview.details, 'https://meet.example.test/candidat');
+  assert.equal('aiStatus' in body.applications[0], false);
+  assert.equal('cvExtractionStatus' in body.applications[0], false);
+  assert.equal('cvSkills' in body.applications[0], false);
   assert.equal('evaluationScore' in body.applications[0].interview, false);
   assert.equal('evaluationNotes' in body.applications[0].interview, false);
 
@@ -462,7 +475,7 @@ test('le RH consulte les candidatures reçues et télécharge leur CV', async (c
 });
 
 test('le RH modifie le statut et le candidat ne peut pas le faire', async (context) => {
-  const { baseUrl, server } = await startApp();
+  const { baseUrl, server, notifications } = await startApp();
   context.after(() => server.close());
   const candidateCookie = await login(baseUrl, 'candidate-application@example.com');
   const hrCookie = await login(baseUrl, 'hr-application@example.com');
@@ -480,6 +493,10 @@ test('le RH modifie le statut et le candidat ne peut pas le faire', async (conte
   const body = await response.json();
   assert.equal(response.status, 200);
   assert.equal(body.application.status, 'shortlisted');
+  assert.deepEqual(
+    notifications.map((notification) => notification.type),
+    ['application_submitted', 'application_shortlisted'],
+  );
 
   const candidateResponse = await fetch(`${baseUrl}/api/applications/1/status`, {
     method: 'PATCH',
@@ -496,7 +513,7 @@ test('le RH modifie le statut et le candidat ne peut pas le faire', async (conte
   assert.equal(invalidResponse.status, 400);
 });
 
-test('le candidat et le RH consultent le statut de l’analyse autorisée', async (context) => {
+test('seul le RH consulte le statut technique de l’analyse', async (context) => {
   const { baseUrl, server } = await startApp();
   context.after(() => server.close());
   const candidateCookie = await login(baseUrl, 'candidate-application@example.com');
@@ -511,11 +528,7 @@ test('le candidat et le RH consultent le statut de l’analyse autorisée', asyn
   const candidateResponse = await fetch(`${baseUrl}/api/applications/1/analysis-status`, {
     headers: { Cookie: candidateCookie },
   });
-  const candidateBody = await candidateResponse.json();
-  assert.equal(candidateResponse.status, 200);
-  assert.equal(candidateBody.analysis.applicationId, 1);
-  assert.equal(candidateBody.analysis.applicationStatus, 'completed');
-  assert.equal(candidateBody.analysis.status, 'completed');
+  assert.equal(candidateResponse.status, 403);
 
   const hrResponse = await fetch(`${baseUrl}/api/applications/1/analysis-status`, {
     headers: { Cookie: hrCookie },

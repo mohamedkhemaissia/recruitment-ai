@@ -8,6 +8,7 @@ import { createDashboardRouter } from './routes/dashboard.routes.js';
 import { createAuthRouter } from './routes/auth.routes.js';
 import { createJobOfferRouter } from './routes/job-offer.routes.js';
 import { createInterviewRouter } from './routes/interview.routes.js';
+import { createNotificationRouter } from './routes/notification.routes.js';
 import { createProfileRouter } from './routes/profile.routes.js';
 import { createJobOfferService } from './services/job-offer.service.js';
 import { createInterviewService } from './services/interview.service.js';
@@ -20,6 +21,7 @@ import { createSkillExtractor } from './services/skill-extractor.service.js';
 import { createSemanticMatcher } from './services/semantic-matcher.service.js';
 import { createUserService } from './services/user.service.js';
 import { createAuditService } from './services/audit.service.js';
+import { createNotificationService } from './services/notification.service.js';
 
 export function createApp({
   databasePool = pool,
@@ -36,6 +38,9 @@ export function createApp({
   semanticMatcher = createSemanticMatcher(),
   analysisJobService = null,
   auditService = createAuditService(databasePool),
+  notificationService = typeof databasePool.connect === 'function'
+    ? createNotificationService(databasePool)
+    : null,
 } = {}) {
   const app = express();
   app.disable('x-powered-by');
@@ -92,7 +97,10 @@ export function createApp({
   app.use('/api/profile', createProfileRouter(profileService));
   app.use('/api/dashboard', createDashboardRouter(userService, dashboardService));
   app.use('/api/job-offers', createJobOfferRouter(userService, jobOfferService, skillExtractor));
-  app.use('/api/interviews', createInterviewRouter(userService, interviewService));
+  app.use('/api/interviews', createInterviewRouter(userService, interviewService, notificationService));
+  if (notificationService) {
+    app.use('/api/notifications', createNotificationRouter(userService, notificationService));
+  }
   app.use('/api/applications', createApplicationRouter(
     userService,
     applicationService,
@@ -102,6 +110,7 @@ export function createApp({
     semanticMatcher,
     analysisJobService,
     auditService,
+    notificationService,
   ));
 
   app.use((error, _request, response, _next) => {

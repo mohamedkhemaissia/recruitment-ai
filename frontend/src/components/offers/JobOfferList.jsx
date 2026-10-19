@@ -1,8 +1,10 @@
-import { Archive, BriefcaseBusiness, CalendarDays, CircleCheck, FileUp, MapPin, Pencil, Plus, RotateCcw, RotateCw, Search, Send, Trash2, Undo2 } from 'lucide-react';
+import { useState } from 'react';
+import { Archive, BriefcaseBusiness, Building2, CalendarDays, CircleCheck, Eye, FileUp, MapPin, Pencil, Plus, RotateCcw, RotateCw, Search, Send, Trash2, Undo2 } from 'lucide-react';
 import Button from '../ui/Button.jsx';
 import Feedback from '../ui/Feedback.jsx';
 import FormField from '../ui/FormField.jsx';
 import LoadingState from '../ui/LoadingState.jsx';
+import Modal from '../ui/Modal.jsx';
 
 const employmentLabels = {
   full_time: 'Temps plein',
@@ -35,9 +37,17 @@ function formatDate(value) {
 function JobOfferList({ user, offers, filters, loading, error, actionMessage, actionTone, actionOfferId, deletingOfferId, onFilterChange, onFilterSubmit, onFilterReset, onRetry, onCreate, onEdit, onStatusChange, onDelete, onApply }) {
   const isHr = user.role === 'hr';
   const hasActiveFilters = Object.values(filters).some(Boolean);
+  const [selectedOffer, setSelectedOffer] = useState(null);
+
+  const applyToSelectedOffer = () => {
+    const offer = selectedOffer;
+    setSelectedOffer(null);
+    onApply(offer);
+  };
 
   return (
-    <div className="content-page">
+    <>
+      <div className="content-page">
       <section className="page-heading">
         <div>
           <p className="overline">Offres d’emploi</p>
@@ -196,15 +206,20 @@ function JobOfferList({ user, offers, filters, loading, error, actionMessage, ac
                           </Button>
                         </div>
                       ) : (
-                        <Button
-                          type="button"
-                          className="button--small"
-                          icon={offer.alreadyApplied ? CircleCheck : FileUp}
-                          disabled={offer.alreadyApplied}
-                          onClick={() => onApply(offer)}
-                        >
-                          {offer.alreadyApplied ? 'Déjà postulé' : 'Postuler'}
-                        </Button>
+                        <div className="table-actions">
+                          <Button type="button" variant="secondary" className="button--small" icon={Eye} onClick={() => setSelectedOffer(offer)}>
+                            Voir l’offre
+                          </Button>
+                          <Button
+                            type="button"
+                            className="button--small"
+                            icon={offer.alreadyApplied ? CircleCheck : FileUp}
+                            disabled={offer.alreadyApplied}
+                            onClick={() => onApply(offer)}
+                          >
+                            {offer.alreadyApplied ? 'Déjà postulé' : 'Postuler'}
+                          </Button>
+                        </div>
                       )}
                     </td>
                   </tr>
@@ -214,7 +229,53 @@ function JobOfferList({ user, offers, filters, loading, error, actionMessage, ac
           </div>
         </section>
       )}
-    </div>
+      </div>
+
+      {!isHr && selectedOffer && (
+        <Modal
+          title={selectedOffer.title}
+          description={selectedOffer.companyName || selectedOffer.department || 'Offre d’emploi'}
+          onClose={() => setSelectedOffer(null)}
+        >
+          <div className="offer-details">
+            <div className="offer-details__metadata" aria-label="Informations principales de l’offre">
+              <span><Building2 size={17} aria-hidden="true" />{selectedOffer.companyName || 'Entreprise non renseignée'}</span>
+              <span><MapPin size={17} aria-hidden="true" />{selectedOffer.location || 'Localisation non renseignée'} · {workplaceLabels[selectedOffer.workplaceType]}</span>
+              <span><BriefcaseBusiness size={17} aria-hidden="true" />{employmentLabels[selectedOffer.employmentType]}</span>
+              <span><CalendarDays size={17} aria-hidden="true" />Publiée le {formatDate(selectedOffer.publishedAt || selectedOffer.createdAt)}</span>
+            </div>
+
+            {selectedOffer.department && <p className="offer-details__department">Département : {selectedOffer.department}</p>}
+
+            <section className="offer-details__section">
+              <h3>Description du poste</h3>
+              <p>{selectedOffer.description}</p>
+            </section>
+
+            <section className="offer-details__section">
+              <h3>Profil et exigences</h3>
+              <p>{selectedOffer.requirements}</p>
+            </section>
+
+            {selectedOffer.skills?.length > 0 && (
+              <section className="offer-details__section">
+                <h3>Compétences recherchées</h3>
+                <div className="skill-list">
+                  {selectedOffer.skills.map((skill) => <span className="skill-tag" key={skill}>{skill}</span>)}
+                </div>
+              </section>
+            )}
+
+            <div className="modal-actions offer-details__actions">
+              <Button type="button" variant="secondary" onClick={() => setSelectedOffer(null)}>Fermer</Button>
+              <Button type="button" icon={selectedOffer.alreadyApplied ? CircleCheck : FileUp} disabled={selectedOffer.alreadyApplied} onClick={applyToSelectedOffer}>
+                {selectedOffer.alreadyApplied ? 'Déjà postulé' : 'Postuler à cette offre'}
+              </Button>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }
 

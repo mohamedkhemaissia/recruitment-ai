@@ -21,7 +21,7 @@ function receiveCv(request, response, next) {
   });
 }
 
-export function createApplicationRouter(userService, applicationService, cvStorage, pdfTextExtractor, skillExtractor, semanticMatcher, analysisJobService = null, auditService = null) {
+export function createApplicationRouter(userService, applicationService, cvStorage, pdfTextExtractor, skillExtractor, semanticMatcher, analysisJobService = null, auditService = null, notificationService = null) {
   const router = Router();
   const controller = createApplicationController(
     applicationService,
@@ -31,21 +31,13 @@ export function createApplicationRouter(userService, applicationService, cvStora
     semanticMatcher,
     analysisJobService,
     auditService,
+    notificationService,
   );
 
   router.use(requireAuth);
   router.get('/', requireRole(userService, 'candidate'), controller.list);
   router.get('/hr', requireRole(userService, 'hr'), controller.listForHr);
-  router.get('/:id/analysis-status', async (request, response, next) => {
-    try {
-      const user = await userService.findPublicById(request.session.userId);
-      if (!user) return response.status(401).json({ message: 'Session invalide.' });
-      request.user = user;
-      return next();
-    } catch (error) {
-      return next(error);
-    }
-  }, controller.analysisStatus);
+  router.get('/:id/analysis-status', requireRole(userService, 'hr'), controller.analysisStatus);
   router.get('/:id/cv', requireRole(userService, 'hr'), controller.downloadCv);
   router.patch('/:id/status', requireRole(userService, 'hr'), controller.updateStatus);
   router.delete('/:id', requireRole(userService, 'candidate'), controller.remove);

@@ -22,14 +22,6 @@ const interviewStatusLabels = {
   cancelled: 'Annulé',
 };
 
-const analysisStatusLabels = {
-  pending: 'Analyse en attente',
-  processing: 'Analyse en cours',
-  completed: 'Analyse terminée',
-  failed: 'Analyse indisponible',
-  unavailable: 'Analyse indisponible',
-};
-
 const meetingLabels = {
   video: 'Visioconférence',
   onsite: 'Sur site',
@@ -115,12 +107,7 @@ function CandidateApplicationList({ applications, loading, error, onRetry, onBro
                       <small>{workplaceLabels[application.offer.workplaceType]}</small>
                     </td>
                     <td data-label="Statut">
-                      <div className="candidate-status">
-                        <span className={`status-badge status-badge--${application.status}`}>{statusLabels[application.status]}</span>
-                        <small className={`analysis-status analysis-status--${application.aiStatus || 'unavailable'}`}>
-                          {analysisStatusLabels[application.aiStatus] || analysisStatusLabels.unavailable}
-                        </small>
-                      </div>
+                      <span className={`status-badge status-badge--${application.status}`}>{statusLabels[application.status]}</span>
                     </td>
                     <td data-label="Entretien">
                       {application.interview ? (

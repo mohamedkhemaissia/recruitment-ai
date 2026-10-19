@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ApplicationForm from './components/applications/ApplicationForm.jsx';
 import CandidateApplicationList from './components/applications/CandidateApplicationList.jsx';
 import HrApplicationList from './components/applications/HrApplicationList.jsx';
@@ -83,7 +83,6 @@ function App() {
   const [applicationFile, setApplicationFile] = useState(null);
   const [applicationConsent, setApplicationConsent] = useState(false);
   const [applications, setApplications] = useState([]);
-  const applicationsRef = useRef([]);
   const [applicationsLoading, setApplicationsLoading] = useState(false);
   const [applicationsError, setApplicationsError] = useState('');
   const [hrApplications, setHrApplications] = useState([]);
@@ -118,14 +117,14 @@ function App() {
   const [editingOfferStatus, setEditingOfferStatus] = useState('draft');
   const [currentView, setCurrentView] = useState('offers');
   const [user, setUser] = useState(null);
+  const [notifications, setNotifications] = useState([]);
+  const [unreadNotificationCount, setUnreadNotificationCount] = useState(0);
+  const [notificationsLoading, setNotificationsLoading] = useState(false);
+  const [notificationsError, setNotificationsError] = useState('');
   const [profile, setProfile] = useState(null);
   const [message, setMessage] = useState('');
   const [messageTone, setMessageTone] = useState('error');
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    applicationsRef.current = applications;
-  }, [applications]);
 
   const showMessage = (text, tone = 'error') => {
     setMessage(text);
@@ -153,11 +152,64 @@ function App() {
       .catch((error) => showMessage(error.message));
   }, [user?.id]);
 
-  const loadDashboard = async () => {
+  const loadNotifications = async ({ silent = false } = {}) => {
+    if (!silent) setNotificationsLoading(true);
+    setNotificationsError('');
+    try {
+      const data = await apiRequest('/api/notifications');
+      setNotifications(data.notifications);
+      setUnreadNotificationCount(data.unreadCount);
+    } catch (error) {
+      if (!silent) setNotificationsError(error.message);
+    } finally {
+      if (!silent) setNotificationsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (user?.role !== 'candidate') {
+      setNotifications([]);
+      setUnreadNotificationCount(0);
+      return undefined;
+    }
+
+    loadNotifications();
+    const intervalId = window.setInterval(() => loadNotifications({ silent: true }), 30000);
+    return () => window.clearInterval(intervalId);
+  }, [user?.id]);
+
+  const markNotificationRead = async (notification) => {
+    if (!notification.readAt) {
+      try {
+        const data = await apiRequest(`/api/notifications/${notification.id}/read`, { method: 'PATCH' });
+        setNotifications((current) => current.map((item) => (
+          item.id === notification.id ? data.notification : item
+        )));
+        setUnreadNotificationCount((current) => Math.max(0, current - 1));
+      } catch (error) {
+        setNotificationsError(error.message);
+      }
+    }
+    if (notification.applicationId) setCurrentView('applications');
+  };
+
+  const markAllNotificationsRead = async () => {
+    try {
+      await apiRequest('/api/notifications/read-all', { method: 'PATCH' });
+      const readAt = new Date().toISOString();
+      setNotifications((current) => current.map((item) => ({ ...item, readAt: item.readAt || readAt })));
+      setUnreadNotificationCount(0);
+    } catch (error) {
+      setNotificationsError(error.message);
+    }
+  };
+
+  const loadDashboard = async (offerId = null) => {
     setDashboardLoading(true);
     setDashboardError('');
     try {
-      const data = await apiRequest('/api/dashboard');
+      const query = Number.isSafeInteger(offerId) ? `?offerId=${offerId}` : '';
+      const data = await apiRequest(`/api/dashboard${query}`);
       setDashboard(data.dashboard);
     } catch (error) {
       setDashboardError(error.message);
@@ -214,45 +266,6 @@ function App() {
     if (user?.role === 'candidate' && currentView === 'applications') {
       loadApplications();
     }
-  }, [user?.id, currentView]);
-
-  useEffect(() => {
-    if (user?.role !== 'candidate' || currentView !== 'applications') return undefined;
-
-    const startedAt = Date.now();
-    let intervalId;
-    const refreshAnalysisStatuses = async () => {
-      const activeApplications = applicationsRef.current.filter((application) => (
-        application.aiStatus === 'pending' || application.aiStatus === 'processing'
-      ));
-      if (Date.now() - startedAt > 120000) {
-        window.clearInterval(intervalId);
-        return;
-      }
-      if (activeApplications.length === 0) return;
-
-      const statuses = await Promise.all(activeApplications.map(async (application) => {
-        try {
-          const data = await apiRequest(`/api/applications/${application.id}/analysis-status`);
-          return { id: application.id, status: data.analysis.status === 'processing' ? 'processing' : data.analysis.applicationStatus };
-        } catch {
-          return null;
-        }
-      }));
-
-      setApplications((current) => {
-        const next = current.map((application) => {
-          const update = statuses.find((item) => item?.id === application.id);
-          return update ? { ...application, aiStatus: update.status } : application;
-        });
-        applicationsRef.current = next;
-        return next;
-      });
-    };
-
-    refreshAnalysisStatuses();
-    intervalId = window.setInterval(refreshAnalysisStatuses, 4000);
-    return () => window.clearInterval(intervalId);
   }, [user?.id, currentView]);
 
   const loadHrApplications = async (page = hrApplicationPagination.page, filters = hrApplicationFilters) => {
@@ -583,6 +596,12 @@ function App() {
     setHrApplicationActionMessage('');
   };
 
+  const openHrApplications = ({ search = '', status = '', sort = 'score' } = {}) => {
+    setHrApplicationFilters({ search, status, sort });
+    setHrApplicationPagination((current) => ({ ...current, page: 1 }));
+    navigate('hr-applications');
+  };
+
   const editOffer = (offer) => {
     setJobOfferForm({
       title: offer.title,
@@ -747,6 +766,8 @@ function App() {
       setApplicationFile(null);
       setApplications([]);
       setHrApplications([]);
+      setNotifications([]);
+      setUnreadNotificationCount(0);
       setDashboard(null);
       setCurrentView('offers');
     } catch (error) {
@@ -783,9 +804,10 @@ function App() {
         dashboard={dashboard}
         loading={dashboardLoading}
         error={dashboardError}
-        onRetry={loadDashboard}
+        onRetry={() => loadDashboard(dashboard?.selectedOfferId || null)}
         onViewOffers={() => navigate('offers')}
-        onViewApplications={() => navigate('hr-applications')}
+        onViewApplications={openHrApplications}
+        onSelectRankingOffer={loadDashboard}
       />
     );
   } else if (currentView === 'offers') {
@@ -917,6 +939,13 @@ function App() {
       onNavigate={navigate}
       onLogout={logout}
       loading={loading}
+      notifications={notifications}
+      unreadNotificationCount={unreadNotificationCount}
+      notificationsLoading={notificationsLoading}
+      notificationsError={notificationsError}
+      onRetryNotifications={loadNotifications}
+      onSelectNotification={markNotificationRead}
+      onMarkAllNotificationsRead={markAllNotificationsRead}
     >
       {content}
     </AppShell>

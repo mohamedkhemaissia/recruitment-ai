@@ -1,5 +1,9 @@
 export function createAiAnalysisWorker({ jobService, analyze, onFailure = null }) {
   return {
+    async recoverInterrupted() {
+      return jobService.recoverStaleProcessing(0);
+    },
+
     async processNext() {
       if (jobService.enqueueMissing) await jobService.enqueueMissing();
       await jobService.recoverStaleProcessing();

@@ -11,6 +11,7 @@ async function startApp() {
     { id: 42, first_name: 'RH', last_name: 'Test', email: 'hr-interview@example.com', password_hash: passwordHash, role: 'hr' },
   ];
   const interviews = [];
+  const notifications = [];
   const userService = {
     async findByEmail(email) {
       return users.find((user) => user.email === email) || null;
@@ -81,9 +82,15 @@ async function startApp() {
     jobOfferService: {},
     applicationService: {},
     interviewService,
+    notificationService: {
+      async notifyCandidate(data) {
+        notifications.push(data);
+        return data;
+      },
+    },
   });
   const server = app.listen(0);
-  return { baseUrl: `http://127.0.0.1:${server.address().port}`, server, interviews };
+  return { baseUrl: `http://127.0.0.1:${server.address().port}`, server, interviews, notifications };
 }
 
 async function login(baseUrl, email) {
@@ -177,7 +184,7 @@ test('une date passee, une candidature inaccessible et un doublon sont refuses',
 });
 
 test('le RH modifie un entretien programme puis le marque comme realise', async (context) => {
-  const { baseUrl, server } = await startApp();
+  const { baseUrl, server, notifications } = await startApp();
   context.after(() => server.close());
   const cookie = await login(baseUrl, 'hr-interview@example.com');
   await schedule(baseUrl, cookie);
@@ -192,6 +199,10 @@ test('le RH modifie un entretien programme puis le marque comme realise', async 
   const statusBody = await statusResponse.json();
   assert.equal(statusResponse.status, 200);
   assert.equal(statusBody.interview.status, 'completed');
+  assert.deepEqual(
+    notifications.map((notification) => notification.type),
+    ['interview_scheduled', 'interview_updated', 'interview_completed'],
+  );
   assert.equal((await updateInterview(baseUrl, cookie, 1)).status, 404);
 });
 

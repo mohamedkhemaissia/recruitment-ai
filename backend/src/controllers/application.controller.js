@@ -10,15 +10,44 @@ async function recordAuditSafely(auditService, data) {
   }
 }
 
+async function notifySafely(notificationService, data) {
+  if (!notificationService) return;
+  try {
+    await notificationService.notifyCandidate(data);
+  } catch (error) {
+    console.error('Création de la notification impossible :', error.message);
+  }
+}
+
+const applicationNotificationContent = {
+  submitted: {
+    type: 'application_submitted',
+    title: 'Candidature envoyée',
+    message: 'Votre candidature a bien été reçue par l’équipe de recrutement.',
+  },
+  reviewed: {
+    type: 'application_reviewed',
+    title: 'Candidature en cours d’examen',
+    message: 'Votre candidature est actuellement examinée par le responsable RH.',
+  },
+  shortlisted: {
+    type: 'application_shortlisted',
+    title: 'Candidature présélectionnée',
+    message: 'Bonne nouvelle : votre candidature a été présélectionnée par le responsable RH.',
+  },
+  rejected: {
+    type: 'application_rejected',
+    title: 'Mise à jour de votre candidature',
+    message: 'Après examen, votre candidature n’a pas été retenue pour cette offre.',
+  },
+};
+
 function serializeApplication(application) {
   return {
     id: application.id,
     jobOfferId: application.job_offer_id,
     candidateUserId: application.candidate_user_id,
     status: application.status,
-    cvExtractionStatus: application.cv_extraction_status,
-    cvSkills: Array.isArray(application.cv_skills) ? application.cv_skills : [],
-    aiStatus: application.ai_status || 'unavailable',
     createdAt: application.created_at,
     interview: application.interview_id ? {
       id: application.interview_id,
@@ -85,7 +114,7 @@ function serializeHrApplication(application) {
   };
 }
 
-export function createApplicationController(applicationService, cvStorage, pdfTextExtractor, skillExtractor, semanticMatcher, analysisJobService = null, auditService = null) {
+export function createApplicationController(applicationService, cvStorage, pdfTextExtractor, skillExtractor, semanticMatcher, analysisJobService = null, auditService = null, notificationService = null) {
   return {
     listForHr: async (request, response, next) => {
       try {
@@ -231,6 +260,11 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
           newValue: { jobOfferId, status: application.status },
           ipAddress: request.ip,
         });
+        await notifySafely(notificationService, {
+          applicationId: application.id,
+          ...applicationNotificationContent.submitted,
+          eventKey: `application:${application.id}:submitted`,
+        });
         if (extractionStatus === 'completed' && analysisJobService) {
           try {
             await analysisJobService.enqueue(application.id);
@@ -297,6 +331,11 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
           resourceId: id,
           newValue: { status },
           ipAddress: request.ip,
+        });
+        await notifySafely(notificationService, {
+          applicationId: application.id,
+          ...applicationNotificationContent[status],
+          eventKey: `application:${application.id}:${status}`,
         });
 
         return response.json({ application: serializeApplication(application) });

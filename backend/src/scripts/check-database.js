@@ -10,6 +10,8 @@ const requiredTables = [
   'interviews',
   'analysis_jobs',
   'audit_logs',
+  'notifications',
+  'email_jobs',
 ];
 const requiredColumns = {
   job_offers: ['description', 'requirements', 'skills', 'status'],

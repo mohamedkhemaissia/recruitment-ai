@@ -5,7 +5,6 @@ import CandidateApplicationList from './CandidateApplicationList.jsx';
 const application = {
   id: 9,
   status: 'rejected',
-  aiStatus: 'completed',
   createdAt: '2026-10-18T10:00:00.000Z',
   offer: {
     title: 'Développeur React',
@@ -22,6 +21,7 @@ describe('CandidateApplicationList', () => {
     const onDelete = vi.fn();
     render(<CandidateApplicationList applications={[application]} loading={false} error="" onRetry={vi.fn()} onBrowseOffers={vi.fn()} onDelete={onDelete} />);
     expect(screen.getByText('Non retenue')).toBeInTheDocument();
+    expect(screen.queryByText(/Analyse/)).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Supprimer' }));
     expect(onDelete).toHaveBeenCalledWith(application);
   });

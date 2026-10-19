@@ -4,10 +4,14 @@ import pool from './config/database.js';
 import { createAiAnalysisJobService } from './services/ai-analysis-job.service.js';
 import { createApplicationService } from './services/application.service.js';
 import { createSemanticMatcher } from './services/semantic-matcher.service.js';
+import { createEmailJobService } from './services/email-job.service.js';
+import { createEmailSender } from './services/email-sender.service.js';
 import { createAiAnalysisWorker } from './workers/ai-analysis.worker.js';
+import { createEmailWorker } from './workers/email.worker.js';
 
 const port = Number(process.env.PORT) || 3000;
 const pollIntervalMs = Number(process.env.AI_WORKER_POLL_INTERVAL_MS || 3000);
+const emailPollIntervalMs = Number(process.env.EMAIL_WORKER_POLL_INTERVAL_MS || 5000);
 const jobService = createAiAnalysisJobService(pool);
 const app = createApp({ analysisJobService: jobService });
 const applicationService = createApplicationService(pool);
@@ -41,10 +45,15 @@ const worker = createAiAnalysisWorker({
     await applicationService.saveAnalysis({ id: job.application_id, aiStatus: 'failed' });
   },
 });
+const emailJobService = createEmailJobService(pool);
+const emailSender = createEmailSender();
+const emailWorker = createEmailWorker({ jobService: emailJobService, emailSender });
 
 let stopping = false;
 let workerTimer;
 let workerTask = Promise.resolve();
+let emailWorkerTimer;
+let emailWorkerTask = Promise.resolve();
 
 async function runWorkerCycle() {
   let nextDelay = pollIntervalMs;
@@ -62,17 +71,55 @@ async function runWorkerCycle() {
   }
 }
 
+async function startWorker() {
+  try {
+    await worker.recoverInterrupted();
+  } catch (error) {
+    console.error('Récupération des analyses interrompues impossible :', error.message);
+  }
+
+  if (!stopping) await runWorkerCycle();
+}
+
+async function runEmailWorkerCycle() {
+  let nextDelay = emailPollIntervalMs;
+  try {
+    const job = await emailWorker.processNext();
+    if (job) nextDelay = 0;
+  } catch (error) {
+    console.error('Envoi d’e-mail échoué, une nouvelle tentative sera effectuée :', error.message);
+  } finally {
+    if (!stopping && emailSender.configured) {
+      emailWorkerTimer = setTimeout(() => {
+        emailWorkerTask = runEmailWorkerCycle();
+      }, nextDelay);
+    }
+  }
+}
+
+async function startEmailWorker() {
+  if (!emailSender.configured) return;
+  try {
+    await emailJobService.recoverInterrupted(0);
+  } catch (error) {
+    console.error('Récupération des e-mails interrompus impossible :', error.message);
+  }
+  if (!stopping) await runEmailWorkerCycle();
+}
+
 const server = app.listen(port, () => {
   console.log(`API disponible sur http://localhost:${port}`);
-  workerTask = runWorkerCycle();
+  workerTask = startWorker();
+  emailWorkerTask = startEmailWorker();
 });
 
 const shutdown = async () => {
   if (stopping) return;
   stopping = true;
   clearTimeout(workerTimer);
+  clearTimeout(emailWorkerTimer);
   server.close(async () => {
-    await workerTask.catch(() => {});
+    await Promise.all([workerTask.catch(() => {}), emailWorkerTask.catch(() => {})]);
     await pool.end();
     process.exit(0);
   });

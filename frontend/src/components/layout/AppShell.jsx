@@ -1,8 +1,23 @@
 import { BriefcaseBusiness, ClipboardList, FilePlus2, LayoutDashboard, LogOut, UserRound, UsersRound } from 'lucide-react';
 import Brand from '../ui/Brand.jsx';
 import Button from '../ui/Button.jsx';
+import NotificationCenter from '../notifications/NotificationCenter.jsx';
 
-function AppShell({ user, currentView, onNavigate, onLogout, loading, children }) {
+function AppShell({
+  user,
+  currentView,
+  onNavigate,
+  onLogout,
+  loading,
+  notifications = [],
+  unreadNotificationCount = 0,
+  notificationsLoading = false,
+  notificationsError = '',
+  onRetryNotifications,
+  onSelectNotification,
+  onMarkAllNotificationsRead,
+  children,
+}) {
   const isHr = user.role === 'hr';
   const roleLabel = isHr ? 'Responsable RH' : 'Candidat';
   const initials = `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`.toUpperCase();
@@ -12,6 +27,17 @@ function AppShell({ user, currentView, onNavigate, onLogout, loading, children }
       <header className="app-header">
         <Brand compact />
         <div className="user-menu" aria-label="Utilisateur connecté">
+          {!isHr && (
+            <NotificationCenter
+              notifications={notifications}
+              unreadCount={unreadNotificationCount}
+              loading={notificationsLoading}
+              error={notificationsError}
+              onRetry={onRetryNotifications}
+              onSelect={onSelectNotification}
+              onMarkAllRead={onMarkAllNotificationsRead}
+            />
+          )}
           <span className="avatar" aria-hidden="true">{initials}</span>
           <span className="user-menu__identity">
             <strong>{user.firstName} {user.lastName}</strong>

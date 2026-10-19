@@ -14,6 +14,7 @@ export function createApplicationService(databasePool) {
         filters.push(`(
           u.first_name ILIKE $${values.length}
           OR u.last_name ILIKE $${values.length}
+          OR CONCAT_WS(' ', u.first_name, u.last_name) ILIKE $${values.length}
           OR u.email ILIKE $${values.length}
           OR o.title ILIKE $${values.length}
         )`);
@@ -70,7 +71,6 @@ export function createApplicationService(databasePool) {
     async listForCandidate(candidateUserId) {
       const result = await databasePool.query(
         `SELECT a.id, a.job_offer_id, a.candidate_user_id, a.status, a.created_at,
-                a.cv_extraction_status, a.cv_skills, a.ai_status,
                 o.title, o.department, o.location, o.employment_type, o.workplace_type,
                 i.id AS interview_id, i.scheduled_at AS interview_scheduled_at,
                 i.duration_minutes AS interview_duration_minutes,

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import JobOfferList from './JobOfferList.jsx';
 
@@ -22,6 +22,8 @@ const offer = {
   employmentType: 'full_time',
   workplaceType: 'hybrid',
   description: 'Concevoir les interfaces accessibles de la plateforme de recrutement.',
+  requirements: 'Maîtrise de React et JavaScript, avec une attention portée à l’accessibilité.',
+  companyName: 'Bee Coders',
   skills: ['React', 'JavaScript'],
   status: 'published',
   publishedAt: '2026-10-18T10:00:00.000Z',
@@ -39,6 +41,25 @@ describe('JobOfferList', () => {
   it('désactive une candidature déjà envoyée', () => {
     render(<JobOfferList user={{ role: 'candidate' }} offers={[{ ...offer, alreadyApplied: true }]} filters={filters} loading={false} error="" {...handlers} />);
     expect(screen.getByRole('button', { name: 'Déjà postulé' })).toBeDisabled();
+  });
+
+  it('ouvre le détail complet d’une offre pour le candidat', () => {
+    const onApply = vi.fn();
+    render(<JobOfferList user={{ role: 'candidate' }} offers={[offer]} filters={filters} loading={false} error="" {...handlers} onApply={onApply} />);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Voir l’offre' }));
+
+    const dialog = screen.getByRole('dialog');
+    expect(within(dialog).getByRole('heading', { name: offer.title })).toBeInTheDocument();
+    expect(within(dialog).getByText(offer.requirements)).toBeInTheDocument();
+    expect(within(dialog).getAllByText('Bee Coders')).toHaveLength(2);
+
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Fermer' }));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Voir l’offre' }));
+    fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: 'Postuler à cette offre' }));
+    expect(onApply).toHaveBeenCalledWith(offer);
   });
 
   it('présente un état d erreur récupérable', () => {

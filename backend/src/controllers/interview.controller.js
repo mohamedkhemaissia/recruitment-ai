@@ -2,6 +2,23 @@ const meetingTypes = new Set(['video', 'onsite', 'phone']);
 const durations = new Set([15, 30, 45, 60, 90, 120]);
 const terminalStatuses = new Set(['completed', 'cancelled']);
 
+function formatInterviewDate(value) {
+  return new Intl.DateTimeFormat('fr-TN', {
+    dateStyle: 'long',
+    timeStyle: 'short',
+    timeZone: 'Africa/Tunis',
+  }).format(new Date(value));
+}
+
+async function notifySafely(notificationService, data) {
+  if (!notificationService) return;
+  try {
+    await notificationService.notifyCandidate(data);
+  } catch (error) {
+    console.error('Création de la notification d’entretien impossible :', error.message);
+  }
+}
+
 function serializeInterview(interview) {
   return {
     id: interview.id,
@@ -39,7 +56,7 @@ function readSchedule(body = {}) {
   return { scheduledAt: scheduledAt.toISOString(), durationMinutes, meetingType, details };
 }
 
-export function createInterviewController(interviewService) {
+export function createInterviewController(interviewService, notificationService = null) {
   return {
     create: async (request, response, next) => {
       try {
@@ -54,6 +71,13 @@ export function createInterviewController(interviewService) {
         if (!interview) {
           return response.status(404).json({ message: 'Candidature introuvable ou non planifiable.' });
         }
+        await notifySafely(notificationService, {
+          applicationId: interview.application_id,
+          type: 'interview_scheduled',
+          title: 'Entretien planifié',
+          message: `Votre entretien est planifié le ${formatInterviewDate(interview.scheduled_at)}.`,
+          eventKey: `interview:${interview.id}:scheduled:${new Date(interview.scheduled_at).toISOString()}`,
+        });
 
         return response.status(201).json({
           interview: serializeInterview(interview),
@@ -83,6 +107,13 @@ export function createInterviewController(interviewService) {
         if (!interview) {
           return response.status(404).json({ message: 'Entretien programmé introuvable.' });
         }
+        await notifySafely(notificationService, {
+          applicationId: interview.application_id,
+          type: 'interview_updated',
+          title: 'Entretien modifié',
+          message: `Votre entretien a été replanifié au ${formatInterviewDate(interview.scheduled_at)}.`,
+          eventKey: `interview:${interview.id}:updated:${new Date(interview.updated_at).toISOString()}`,
+        });
 
         return response.json({
           interview: serializeInterview(interview),
@@ -108,6 +139,22 @@ export function createInterviewController(interviewService) {
         if (!interview) {
           return response.status(404).json({ message: 'Entretien programmé introuvable.' });
         }
+        const notification = status === 'completed'
+          ? {
+              type: 'interview_completed',
+              title: 'Entretien réalisé',
+              message: 'Votre entretien a été marqué comme réalisé par le responsable RH.',
+            }
+          : {
+              type: 'interview_cancelled',
+              title: 'Entretien annulé',
+              message: 'Votre entretien a été annulé. Consultez votre espace candidat pour suivre votre candidature.',
+            };
+        await notifySafely(notificationService, {
+          applicationId: interview.application_id,
+          ...notification,
+          eventKey: `interview:${interview.id}:${status}`,
+        });
 
         return response.json({
           interview: serializeInterview(interview),

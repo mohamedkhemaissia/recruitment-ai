@@ -54,6 +54,7 @@ test('la liste RH applique les filtres, la pagination et le tri IA', async () =>
   assert.equal(result.total, 21);
   assert.equal(result.page, 2);
   assert.match(calls[1].sql, /final_score DESC NULLS LAST/);
+  assert.match(calls[1].sql, /CONCAT_WS/);
   assert.match(calls[1].sql, /LIMIT \$4 OFFSET \$5/);
   assert.deepEqual(calls[1].values, [12, 'shortlisted', '%React%', 10, 10]);
 });
@@ -73,17 +74,20 @@ test('la suppression d une candidature reste limitée à son propriétaire', asy
   assert.equal(removed.status, 'rejected');
 });
 
-test('le tableau de bord utilise le score final du classement', async () => {
+test('le tableau de bord utilise le score final dans un classement par offre', async () => {
   const responses = [
-    { rows: [{ total_offers: 2, published_offers: 1, total_applications: 3, shortlisted_applications: 1, analyzed_applications: 2, average_ai_score: '78.4', upcoming_interviews: 1, completed_interviews: 0 }] },
+    { rows: [{ total_offers: 2, published_offers: 1, total_applications: 3, submitted_applications: 1, reviewed_applications: 0, shortlisted_applications: 1, rejected_applications: 1, analyzed_applications: 2, upcoming_interviews: 1, completed_interviews: 0 }] },
+    { rows: [{ id: '2', title: 'React', status: 'published', application_count: 3, shortlisted_count: 1 }] },
     { rows: [{ id: 5, final_score: '91.25', status: 'shortlisted', first_name: 'Sami', last_name: 'Ben Ali', title: 'React' }] },
+    { rows: [] },
     { rows: [] },
   ];
   const service = createDashboardService({ query: async () => responses.shift() });
 
   const dashboard = await service.getForHr(9);
 
-  assert.equal(dashboard.summary.averageAiScore, 78.4);
+  assert.equal(dashboard.summary.submittedApplications, 1);
+  assert.equal(dashboard.selectedOfferId, 2);
   assert.equal(dashboard.ranking[0].score, 91.25);
   assert.equal(dashboard.ranking[0].candidateName, 'Sami Ben Ali');
 });

@@ -75,3 +75,21 @@ test('le worker recrée les jobs manquants et récupère les jobs bloqués', asy
   assert.equal(await worker.processNext(), null);
   assert.deepEqual(calls, ['enqueue', 'recover', 'claim']);
 });
+
+test('le worker reprend immédiatement les analyses interrompues au démarrage', async () => {
+  const timeouts = [];
+  const worker = createAiAnalysisWorker({
+    jobService: {
+      async recoverStaleProcessing(timeoutMinutes) {
+        timeouts.push(timeoutMinutes);
+        return [{ id: 4, status: 'pending' }];
+      },
+    },
+    async analyze() {},
+  });
+
+  const recovered = await worker.recoverInterrupted();
+
+  assert.deepEqual(timeouts, [0]);
+  assert.deepEqual(recovered, [{ id: 4, status: 'pending' }]);
+});
