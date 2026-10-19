@@ -1,5 +1,7 @@
 [core]
-    remote = local-storage
+    remote = google-drive
     analytics = false
 ['remote "local-storage"']
     url = ../.dvc-storage
+['remote "google-drive"']
+    url = gdrive://1Chh-cj3CfcGk7z39XtS_tHfot7JJ2rNG
