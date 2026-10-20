@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annotation du corpus de recrutement</title>
+<style>
+body{font:16px system-ui,sans-serif;max-width:1000px;margin:32px auto;padding:0 20px;color:#172033;background:#f8fafc}h1{font-size:26px}section{background:white;padding:24px;border:1px solid #d9e1ea;border-radius:10px;margin:20px 0}.columns{display:grid;grid-template-columns:1fr 1fr;gap:24px}label{display:block;font-weight:600;margin:14px 0 6px}input,select,textarea,button{font:inherit;padding:10px;box-sizing:border-box}input[type=text],textarea,select{width:100%}textarea{min-height:90px}button{cursor:pointer;margin:8px 8px 8px 0}pre{font:inherit;white-space:pre-wrap;line-height:1.6}#message{color:#934200}@media(max-width:700px){.columns{grid-template-columns:1fr}}
+</style>
+<h1>Annotation des correspondances offre–CV</h1>
+<p>Évaluez le contenu des profils fictifs sans consulter les scores IA. Travaillez par lots de 12 couples puis enregistrez votre progression.</p>
+<label for="file">Ouvrir le fichier de revue JSON</label><input id="file" type="file" accept=".json,application/json">
+<p id="message" role="status"></p>
+<div id="workspace" hidden>
+<label for="reviewer">Nom ou identifiant de l’évaluateur</label><input id="reviewer" type="text">
+<p id="progress" aria-live="polite"></p>
+<section>
+<div class="columns"><div><h2>Offre</h2><pre id="offer"></pre></div><div><h2>CV</h2><pre id="cv"></pre></div></div>
+<label for="grade">Pertinence</label><select id="grade"><option value="">Choisir une note</option><option value="0">0 — Hors sujet</option><option value="1">1 — Correspondance faible</option><option value="2">2 — Correspondance partielle</option><option value="3">3 — Correspondance forte</option></select>
+<label for="reason">Justification fondée sur le CV et les exigences</label><textarea id="reason"></textarea>
+<button id="previous">Précédent</button><button id="next">Suivant</button>
+</section>
+<button id="save">Télécharger la progression JSON</button>
+<p>Rechargez le fichier téléchargé pour reprendre. Le fichier initial n’est jamais modifié. Aucun envoi réseau n’est effectué.</p>
+</div>
+<script type="module">
+const get = (id) => document.getElementById(id);
+let packet, position = 0;
+function storeCurrent() {
+  if (!packet) return;
+  const row = packet.judgments[position];
+  row.relevance = get('grade').value === '' ? null : Number(get('grade').value);
+  row.reason = get('reason').value;
+  packet.reviewer = get('reviewer').value.trim();
+}
+function display() {
+  const row = packet.judgments[position];
+  get('offer').textContent = [row.offer.title, row.offer.description, row.offer.requirements].join('\n\n');
+  get('cv').textContent = row.cvText;
+  get('grade').value = row.relevance === null ? '' : String(row.relevance);
+  get('reason').value = row.reason || '';
+  const completed = packet.judgments.filter((item) => Number.isInteger(item.relevance) && item.relevance >= 0 && item.relevance <= 3 && item.reason?.trim()).length;
+  get('progress').textContent = 'Couple ' + (position + 1) + '/' + packet.judgments.length + ' · Lot ' + (Math.floor(position / 12) + 1) + ' · ' + completed + ' annotés';
+  get('previous').disabled = position === 0;
+  get('next').disabled = position === packet.judgments.length - 1;
+}
+get('file').addEventListener('change', async (event) => {
+  try {
+    const file = event.target.files[0];
+    if (!file) return;
+    const loaded = JSON.parse(await file.text());
+    if (loaded.version !== 1 || typeof loaded.datasetFingerprint !== 'string' || !Array.isArray(loaded.judgments) || !loaded.judgments.length) throw new Error('Format de revue non reconnu.');
+    if (!loaded.judgments.every((row) => row && row.offer && ['title', 'description', 'requirements'].every((key) => typeof row.offer[key] === 'string') && typeof row.cvText === 'string' && (row.relevance === null || (Number.isInteger(row.relevance) && row.relevance >= 0 && row.relevance <= 3)))) throw new Error('Le fichier contient des couples invalides.');
+    packet = loaded;
+    position = Math.max(0, packet.judgments.findIndex((row) => row.relevance === null || !row.reason?.trim()));
+    get('reviewer').value = packet.reviewer || '';
+    get('workspace').hidden = false;
+    get('message').textContent = 'Fichier chargé. Les modifications restent dans cette page jusqu’au téléchargement.';
+    display();
+  } catch (error) { get('message').textContent = error.message; }
+});
+for (const [id, direction] of [['previous', -1], ['next', 1]]) get(id).addEventListener('click', () => {
+  storeCurrent();
+  position = Math.max(0, Math.min(packet.judgments.length - 1, position + direction));
+  display();
+});
+get('save').addEventListener('click', () => {
+  storeCurrent();
+  packet.reviewedAt = new Date().toISOString();
+  const url = URL.createObjectURL(new Blob([JSON.stringify(packet, null, 2) + '\n'], { type: 'application/json' }));
+  const link = document.createElement('a');
+  link.href = url; link.download = 'ai-benchmark-review-completed.json'; link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  get('message').textContent = 'Progression téléchargée. Une revue partielle peut être reprise ; le calcul final exige toutes les notes et justifications.';
+  display();
+});
+</script></html>
