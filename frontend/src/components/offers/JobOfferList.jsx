@@ -50,7 +50,6 @@ function JobOfferList({ user, offers, filters, loading, error, actionMessage, ac
       <div className="content-page">
       <section className="page-heading">
         <div>
-          <p className="overline">Offres d’emploi</p>
           <h1>{isHr ? 'Mes offres' : 'Offres disponibles'}</h1>
           <p>{isHr ? 'Consultez les offres créées par votre équipe RH.' : 'Découvrez les opportunités actuellement publiées.'}</p>
         </div>
@@ -109,123 +108,79 @@ function JobOfferList({ user, offers, filters, loading, error, actionMessage, ac
             : isHr && <Button type="button" icon={Plus} onClick={onCreate}>Créer une offre</Button>}
         </section>
       ) : (
-        <section className="card offer-list-card" aria-labelledby="offer-list-title">
-          <div className="offer-list-card__heading">
-            <div>
-              <h2 id="offer-list-title">{isHr ? 'Offres enregistrées' : 'Opportunités ouvertes'}</h2>
-              <p>{offers.length} offre{offers.length > 1 ? 's' : ''}</p>
-            </div>
-            <span className="badge badge--primary">{offers.length}</span>
-          </div>
-
+        <section className="offer-results" aria-label={isHr ? 'Offres enregistrées' : 'Opportunités ouvertes'}>
           {actionMessage && (
             <div className="offer-list-feedback">
               <Feedback message={actionMessage} tone={actionTone} />
             </div>
           )}
 
-          <div className="table-scroll">
-            <table className="offer-table">
-              <thead>
-                <tr>
-                  <th>Poste</th>
-                  <th>Localisation</th>
-                  <th>Contrat</th>
-                  {isHr && <th>Statut</th>}
-                  <th>Date</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {offers.map((offer) => (
-                  <tr key={offer.id}>
-                    <td data-label="Poste">
-                      <strong>{offer.title}</strong>
-                      {offer.skills?.length > 0 && (
-                        <div className="skill-list" aria-label="Compétences identifiées">
-                          {offer.skills.slice(0, 4).map((skill) => <span className="skill-tag" key={skill}>{skill}</span>)}
-                          {offer.skills.length > 4 && <span className="skill-tag skill-tag--more">+{offer.skills.length - 4}</span>}
-                        </div>
+          <div className={`offer-grid ${isHr ? 'offer-grid--hr' : ''}`}>
+            {offers.map((offer) => (
+              <article className="offer-card" key={offer.id}>
+                <header className="offer-card__header">
+                  <span className="offer-card__icon" aria-hidden="true"><BriefcaseBusiness size={21} /></span>
+                  {isHr && <span className={`status-badge status-badge--${offer.status}`}>{statusLabels[offer.status]}</span>}
+                </header>
+
+                <div className="offer-card__title">
+                  <h3>{offer.title}</h3>
+                  <p>{offer.department || offer.companyName || 'Département non renseigné'}</p>
+                </div>
+
+                <p className="offer-card__description">{offer.description}</p>
+
+                <div className="offer-card__metadata">
+                  <span><MapPin size={15} aria-hidden="true" />{offer.location || 'Non renseignée'}</span>
+                  <span><BriefcaseBusiness size={15} aria-hidden="true" />{employmentLabels[offer.employmentType]}</span>
+                  <span><Building2 size={15} aria-hidden="true" />{workplaceLabels[offer.workplaceType]}</span>
+                </div>
+
+                {offer.skills?.length > 0 && (
+                  <div className="skill-list offer-card__skills" aria-label="Compétences identifiées">
+                    {offer.skills.slice(0, 3).map((skill) => <span className="skill-tag" key={skill}>{skill}</span>)}
+                    {offer.skills.length > 3 && <span className="skill-tag skill-tag--more">+{offer.skills.length - 3}</span>}
+                  </div>
+                )}
+
+                <footer className="offer-card__footer">
+                  <span className="offer-card__date"><CalendarDays size={14} aria-hidden="true" />{formatDate(offer.publishedAt || offer.createdAt)}</span>
+                  {isHr ? (
+                    <div className="offer-card__actions">
+                      <Button type="button" variant="secondary" className="button--small" icon={Pencil} disabled={Boolean(actionOfferId || deletingOfferId)} onClick={() => onEdit(offer)}>Modifier</Button>
+                      {offer.status !== 'closed' && (
+                        <Button
+                          type="button"
+                          variant="secondary"
+                          className="button--small"
+                          icon={offer.status === 'published' ? Undo2 : Send}
+                          loading={actionOfferId === offer.id}
+                          disabled={Boolean(actionOfferId || deletingOfferId)}
+                          onClick={() => onStatusChange(offer, offer.status === 'published' ? 'draft' : 'published')}
+                        >
+                          {offer.status === 'published' ? 'Brouillon' : 'Publier'}
+                        </Button>
                       )}
-                      <span>{offer.department || offer.companyName || 'Département non renseigné'}</span>
-                      <p className="offer-table__description">{offer.description}</p>
-                    </td>
-                    <td data-label="Localisation">
-                      <span className="table-detail"><MapPin size={15} aria-hidden="true" />{offer.location || 'Non renseignée'}</span>
-                      <small>{workplaceLabels[offer.workplaceType]}</small>
-                    </td>
-                    <td data-label="Contrat">{employmentLabels[offer.employmentType]}</td>
-                    {isHr && (
-                      <td data-label="Statut">
-                        <span className={`status-badge status-badge--${offer.status}`}>{statusLabels[offer.status]}</span>
-                      </td>
-                    )}
-                    <td data-label="Date">
-                      <span className="table-detail"><CalendarDays size={15} aria-hidden="true" />{formatDate(offer.publishedAt || offer.createdAt)}</span>
-                    </td>
-                    <td data-label="Action">
-                      {isHr ? (
-                        <div className="table-actions">
-                          <Button type="button" variant="secondary" className="button--small" icon={Pencil} disabled={Boolean(actionOfferId || deletingOfferId)} onClick={() => onEdit(offer)}>Modifier</Button>
-                          {offer.status !== 'closed' && (
-                            <Button
-                              type="button"
-                              variant="secondary"
-                              className="button--small"
-                              icon={offer.status === 'published' ? Undo2 : Send}
-                              loading={actionOfferId === offer.id}
-                              disabled={Boolean(actionOfferId || deletingOfferId)}
-                              onClick={() => onStatusChange(offer, offer.status === 'published' ? 'draft' : 'published')}
-                            >
-                              {offer.status === 'published' ? 'Remettre en brouillon' : 'Publier'}
-                            </Button>
-                          )}
-                          {offer.status !== 'closed' && (
-                            <Button
-                              type="button"
-                              variant="secondary"
-                              className="button--small"
-                              icon={Archive}
-                              loading={actionOfferId === offer.id}
-                              disabled={Boolean(actionOfferId || deletingOfferId)}
-                              onClick={() => onStatusChange(offer, 'closed')}
-                            >
-                              Archiver
-                            </Button>
-                          )}
-                          <Button
-                            type="button"
-                            variant="danger"
-                            className="button--small"
-                            icon={Trash2}
-                            loading={deletingOfferId === offer.id}
-                            disabled={Boolean(actionOfferId || deletingOfferId)}
-                            onClick={() => onDelete(offer)}
-                          >
-                            {offer.status === 'closed' ? 'Supprimer' : 'Supprimer définitivement'}
-                          </Button>
-                        </div>
-                      ) : (
-                        <div className="table-actions">
-                          <Button type="button" variant="secondary" className="button--small" icon={Eye} onClick={() => setSelectedOffer(offer)}>
-                            Voir l’offre
-                          </Button>
-                          <Button
-                            type="button"
-                            className="button--small"
-                            icon={offer.alreadyApplied ? CircleCheck : FileUp}
-                            disabled={offer.alreadyApplied}
-                            onClick={() => onApply(offer)}
-                          >
-                            {offer.alreadyApplied ? 'Déjà postulé' : 'Postuler'}
-                          </Button>
-                        </div>
+                      {offer.status !== 'closed' && (
+                        <Button type="button" variant="ghost" className="button--small offer-card__icon-action" icon={Archive} loading={actionOfferId === offer.id} disabled={Boolean(actionOfferId || deletingOfferId)} onClick={() => onStatusChange(offer, 'closed')} aria-label="Archiver l’offre" title="Archiver">
+                          Archiver
+                        </Button>
                       )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      <Button type="button" variant="danger" className="button--small offer-card__icon-action" icon={Trash2} loading={deletingOfferId === offer.id} disabled={Boolean(actionOfferId || deletingOfferId)} onClick={() => onDelete(offer)} aria-label="Supprimer l’offre" title="Supprimer">
+                        Supprimer
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="offer-card__actions">
+                      <Button type="button" variant="secondary" className="button--small" icon={Eye} onClick={() => setSelectedOffer(offer)}>Voir l’offre</Button>
+                      <Button type="button" className="button--small" icon={offer.alreadyApplied ? CircleCheck : FileUp} disabled={offer.alreadyApplied} onClick={() => onApply(offer)}>
+                        {offer.alreadyApplied ? 'Déjà postulé' : 'Postuler'}
+                      </Button>
+                    </div>
+                  )}
+                </footer>
+              </article>
+            ))}
           </div>
         </section>
       )}

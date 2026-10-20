@@ -18,7 +18,7 @@ import { createCvStorage } from './services/cv-storage.service.js';
 import { createProfileService } from './services/profile.service.js';
 import { createPdfTextExtractor } from './services/pdf-text-extractor.service.js';
 import { createSkillExtractor } from './services/skill-extractor.service.js';
-import { createSemanticMatcher } from './services/semantic-matcher.service.js';
+import { createRecruitmentMatcher } from './services/recruitment-matcher.service.js';
 import { createUserService } from './services/user.service.js';
 import { createAuditService } from './services/audit.service.js';
 import { createNotificationService } from './services/notification.service.js';
@@ -35,7 +35,7 @@ export function createApp({
   cvStorage = createCvStorage(),
   pdfTextExtractor = createPdfTextExtractor(),
   skillExtractor = createSkillExtractor(),
-  semanticMatcher = createSemanticMatcher(),
+  semanticMatcher = createRecruitmentMatcher(),
   analysisJobService = null,
   auditService = createAuditService(databasePool),
   notificationService = typeof databasePool.connect === 'function'

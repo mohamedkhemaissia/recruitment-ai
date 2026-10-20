@@ -1,15 +1,22 @@
-import { referenceCandidates, referenceOffers } from '../evaluation/reference-cases.js';
+import { readFile } from 'node:fs/promises';
 import { evaluateReferenceSet } from '../services/ai-evaluation.service.js';
 import { createSemanticMatcher } from '../services/semantic-matcher.service.js';
+import { createRecruitmentMatcher } from '../services/recruitment-matcher.service.js';
 import { createSkillMatcher } from '../services/skill-matcher.service.js';
 import { createSkillExtractor } from '../services/skill-extractor.service.js';
 
+const datasetUrl = new URL('../../data/ai-evaluation-dataset.json', import.meta.url);
+const dataset = JSON.parse(await readFile(datasetUrl, 'utf8'));
+if (dataset.version !== 2 || !Array.isArray(dataset.offers) || !Array.isArray(dataset.candidates)) {
+  throw new Error('AI_EVALUATION_DATASET_INVALID');
+}
+
 const skillExtractor = createSkillExtractor();
-const candidates = referenceCandidates.map((candidate) => ({
+const candidates = dataset.candidates.map((candidate) => ({
   ...candidate,
   skills: skillExtractor.extract(candidate.text),
 }));
-const offers = referenceOffers.map((offer) => ({
+const offers = dataset.offers.map((offer) => ({
   ...offer,
   skills: skillExtractor.extract(`${offer.title}\n${offer.description}\n${offer.requirements}`),
 }));
@@ -18,6 +25,7 @@ try {
   const evaluations = [
     ['Baseline competences', createSkillMatcher()],
     ['Matching hybride IA', createSemanticMatcher()],
+    ['Ranker appris V2', createRecruitmentMatcher()],
   ];
 
   for (const [label, matcher] of evaluations) {
@@ -31,7 +39,7 @@ try {
     console.log(`Marge moyenne : ${evaluation.meanMargin} points`);
     console.log(`Durée : ${durationSeconds} s`);
 
-    if (label === 'Matching hybride IA' && (evaluation.top1Accuracy < 90 || evaluation.top3Accuracy < 100)) {
+    if ((label === 'Matching hybride IA' || label === 'Ranker appris V2') && (evaluation.top1Accuracy < 90 || evaluation.top3Accuracy < 100)) {
       const failedOffers = evaluation.cases
         .filter((item) => item.expectedRank !== 1)
         .map((item) => `${item.offerTitle} (rang ${item.expectedRank || 'absent'})`)

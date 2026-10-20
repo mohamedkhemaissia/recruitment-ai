@@ -86,6 +86,8 @@ ALTER TABLE applications ADD COLUMN IF NOT EXISTS final_score NUMERIC(5,2) CHECK
 ALTER TABLE applications ADD COLUMN IF NOT EXISTS semantic_component NUMERIC(5,2) CHECK (semantic_component >= 0 AND semantic_component <= 100);
 ALTER TABLE applications ADD COLUMN IF NOT EXISTS skill_component NUMERIC(5,2) CHECK (skill_component >= 0 AND skill_component <= 100);
 ALTER TABLE applications ADD COLUMN IF NOT EXISTS scoring_version VARCHAR(40) NOT NULL DEFAULT '';
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS ai_confidence NUMERIC(5,4) CHECK (ai_confidence >= 0 AND ai_confidence <= 1);
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS ai_explanation JSONB NOT NULL DEFAULT '{}'::jsonb;
 
 CREATE INDEX IF NOT EXISTS applications_job_offer_id_idx ON applications(job_offer_id);
 CREATE INDEX IF NOT EXISTS applications_candidate_user_id_idx ON applications(candidate_user_id);

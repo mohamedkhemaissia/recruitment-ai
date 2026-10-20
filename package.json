@@ -14,6 +14,7 @@
     "build": "npm run build --prefix frontend",
     "check": "npm test && npm run build && npm run db:check --prefix backend && npm run ai:evaluate --prefix backend",
     "ai:validate": "npm run ai:validate --prefix backend",
+    "ai:train": "npm run ai:train --prefix backend",
     "data:reproduce": "node scripts/run-dvc.mjs repro",
     "data:purge-cvs": "npm run data:purge-cvs --prefix backend",
     "demo:seed": "npm run demo:seed --prefix backend --",

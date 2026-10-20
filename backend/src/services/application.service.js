@@ -1,6 +1,13 @@
 export function createApplicationService(databasePool) {
   return {
-    async listForHr(hrUserId, { page = 1, limit = 20, status = '', search = '', sort = 'score' } = {}) {
+    async listForHr(hrUserId, {
+      page = 1,
+      limit = 20,
+      status = '',
+      search = '',
+      sort = 'date',
+      jobOfferId = null,
+    } = {}) {
       const offset = (page - 1) * limit;
       const values = [hrUserId];
       const filters = ['o.hr_user_id = $1'];
@@ -20,10 +27,17 @@ export function createApplicationService(databasePool) {
         )`);
       }
 
+      if (jobOfferId) {
+        values.push(jobOfferId);
+        filters.push(`o.id = $${values.length}`);
+      }
+
       const whereClause = filters.join(' AND ');
-      const orderBy = sort === 'date'
-        ? 'a.created_at DESC, a.id DESC'
-        : 'CASE WHEN a.ai_status = \'completed\' THEN 0 ELSE 1 END, a.final_score DESC NULLS LAST, a.semantic_score DESC NULLS LAST, a.created_at DESC, a.id DESC';
+      // Le ranker est appris par offre : comparer les scores de deux offres
+      // différentes ne constitue pas un classement valide.
+      const orderBy = sort === 'score' && jobOfferId
+        ? 'CASE WHEN a.ai_status = \'completed\' THEN 0 ELSE 1 END, a.final_score DESC NULLS LAST, a.semantic_score DESC NULLS LAST, a.created_at DESC, a.id DESC'
+        : 'a.created_at DESC, a.id DESC';
       const countResult = await databasePool.query(
         `SELECT COUNT(*)::integer AS total
          FROM applications a
@@ -37,7 +51,7 @@ export function createApplicationService(databasePool) {
                 a.cv_extraction_status, a.cv_skills, a.ai_status,
                 a.semantic_score, a.final_score, a.semantic_component,
                 a.skill_component, a.matched_skills, a.missing_skills,
-                a.scoring_version,
+                a.scoring_version, a.ai_confidence, a.ai_explanation,
                 a.cv_original_name, o.title, o.department,
                 i.id AS interview_id, i.scheduled_at AS interview_scheduled_at,
                 i.duration_minutes AS interview_duration_minutes,
@@ -128,18 +142,22 @@ export function createApplicationService(databasePool) {
       missingSkills = [],
       model = '',
       scoringVersion = '',
+      confidence = null,
+      explanation = {},
     }) {
       const result = await databasePool.query(
         `UPDATE applications
          SET ai_status = $1::varchar(20), semantic_score = $2, final_score = $3,
              semantic_component = $4, skill_component = $5, matched_skills = $6::jsonb,
              missing_skills = $7::jsonb, ai_model = $8, scoring_version = $9,
+             ai_confidence = $10, ai_explanation = $11::jsonb,
              analyzed_at = CASE WHEN $1::varchar(20) = 'completed' THEN NOW() ELSE NULL END,
              updated_at = NOW()
-         WHERE id = $10
+         WHERE id = $12
          RETURNING id, job_offer_id, candidate_user_id, status, cv_extraction_status, cv_skills,
                    ai_status, semantic_score, final_score, semantic_component, skill_component,
-                   matched_skills, missing_skills, scoring_version, created_at`,
+                   matched_skills, missing_skills, scoring_version, ai_confidence,
+                   ai_explanation, created_at`,
         [
           aiStatus,
           score,
@@ -150,6 +168,8 @@ export function createApplicationService(databasePool) {
           JSON.stringify(missingSkills),
           model,
           scoringVersion,
+          confidence,
+          JSON.stringify(explanation || {}),
           id,
         ],
       );

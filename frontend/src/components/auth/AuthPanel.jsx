@@ -1,4 +1,4 @@
-import { ArrowRight, LogIn, UserPlus } from 'lucide-react';
+import { ArrowRight, BrainCircuit, LogIn, Sparkles, UserPlus } from 'lucide-react';
 import Brand from '../ui/Brand.jsx';
 import Button from '../ui/Button.jsx';
 import Feedback from '../ui/Feedback.jsx';
@@ -14,15 +14,27 @@ function AuthPanel({ mode, setMode, form, onChange, onSubmit, loading, message, 
   return (
     <main className="auth-page">
       <section className="auth-hero" aria-labelledby="product-title">
-        <Brand />
+        <Brand inverse />
         <div className="auth-hero__content">
-          <p className="overline">Plateforme de recrutement</p>
-          <h1 id="product-title">Le recrutement, mieux organisé.</h1>
+          <p className="auth-hero__eyebrow"><Sparkles size={15} aria-hidden="true" /> Plateforme de recrutement</p>
+          <h1 id="product-title">Chaque talent mérite une décision <em>éclairée.</em></h1>
           <p>
-            Centralisez les offres, les candidatures et les entretiens dans un espace clair conçu pour les équipes RH et les candidats.
+            Pilotez vos recrutements, comparez les profils avec une IA explicable et gardez l’humain au centre de chaque décision.
           </p>
+
         </div>
-        <p className="auth-hero__footer">Une expérience simple, structurée et assistée par l’intelligence artificielle.</p>
+
+        <div className="auth-ai-preview" aria-hidden="true">
+          <div className="auth-ai-preview__topline">
+            <span><BrainCircuit size={16} /> Analyse de correspondance</span>
+          </div>
+          <div className="auth-ai-preview__candidate">
+            <span className="auth-ai-preview__avatar">SK</span>
+            <span><strong>Profil candidat</strong><small>Développeuse Full Stack</small></span>
+            <b>91%</b>
+          </div>
+          <div className="auth-ai-preview__bar"><span /></div>
+        </div>
       </section>
 
       <section className="auth-workspace" aria-label="Accès au compte">

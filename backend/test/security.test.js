@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createSessionMiddleware } from '../src/config/session.js';
 import { createCsrfOriginGuard } from '../src/middleware/csrf-origin.js';
+import { createAuthRateLimit } from '../src/middleware/auth-rate-limit.js';
 import { createCvStorage } from '../src/services/cv-storage.service.js';
 
 test('la production refuse un secret de session absent ou faible', () => {
@@ -98,4 +99,36 @@ test('la protection CSRF refuse les origines absentes ou inconnues en production
     if (previousEnvironment === undefined) delete process.env.NODE_ENV;
     else process.env.NODE_ENV = previousEnvironment;
   }
+});
+
+test('la limitation d authentification borne et nettoie les clients mémorisés', () => {
+  let currentTime = 0;
+  const guard = createAuthRateLimit({
+    now: () => currentTime,
+    limit: 1,
+    maximumTrackedClients: 2,
+  });
+  const response = {
+    statusCode: 401,
+    set() {},
+    status(value) {
+      this.statusCode = value;
+      return this;
+    },
+    json() {},
+    on() {},
+  };
+  const request = (ip) => ({ ip, socket: {} });
+  let nextCalls = 0;
+  const next = () => { nextCalls += 1; };
+
+  guard(request('192.0.2.1'), response, next);
+  guard(request('192.0.2.2'), response, next);
+  guard(request('192.0.2.3'), response, next);
+  guard(request('192.0.2.1'), response, next);
+  assert.equal(nextCalls, 4, 'le client le plus ancien doit avoir été évincé');
+
+  currentTime = 16 * 60 * 1000;
+  guard(request('192.0.2.2'), response, next);
+  assert.equal(nextCalls, 5, 'les entrées expirées doivent être nettoyées');
 });

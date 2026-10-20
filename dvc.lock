@@ -5,14 +5,66 @@ stages:
     deps:
     - path: backend/src/evaluation/reference-cases.js
       hash: md5
-      md5: 8e30af707e001cb177dd02c8c9304b48
-      size: 8458
+      md5: ae3b1a4b056ffbf8eaa58411ed7f9543
+      size: 8878
     - path: backend/src/scripts/export-evaluation-dataset.js
       hash: md5
-      md5: d621d628476bbf16ff5c6e3c79c730f2
-      size: 678
+      md5: f6708edc8ff55b312598df63a83fcff7
+      size: 771
     outs:
     - path: backend/data/ai-evaluation-dataset.json
       hash: md5
-      md5: 3b05199d0a699dc0de2bb45cc244bf9f
-      size: 9933
+      md5: cfe756a2cdf34437388b0345b0732cc5
+      size: 39914
+  train-ranking-model:
+    cmd: node backend/src/scripts/train-ai-ranker.js
+    deps:
+    - path: backend/data/ai-evaluation-dataset.json
+      hash: md5
+      md5: cfe756a2cdf34437388b0345b0732cc5
+      size: 39914
+    - path: backend/src/ai/skill-taxonomy.json
+      hash: md5
+      md5: 1a59ddb3cef5b68fdf152d9e8c548e9d
+      size: 6147
+    - path: backend/src/scripts/train-ai-ranker.js
+      hash: md5
+      md5: c5b2189767c5688f08398ab3366df311
+      size: 6146
+    - path: backend/src/services/ai-ranking-features.service.js
+      hash: md5
+      md5: 0c6bf6f6c391763e1507f437cde08ef4
+      size: 2016
+    - path: backend/src/services/pairwise-ranker-training.service.js
+      hash: md5
+      md5: 1cc3c2d14d5657d6f9e9b4ad8c64e2f1
+      size: 5651
+    - path: backend/src/services/ranking-evaluation.service.js
+      hash: md5
+      md5: d554d9ce2938e5d9ec607739605b0a9d
+      size: 2309
+    - path: backend/src/services/semantic-matcher.service.js
+      hash: md5
+      md5: b72193ffa14baf3674561a61ad6078c9
+      size: 4444
+    - path: backend/src/services/skill-extractor.service.js
+      hash: md5
+      md5: b29d7164f31d58e653a6550759906e97
+      size: 345
+    - path: backend/src/services/skill-taxonomy.service.js
+      hash: md5
+      md5: d0f9e56e597cffbfaf77fc0f88afd24b
+      size: 2190
+    - path: package-lock.json
+      hash: md5
+      md5: d975d0bb3dcbc660878229152fdc0c72
+      size: 189917
+    outs:
+    - path: backend/data/ai-ranking-report.json
+      hash: md5
+      md5: 3186b7957d7f945c1ab472349ec159f5
+      size: 94031
+    - path: backend/src/ai/models/recruitment-ranker-v2.json
+      hash: md5
+      md5: 10fb074a1f21200d1132b79afd75026c
+      size: 2871

@@ -53,6 +53,9 @@ jobs:
       - name: Vérifier le verrou DVC
         run: git diff --exit-code -- dvc.lock
 
+      - name: Évaluer le classement IA
+        run: npm run ai:evaluate --prefix backend
+
       - name: Exécuter les tests
         run: npm test
 

@@ -142,3 +142,16 @@ export const referenceOffers = profiles.map(({ id, offer }) => ({
   expectedCandidateId: `${id}-target`,
   ...offer,
 }));
+
+export const referenceJudgments = referenceOffers.flatMap((offer) => referenceCandidates.map((candidate) => {
+  let relevance = 0;
+  if (candidate.id === offer.expectedCandidateId) relevance = 3;
+  else if (candidate.id === `${offer.id}-junior`) relevance = 2;
+  else if (candidate.id === `${offer.id}-adjacent`) relevance = 1;
+
+  return {
+    offerId: offer.id,
+    candidateId: candidate.id,
+    relevance,
+  };
+}));

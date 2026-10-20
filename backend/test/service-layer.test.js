@@ -8,7 +8,7 @@ import { createJobOfferService } from '../src/services/job-offer.service.js';
 import { createProfileService } from '../src/services/profile.service.js';
 import { createUserService } from '../src/services/user.service.js';
 
-test('le service candidature conserve les composantes et le score hybride', async () => {
+test('le service candidature conserve le score appris et son explication sans inventer de confiance', async () => {
   let parameters;
   const service = createApplicationService({
     async query(_sql, values) {
@@ -26,15 +26,17 @@ test('le service candidature conserve les composantes et le score hybride', asyn
     matchedSkills: ['React'],
     missingSkills: ['SQL'],
     model: 'model-test',
-    scoringVersion: 'hybrid-v1',
+    scoringVersion: 'learned-ranking-v2',
+    explanation: { factors: [{ name: 'requiredSkillCoverage', contribution: 1.2 }] },
   });
 
   assert.deepEqual(parameters, [
-    'completed', 79.55, 79.55, 82, 75, '["React"]', '["SQL"]', 'model-test', 'hybrid-v1', 4,
+    'completed', 79.55, 79.55, 82, 75, '["React"]', '["SQL"]', 'model-test', 'learned-ranking-v2', null,
+    '{"factors":[{"name":"requiredSkillCoverage","contribution":1.2}]}', 4,
   ]);
 });
 
-test('la liste RH applique les filtres, la pagination et le tri IA', async () => {
+test('la liste RH applique les filtres, la pagination et le tri IA uniquement par offre', async () => {
   const calls = [];
   const service = createApplicationService({
     async query(sql, values) {
@@ -49,14 +51,31 @@ test('la liste RH applique les filtres, la pagination et le tri IA', async () =>
     status: 'shortlisted',
     search: 'React',
     sort: 'score',
+    jobOfferId: 44,
   });
 
   assert.equal(result.total, 21);
   assert.equal(result.page, 2);
   assert.match(calls[1].sql, /final_score DESC NULLS LAST/);
   assert.match(calls[1].sql, /CONCAT_WS/);
-  assert.match(calls[1].sql, /LIMIT \$4 OFFSET \$5/);
-  assert.deepEqual(calls[1].values, [12, 'shortlisted', '%React%', 10, 10]);
+  assert.match(calls[1].sql, /o\.id = \$4/);
+  assert.match(calls[1].sql, /LIMIT \$5 OFFSET \$6/);
+  assert.deepEqual(calls[1].values, [12, 'shortlisted', '%React%', 44, 10, 10]);
+});
+
+test('la liste RH globale reste chronologique même si un tri IA est demandé', async () => {
+  const calls = [];
+  const service = createApplicationService({
+    async query(sql, values) {
+      calls.push({ sql, values });
+      return calls.length === 1 ? { rows: [{ total: 1 }] } : { rows: [{ id: 8 }] };
+    },
+  });
+
+  await service.listForHr(12, { sort: 'score' });
+
+  assert.match(calls[1].sql, /ORDER BY a\.created_at DESC/);
+  assert.doesNotMatch(calls[1].sql, /final_score DESC/);
 });
 
 test('la suppression d une candidature reste limitée à son propriétaire', async () => {

@@ -85,6 +85,9 @@ function serializeHrApplication(application) {
       : Number(application.final_score),
     skillScore: application.skill_component === null || application.skill_component === undefined ? null : Number(application.skill_component),
     scoringVersion: application.scoring_version || '',
+    aiExplanation: application.ai_explanation && typeof application.ai_explanation === 'object'
+      ? application.ai_explanation
+      : {},
     matchedSkills: Array.isArray(application.matched_skills) ? application.matched_skills : [],
     missingSkills: Array.isArray(application.missing_skills) ? application.missing_skills : [],
     createdAt: application.created_at,
@@ -122,13 +125,21 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
         const limit = Math.min(100, Math.max(1, Number.parseInt(request.query.limit, 10) || 20));
         const status = typeof request.query.status === 'string' ? request.query.status : '';
         const search = typeof request.query.search === 'string' ? request.query.search.trim().slice(0, 100) : '';
-        const sort = request.query.sort === 'date' ? 'date' : 'score';
+        const requestedOfferId = request.query.jobOfferId;
+        const jobOfferId = requestedOfferId === undefined || requestedOfferId === ''
+          ? null
+          : Number(requestedOfferId);
+        if (jobOfferId !== null && (!Number.isSafeInteger(jobOfferId) || jobOfferId < 1)) {
+          return response.status(400).json({ message: 'Le filtre d’offre est invalide.' });
+        }
+        const sort = request.query.sort === 'score' && jobOfferId ? 'score' : 'date';
         const result = await applicationService.listForHr(request.user.id, {
           page,
           limit,
           status,
           search,
           sort,
+          jobOfferId,
         });
         const applications = Array.isArray(result) ? result : result.rows;
         const pagination = Array.isArray(result)
@@ -139,7 +150,11 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
             total: result.total,
             totalPages: result.total ? Math.ceil(result.total / result.limit) : 0,
           };
-        return response.json({ applications: applications.map(serializeHrApplication), pagination });
+        return response.json({
+          applications: applications.map(serializeHrApplication),
+          pagination,
+          appliedSort: sort,
+        });
       } catch (error) {
         return next(error);
       }
@@ -284,6 +299,8 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
               missingSkills: analysis.missingSkills,
               model: analysis.model,
               scoringVersion: analysis.scoringVersion,
+              confidence: analysis.confidence,
+              explanation: analysis.explanation,
             }) || application;
           } catch {
             application = await applicationService.saveAnalysis({

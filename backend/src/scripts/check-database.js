@@ -15,7 +15,7 @@ const requiredTables = [
 ];
 const requiredColumns = {
   job_offers: ['description', 'requirements', 'skills', 'status'],
-  applications: ['consent_given_at', 'final_score', 'semantic_component', 'skill_component', 'scoring_version'],
+  applications: ['consent_given_at', 'final_score', 'semantic_component', 'skill_component', 'scoring_version', 'ai_confidence', 'ai_explanation'],
 };
 
 try {

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { referenceCandidates, referenceOffers } from '../src/evaluation/reference-cases.js';
+import { referenceCandidates, referenceJudgments, referenceOffers } from '../src/evaluation/reference-cases.js';
 import { evaluateReferenceSet } from '../src/services/ai-evaluation.service.js';
 
 test('le jeu de référence contient dix offres et trente CV cohérents', () => {
@@ -10,6 +10,8 @@ test('le jeu de référence contient dix offres et trente CV cohérents', () => 
   for (const offer of referenceOffers) {
     assert.ok(referenceCandidates.some((candidate) => candidate.id === offer.expectedCandidateId));
   }
+  assert.equal(referenceJudgments.length, 300);
+  assert.equal(referenceJudgments.filter((judgment) => judgment.relevance === 3).length, 10);
 });
 
 test('l evaluation calcule le classement Top-1 et le rang reciproque moyen', async () => {

@@ -6,3 +6,21 @@ stages:
     - backend/src/scripts/export-evaluation-dataset.js
     outs:
     - backend/data/ai-evaluation-dataset.json
+  train-ranking-model:
+    cmd: node backend/src/scripts/train-ai-ranker.js
+    deps:
+    - backend/data/ai-evaluation-dataset.json
+    - backend/src/ai/skill-taxonomy.json
+    - backend/src/scripts/train-ai-ranker.js
+    - backend/src/services/ai-ranking-features.service.js
+    - backend/src/services/pairwise-ranker-training.service.js
+    - backend/src/services/ranking-evaluation.service.js
+    - backend/src/services/semantic-matcher.service.js
+    - backend/src/services/skill-extractor.service.js
+    - backend/src/services/skill-taxonomy.service.js
+    - package-lock.json
+    outs:
+    - backend/src/ai/models/recruitment-ranker-v2.json
+    metrics:
+    - backend/data/ai-ranking-report.json:
+        cache: false

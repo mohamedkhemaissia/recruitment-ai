@@ -1,0 +1,3302 @@
+{
+  "generatedAt": "reproducible",
+  "datasetVersion": 2,
+  "split": {
+    "trainOfferIds": [
+      "frontend",
+      "data",
+      "backend",
+      "devops",
+      "mobile",
+      "ai-nlp",
+      "dotnet"
+    ],
+    "validationOfferIds": [
+      "ux"
+    ],
+    "testOfferIds": [
+      "fullstack",
+      "project"
+    ]
+  },
+  "metrics": {
+    "train": {
+      "baseline": {
+        "offerCount": 7,
+        "sampleCount": 210,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 1,
+        "ndcgAt5": 0.9464,
+        "cases": [
+          {
+            "offerId": "frontend",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9049495058460971,
+            "ranking": [
+              {
+                "candidateId": "frontend-target",
+                "relevance": 3,
+                "score": 82.26
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 75.51
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 2,
+                "score": 70.04
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 68.95
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 63.12
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 57.55
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 50.02
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 1,
+                "score": 49.72
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 45.59
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 44.31
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 40.94
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 38.42
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 38.15
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 37.65
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 36.18
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 32.8
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 30.91
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 29.03
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 27.43
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 26.84
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 25.95
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 22.62
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 21.27
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 20.42
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 18.85
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 14.4
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 12.53
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 11.84
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 9.39
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 9.28
+              }
+            ]
+          },
+          {
+            "offerId": "data",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.992619504174702,
+            "ranking": [
+              {
+                "candidateId": "data-target",
+                "relevance": 3,
+                "score": 79.2
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 2,
+                "score": 64.16
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 54.67
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 1,
+                "score": 54.09
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 48.84
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 39.99
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 39.71
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 37.03
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 35
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 33.57
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 32.28
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 31.87
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 31.52
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 31.07
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 30.78
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 30.73
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 29.45
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 28.61
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 28.4
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 27.33
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 27.19
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 24.28
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 24.19
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 24.17
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 22.83
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 20.81
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 20.79
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 20.49
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 19.05
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 15.34
+              }
+            ]
+          },
+          {
+            "offerId": "backend",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9508013338940989,
+            "ranking": [
+              {
+                "candidateId": "backend-target",
+                "relevance": 3,
+                "score": 87.29
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 72.86
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 2,
+                "score": 65.45
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 1,
+                "score": 60.87
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 59.14
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 52.29
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 50.37
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 41.99
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 41.9
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 41.63
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 38.16
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 35.35
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 29.86
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 28.06
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 27.93
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 26.04
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 22.59
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 20.28
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 18.85
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 16.75
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 15.63
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 14.99
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 13.02
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 12.83
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 12.37
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 12.26
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 12.15
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 9.02
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 8.31
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 5.53
+              }
+            ]
+          },
+          {
+            "offerId": "devops",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "devops-target",
+                "relevance": 3,
+                "score": 89.3
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 2,
+                "score": 50.93
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 37.22
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 35.93
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 34.5
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 34.09
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 33.66
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 33.54
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 1,
+                "score": 32.77
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 30.27
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 28.66
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 25.52
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 24.88
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 23.37
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 22.94
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 22.47
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 21.25
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 20.75
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 20.37
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 19.96
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 19.36
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 16.45
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 15.58
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 13.95
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 13.66
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 13.12
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 11.04
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 10.6
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 10.29
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 6.7
+              }
+            ]
+          },
+          {
+            "offerId": "mobile",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "mobile-target",
+                "relevance": 3,
+                "score": 82.61
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 2,
+                "score": 69.71
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 65.63
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 58
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 51.95
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 1,
+                "score": 49.95
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 43.26
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 39.39
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 38.51
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 38.3
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 36.06
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 35.99
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 35.85
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 30.17
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 26.6
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 26.51
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 26.43
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 24.52
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 23.5
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 21.79
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 20.86
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 20.11
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 18.53
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 17.97
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 15.96
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 14.04
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 13.71
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 12.33
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 10.57
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 9.86
+              }
+            ]
+          },
+          {
+            "offerId": "ai-nlp",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 1,
+            "ranking": [
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 3,
+                "score": 85.08
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 2,
+                "score": 55.98
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 1,
+                "score": 47.91
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 36.47
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 36.08
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 33.25
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 31.24
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 30.98
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 28.54
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 27.68
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 27.55
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 27.51
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 26.84
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 26.03
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 25.66
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 25.34
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 25.28
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 23.63
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 22.9
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 22.85
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 22.6
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 20.35
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 20.11
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 19.9
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 18.78
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 18.66
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 17.97
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 16.83
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 16.24
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 15.47
+              }
+            ]
+          },
+          {
+            "offerId": "dotnet",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.882808018370203,
+            "ranking": [
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 3,
+                "score": 83.96
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 58.76
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 56.56
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 2,
+                "score": 54.95
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 54.6
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 53.33
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 51.33
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 1,
+                "score": 50.99
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 44.17
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 43.55
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 40.96
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 40.1
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 37.51
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 35.9
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 32.52
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 31.59
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 31.2
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 29.87
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 27.69
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 25.86
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 24.81
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 21.73
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 19.33
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 19.14
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 19.04
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 17.64
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 17.5
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 15.85
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 15.68
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 14.08
+              }
+            ]
+          }
+        ]
+      },
+      "learnedRanker": {
+        "offerCount": 7,
+        "sampleCount": 210,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 1,
+        "ndcgAt5": 0.9702,
+        "cases": [
+          {
+            "offerId": "frontend",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "frontend-target",
+                "relevance": 3,
+                "score": 0.7241
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 2,
+                "score": 0.5911
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.5834
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.5155
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.3437
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.3259
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 1,
+                "score": 0.2108
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.1957
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.1086
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.1084
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.1003
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.1002
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0998
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.0961
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0879
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0793
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0625
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0534
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0509
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0507
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0286
+              }
+            ]
+          },
+          {
+            "offerId": "data",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 1,
+            "ranking": [
+              {
+                "candidateId": "data-target",
+                "relevance": 3,
+                "score": 0.6337
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 2,
+                "score": 0.4086
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 1,
+                "score": 0.3297
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.2477
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.2086
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.1009
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0959
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0808
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0721
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0686
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0657
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.062
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.0616
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.0583
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.0582
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.058
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0561
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0558
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.0554
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0294
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0293
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0288
+              }
+            ]
+          },
+          {
+            "offerId": "backend",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9508013338940989,
+            "ranking": [
+              {
+                "candidateId": "backend-target",
+                "relevance": 3,
+                "score": 0.7736
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.6381
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 2,
+                "score": 0.4659
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 1,
+                "score": 0.3972
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.3241
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.2234
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.1731
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.1413
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.1092
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0961
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.0936
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0688
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.0594
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0558
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0554
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.055
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0318
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0303
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0301
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0301
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.03
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0285
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0284
+              }
+            ]
+          },
+          {
+            "offerId": "devops",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 1,
+            "ranking": [
+              {
+                "candidateId": "devops-target",
+                "relevance": 3,
+                "score": 0.7141
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 2,
+                "score": 0.4467
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 1,
+                "score": 0.2537
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.11
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.1098
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.1097
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0957
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0878
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.0817
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0623
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.0568
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.0566
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.056
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.0529
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.051
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.0505
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0301
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0285
+              }
+            ]
+          },
+          {
+            "offerId": "mobile",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "mobile-target",
+                "relevance": 3,
+                "score": 0.7726
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 2,
+                "score": 0.6449
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.4317
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.3369
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.2782
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 1,
+                "score": 0.2688
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.1895
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.1178
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.1178
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.1089
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.1088
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.1045
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0954
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0672
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0651
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0558
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.053
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.053
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0303
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0303
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0286
+              }
+            ]
+          },
+          {
+            "offerId": "ai-nlp",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 1,
+            "ranking": [
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 3,
+                "score": 0.7731
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 2,
+                "score": 0.3585
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 1,
+                "score": 0.2739
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.1101
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.1078
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0874
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0732
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0732
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0625
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0622
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.0586
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.0566
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.0552
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.0552
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.0551
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0534
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.0532
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.0524
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0513
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.049
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0288
+              }
+            ]
+          },
+          {
+            "offerId": "dotnet",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 3,
+                "score": 0.7729
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 2,
+                "score": 0.4567
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.2317
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.2308
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.2052
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 1,
+                "score": 0.2047
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.1798
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.1532
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.0964
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0954
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0917
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0912
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.0827
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0759
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.068
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.065
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0648
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0632
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.0571
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0534
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "validation": {
+      "baseline": {
+        "offerCount": 1,
+        "sampleCount": 30,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 1,
+        "ndcgAt5": 0.9468,
+        "cases": [
+          {
+            "offerId": "ux",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "ux-target",
+                "relevance": 3,
+                "score": 81.09
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 2,
+                "score": 63.97
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 63.77
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 48.17
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 46.38
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 44.71
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 1,
+                "score": 39.18
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 35.7
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 34.79
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 32.07
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 30.2
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 28.61
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 27.62
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 27.53
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 26.63
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 25.79
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 24.7
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 24.58
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 24.53
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 24.12
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 22.47
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 21.46
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 20.68
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 20.44
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 19.78
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 18.14
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 17.95
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 17.12
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 14.9
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 14.51
+              }
+            ]
+          }
+        ]
+      },
+      "learnedRanker": {
+        "offerCount": 1,
+        "sampleCount": 30,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 1,
+        "ndcgAt5": 0.9926,
+        "cases": [
+          {
+            "offerId": "ux",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.992619504174702,
+            "ranking": [
+              {
+                "candidateId": "ux-target",
+                "relevance": 3,
+                "score": 0.7723
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 2,
+                "score": 0.5652
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.3777
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 1,
+                "score": 0.2581
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.1408
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.1242
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.1237
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.1094
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.0941
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0586
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.0321
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.0319
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0319
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0318
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0288
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "test": {
+      "baseline": {
+        "offerCount": 2,
+        "sampleCount": 60,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 0.75,
+        "ndcgAt5": 0.8726,
+        "cases": [
+          {
+            "offerId": "fullstack",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 0.5,
+            "ndcgAtK": 0.7984848580994974,
+            "ranking": [
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 3,
+                "score": 79.3
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 60.44
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 1,
+                "score": 59.46
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 58.98
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 55.79
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 2,
+                "score": 54.34
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 53.13
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 51.52
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 49.31
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 43.94
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 41.35
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 39.14
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 37.55
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 36.77
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 29.62
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 26.89
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 24.73
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 22.34
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 21.96
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 21.24
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 17.54
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 17.27
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 16.97
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 15.7
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 14.12
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 12.02
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 11.37
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 10.88
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 9.26
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 8.08
+              }
+            ]
+          },
+          {
+            "offerId": "project",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "project-target",
+                "relevance": 3,
+                "score": 85.4
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 2,
+                "score": 60.97
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 55.32
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 46.21
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 39.87
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 36.71
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 34.95
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 1,
+                "score": 34.02
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 33.88
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 33.36
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 33.29
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 32.11
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 31.26
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 31.1
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 31.02
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 30.96
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 30.87
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 29.67
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 29.54
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 29.52
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 28.65
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 27.1
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 25.77
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 23.25
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 23.06
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 22.57
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 22.54
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 21.65
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 21.12
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 18.22
+              }
+            ]
+          }
+        ]
+      },
+      "learnedRanker": {
+        "offerCount": 2,
+        "sampleCount": 60,
+        "top1Accuracy": 100,
+        "meanReciprocalRank": 1,
+        "recallAt5": 1,
+        "ndcgAt5": 0.9344,
+        "cases": [
+          {
+            "offerId": "fullstack",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9220433016555235,
+            "ranking": [
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 3,
+                "score": 0.7719
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.4248
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 1,
+                "score": 0.4245
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.3354
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 2,
+                "score": 0.3195
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.2676
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.2644
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.2484
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.209
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.1775
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.1562
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.1415
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.1202
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0779
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0622
+              },
+              {
+                "candidateId": "project-target",
+                "relevance": 0,
+                "score": 0.0532
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0525
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0523
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.0509
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0302
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0301
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.03
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0297
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0297
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0288
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.0287
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0286
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.0285
+              }
+            ]
+          },
+          {
+            "offerId": "project",
+            "bestRank": 1,
+            "reciprocalRank": 1,
+            "recallAtK": 1,
+            "ndcgAtK": 0.9467676761267002,
+            "ranking": [
+              {
+                "candidateId": "project-target",
+                "relevance": 3,
+                "score": 0.7732
+              },
+              {
+                "candidateId": "project-junior",
+                "relevance": 2,
+                "score": 0.3367
+              },
+              {
+                "candidateId": "ux-adjacent",
+                "relevance": 0,
+                "score": 0.2557
+              },
+              {
+                "candidateId": "data-adjacent",
+                "relevance": 0,
+                "score": 0.1094
+              },
+              {
+                "candidateId": "devops-target",
+                "relevance": 0,
+                "score": 0.1058
+              },
+              {
+                "candidateId": "frontend-target",
+                "relevance": 0,
+                "score": 0.098
+              },
+              {
+                "candidateId": "devops-junior",
+                "relevance": 0,
+                "score": 0.0663
+              },
+              {
+                "candidateId": "frontend-junior",
+                "relevance": 0,
+                "score": 0.0599
+              },
+              {
+                "candidateId": "dotnet-adjacent",
+                "relevance": 0,
+                "score": 0.0595
+              },
+              {
+                "candidateId": "backend-junior",
+                "relevance": 0,
+                "score": 0.0595
+              },
+              {
+                "candidateId": "ux-target",
+                "relevance": 0,
+                "score": 0.0583
+              },
+              {
+                "candidateId": "mobile-target",
+                "relevance": 0,
+                "score": 0.056
+              },
+              {
+                "candidateId": "backend-adjacent",
+                "relevance": 0,
+                "score": 0.056
+              },
+              {
+                "candidateId": "fullstack-adjacent",
+                "relevance": 0,
+                "score": 0.056
+              },
+              {
+                "candidateId": "backend-target",
+                "relevance": 0,
+                "score": 0.0559
+              },
+              {
+                "candidateId": "ai-nlp-target",
+                "relevance": 0,
+                "score": 0.0537
+              },
+              {
+                "candidateId": "fullstack-target",
+                "relevance": 0,
+                "score": 0.0533
+              },
+              {
+                "candidateId": "dotnet-target",
+                "relevance": 0,
+                "score": 0.0533
+              },
+              {
+                "candidateId": "project-adjacent",
+                "relevance": 1,
+                "score": 0.0295
+              },
+              {
+                "candidateId": "devops-adjacent",
+                "relevance": 0,
+                "score": 0.0294
+              },
+              {
+                "candidateId": "fullstack-junior",
+                "relevance": 0,
+                "score": 0.0293
+              },
+              {
+                "candidateId": "data-target",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "ai-nlp-junior",
+                "relevance": 0,
+                "score": 0.0292
+              },
+              {
+                "candidateId": "dotnet-junior",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "ai-nlp-adjacent",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "data-junior",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "mobile-junior",
+                "relevance": 0,
+                "score": 0.0291
+              },
+              {
+                "candidateId": "mobile-adjacent",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "ux-junior",
+                "relevance": 0,
+                "score": 0.029
+              },
+              {
+                "candidateId": "frontend-adjacent",
+                "relevance": 0,
+                "score": 0.0289
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "ablations": {
+    "semanticSimilarity": {
+      "top1Accuracy": 100,
+      "meanReciprocalRank": 1,
+      "recallAt5": 1,
+      "ndcgAt5": 0.9344
+    },
+    "requiredSkillCoverage": {
+      "top1Accuracy": 100,
+      "meanReciprocalRank": 1,
+      "recallAt5": 1,
+      "ndcgAt5": 0.9414
+    },
+    "relatedSkillCoverage": {
+      "top1Accuracy": 100,
+      "meanReciprocalRank": 1,
+      "recallAt5": 1,
+      "ndcgAt5": 0.9344
+    },
+    "titleAlignment": {
+      "top1Accuracy": 100,
+      "meanReciprocalRank": 1,
+      "recallAt5": 1,
+      "ndcgAt5": 0.9344
+    },
+    "skillSpecificity": {
+      "top1Accuracy": 100,
+      "meanReciprocalRank": 1,
+      "recallAt5": 0.75,
+      "ndcgAt5": 0.8689
+    }
+  }
+}

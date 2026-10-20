@@ -21,38 +21,27 @@ function AppShell({
   const isHr = user.role === 'hr';
   const roleLabel = isHr ? 'Responsable RH' : 'Candidat';
   const initials = `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`.toUpperCase();
+  const viewLabels = {
+    dashboard: 'Vue d’ensemble',
+    offers: isHr ? 'Gestion des offres' : 'Opportunités',
+    'new-offer': 'Nouvelle offre',
+    'edit-offer': 'Modification de l’offre',
+    'hr-applications': 'Candidatures',
+    applications: 'Suivi des candidatures',
+    apply: 'Nouvelle candidature',
+    profile: 'Profil',
+  };
 
   return (
     <div className="app-page">
-      <header className="app-header">
-        <Brand compact />
-        <div className="user-menu" aria-label="Utilisateur connecté">
-          {!isHr && (
-            <NotificationCenter
-              notifications={notifications}
-              unreadCount={unreadNotificationCount}
-              loading={notificationsLoading}
-              error={notificationsError}
-              onRetry={onRetryNotifications}
-              onSelect={onSelectNotification}
-              onMarkAllRead={onMarkAllNotificationsRead}
-            />
-          )}
-          <span className="avatar" aria-hidden="true">{initials}</span>
-          <span className="user-menu__identity">
-            <strong>{user.firstName} {user.lastName}</strong>
-            <small>{roleLabel}</small>
-          </span>
-          <Button type="button" variant="ghost" icon={LogOut} onClick={onLogout} loading={loading} className="logout-button" aria-label="Se déconnecter" title="Se déconnecter">
-            Déconnexion
-          </Button>
+      <aside className="app-sidebar" aria-label={`Navigation ${roleLabel}`}>
+        <div className="app-sidebar__brand">
+          <Brand compact inverse />
         </div>
-      </header>
 
-      <div className="workspace-shell">
-        <aside className="sidebar" aria-label={`Navigation ${roleLabel}`}>
-            <p className="sidebar__label">Espace {isHr ? 'RH' : 'candidat'}</p>
-            <nav className="sidebar__nav">
+        <div className="sidebar">
+          <p className="sidebar__label">Navigation</p>
+          <nav className="sidebar__nav">
               {isHr && (
                 <button type="button" className={currentView === 'dashboard' ? 'is-active' : ''} aria-current={currentView === 'dashboard' ? 'page' : undefined} onClick={() => onNavigate('dashboard')}>
                   <LayoutDashboard size={18} aria-hidden="true" />
@@ -85,11 +74,41 @@ function AppShell({
                 <UserRound size={18} aria-hidden="true" />
                 <span>Mon profil</span>
               </button>
-            </nav>
-          </aside>
+          </nav>
+        </div>
+
+      </aside>
+
+      <section className="app-workspace">
+        <header className="app-header">
+          <div className="app-header__context">
+            <strong>{viewLabels[currentView] || 'Bee Coders'}</strong>
+          </div>
+          <div className="user-menu" aria-label="Utilisateur connecté">
+            {!isHr && (
+              <NotificationCenter
+                notifications={notifications}
+                unreadCount={unreadNotificationCount}
+                loading={notificationsLoading}
+                error={notificationsError}
+                onRetry={onRetryNotifications}
+                onSelect={onSelectNotification}
+                onMarkAllRead={onMarkAllNotificationsRead}
+              />
+            )}
+            <span className="avatar" aria-hidden="true">{initials}</span>
+            <span className="user-menu__identity">
+              <strong>{user.firstName} {user.lastName}</strong>
+              <small>{roleLabel}</small>
+            </span>
+            <Button type="button" variant="ghost" icon={LogOut} onClick={onLogout} loading={loading} className="logout-button" aria-label="Se déconnecter" title="Se déconnecter">
+              Déconnexion
+            </Button>
+          </div>
+        </header>
 
         <main className="workspace-content">{children}</main>
-      </div>
+      </section>
     </div>
   );
 }

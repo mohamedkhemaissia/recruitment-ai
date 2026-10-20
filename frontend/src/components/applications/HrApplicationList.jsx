@@ -1,4 +1,4 @@
-import { Ban, CalendarDays, CalendarPlus, CircleCheck, ClipboardList, Download, Pencil, RotateCw, Star } from 'lucide-react';
+import { Ban, BrainCircuit, CalendarDays, CalendarPlus, CircleCheck, ClipboardList, Download, Pencil, RotateCw, Star } from 'lucide-react';
 import Button from '../ui/Button.jsx';
 import Feedback from '../ui/Feedback.jsx';
 import LoadingState from '../ui/LoadingState.jsx';
@@ -22,7 +22,7 @@ const interviewStatusLabels = {
   cancelled: 'Annulé',
 };
 
-function HrApplicationList({ applications, loading, error, actionMessage, actionTone, updatingId, downloadingId, interviewUpdatingId, interviewUpdatingStatus, pagination, filters, onFilterChange, onFilterSubmit, onPageChange, onRetry, onStatusChange, onDownloadCv, onScheduleInterview, onInterviewStatusChange, onEvaluateInterview }) {
+function HrApplicationList({ applications, offers = [], loading, error, actionMessage, actionTone, updatingId, downloadingId, interviewUpdatingId, interviewUpdatingStatus, pagination, filters, onFilterChange, onFilterSubmit, onPageChange, onRetry, onStatusChange, onDownloadCv, onScheduleInterview, onInterviewStatusChange, onEvaluateInterview }) {
   const extractionLabels = {
     completed: 'Texte extrait',
     no_text: 'PDF sans texte',
@@ -55,9 +55,13 @@ function HrApplicationList({ applications, loading, error, actionMessage, action
           <option value="shortlisted">Présélectionnées</option>
           <option value="rejected">Non retenues</option>
         </select>
+        <select name="jobOfferId" value={filters.jobOfferId || ''} onChange={onFilterChange} aria-label="Filtrer par offre">
+          <option value="">Toutes les offres</option>
+          {offers.map((offer) => <option key={offer.id} value={offer.id}>{offer.title}</option>)}
+        </select>
         <select name="sort" value={filters.sort} onChange={onFilterChange} aria-label="Trier les candidatures">
-          <option value="score">Trier par score</option>
           <option value="date">Trier par date</option>
+          <option value="score" disabled={!filters.jobOfferId}>Trier par score de l’offre</option>
         </select>
         <Button type="submit" variant="secondary">Filtrer</Button>
       </form>
@@ -97,7 +101,6 @@ function HrApplicationList({ applications, loading, error, actionMessage, action
             <table className="offer-table hr-application-table">
               <thead>
                 <tr>
-                  <th>Rang</th>
                   <th>Candidat</th>
                   <th>Offre</th>
                   <th>CV</th>
@@ -107,11 +110,8 @@ function HrApplicationList({ applications, loading, error, actionMessage, action
                 </tr>
               </thead>
               <tbody>
-                {applications.map((application, index) => (
+                {applications.map((application) => (
                   <tr key={application.id}>
-                    <td data-label="Rang">
-                      <span className="rank-badge">#{index + 1}</span>
-                    </td>
                     <td data-label="Candidat">
                       <strong>{application.candidate.firstName} {application.candidate.lastName}</strong>
                       <span>{application.candidate.professionalTitle || application.candidate.email}</span>
@@ -145,26 +145,45 @@ function HrApplicationList({ applications, loading, error, actionMessage, action
                           const semanticScore = application.semanticScore;
                           const skillScore = application.skillScore;
                           const roundedScore = Math.round(Number(score) || 0);
+                          const factors = Array.isArray(application.aiExplanation?.factors)
+                            ? application.aiExplanation.factors
+                            : [];
+                          const evidence = Array.isArray(application.aiExplanation?.evidence)
+                            ? application.aiExplanation.evidence
+                            : [];
 
                           return (
-                        <div className="ai-analysis">
+                        <div className="ai-analysis" style={{ '--ai-score': `${Math.max(0, Math.min(100, roundedScore)) * 3.6}deg` }}>
                           <div className="ai-analysis__heading">
-                            <span className="ai-analysis__label">Aide à la décision</span>
-                            <span className="ai-analysis__model">
-                              Score hybride{application.scoringVersion ? ` · ${application.scoringVersion}` : ''}
+                            <span className="ai-analysis__icon" aria-hidden="true"><BrainCircuit size={15} /></span>
+                            <span>
+                              <span className="ai-analysis__label">Aide à la décision</span>
+                              <span className="ai-analysis__model">
+                                {application.scoringVersion === 'learned-ranking-v2' ? 'Ranker appris' : 'Score hybride'}
+                                {application.scoringVersion ? ` · ${application.scoringVersion}` : ''}
+                              </span>
                             </span>
                           </div>
-                          <div className="ai-score" aria-label={`Score final indicatif ${roundedScore} pour cent`}>
-                            <strong>{roundedScore}%</strong>
-                            <span>Score final indicatif</span>
-                          </div>
-                          <div className="ai-score-bar" aria-hidden="true">
-                            <span style={{ width: `${Math.max(0, Math.min(100, Number(score) || 0))}%` }} />
+                          <div className="ai-score-summary">
+                            <div className="ai-score" aria-label={`Score final indicatif ${roundedScore} pour cent`}>
+                              <strong>{roundedScore}%</strong>
+                            </div>
+                            <span><strong>Compatibilité</strong><small>Score final indicatif</small></span>
                           </div>
                           {semanticScore !== null && semanticScore !== undefined && skillScore !== null && skillScore !== undefined && (
                             <small className="ai-skills">
                               Sémantique : {Math.round(Number(semanticScore))}% · Compétences : {Math.round(Number(skillScore))}%
                             </small>
+                          )}
+                          {factors.length > 0 && (
+                            <div className="ai-factors" aria-label="Facteurs principaux du score">
+                              {factors.map((factor) => (
+                                <small key={factor.name}>
+                                  {factor.label} : {factor.effect === 'negative' ? 'impact défavorable' : 'impact favorable'}
+                                  {' '}({Math.round(Number(factor.value) * 100)}% observé)
+                                </small>
+                              ))}
+                            </div>
                           )}
                           <small className="ai-skills ai-skills--matched">
                             Correspondantes : {application.matchedSkills.length ? application.matchedSkills.join(', ') : 'Aucune'}
@@ -172,8 +191,18 @@ function HrApplicationList({ applications, loading, error, actionMessage, action
                           <small className="ai-skills ai-skills--missing">
                             Manquantes : {application.missingSkills.length ? application.missingSkills.join(', ') : 'Aucune'}
                           </small>
+                          {evidence.length > 0 && (
+                            <details className="ai-evidence">
+                              <summary>Voir les preuves extraites du CV</summary>
+                              {evidence.map((item) => (
+                                <small key={`${item.criterion}-${item.excerpt}`}>
+                                  <strong>{item.criterion}</strong> — {item.excerpt}
+                                </small>
+                              ))}
+                            </details>
+                          )}
                           <small className="ai-analysis__notice">
-                            Le score aide le recruteur et ne remplace pas la validation humaine.
+                            Indicateur comparatif pour cette offre, sans mesure de certitude. La décision reste humaine.
                           </small>
                         </div>
                           );

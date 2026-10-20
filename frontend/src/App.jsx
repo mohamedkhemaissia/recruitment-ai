@@ -11,24 +11,7 @@ import JobOfferForm from './components/offers/JobOfferForm.jsx';
 import JobOfferList from './components/offers/JobOfferList.jsx';
 import ProfilePanel from './components/profile/ProfilePanel.jsx';
 import LoadingState from './components/ui/LoadingState.jsx';
-
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-
-async function apiRequest(path, options = {}) {
-  const isFormData = options.body instanceof FormData;
-  const response = await fetch(`${apiUrl}${path}`, {
-    ...options,
-    credentials: 'include',
-    headers: { ...(isFormData ? {} : { 'Content-Type': 'application/json' }), ...options.headers },
-  });
-  const data = response.status === 204 ? null : await response.json();
-
-  if (!response.ok) {
-    throw new Error(data?.message || 'Une erreur est survenue.');
-  }
-
-  return data;
-}
+import { apiFetch, apiRequest } from './services/api.js';
 
 const initialAuthForm = {
   firstName: '',
@@ -52,6 +35,13 @@ const initialOfferFilters = {
   employmentType: '',
   workplaceType: '',
   status: '',
+};
+
+const initialHrApplicationFilters = {
+  search: '',
+  status: '',
+  jobOfferId: '',
+  sort: 'date',
 };
 
 const initialInterviewForm = {
@@ -87,7 +77,7 @@ function App() {
   const [applicationsError, setApplicationsError] = useState('');
   const [hrApplications, setHrApplications] = useState([]);
   const [hrApplicationPagination, setHrApplicationPagination] = useState({ page: 1, limit: 20, total: 0, totalPages: 0 });
-  const [hrApplicationFilters, setHrApplicationFilters] = useState({ search: '', status: '', sort: 'score' });
+  const [hrApplicationFilters, setHrApplicationFilters] = useState(initialHrApplicationFilters);
   const [hrApplicationsLoading, setHrApplicationsLoading] = useState(false);
   const [hrApplicationsError, setHrApplicationsError] = useState('');
   const [hrApplicationActionMessage, setHrApplicationActionMessage] = useState('');
@@ -276,6 +266,7 @@ function App() {
       const params = new URLSearchParams({ page: String(page), limit: String(hrApplicationPagination.limit) });
       if (filters.search) params.set('search', filters.search.trim());
       if (filters.status) params.set('status', filters.status);
+      if (filters.jobOfferId) params.set('jobOfferId', filters.jobOfferId);
       if (filters.sort) params.set('sort', filters.sort);
       const data = await apiRequest(`/api/applications/hr?${params.toString()}`);
       setHrApplications(data.applications);
@@ -288,7 +279,12 @@ function App() {
   };
 
   const updateHrApplicationFilter = (event) => {
-    setHrApplicationFilters((current) => ({ ...current, [event.target.name]: event.target.value }));
+    const { name, value } = event.target;
+    setHrApplicationFilters((current) => ({
+      ...current,
+      [name]: value,
+      ...(name === 'jobOfferId' && !value ? { sort: 'date' } : {}),
+    }));
   };
 
   const submitHrApplicationFilters = (event) => {
@@ -299,6 +295,7 @@ function App() {
   useEffect(() => {
     if (user?.role === 'hr' && currentView === 'hr-applications') {
       loadHrApplications();
+      loadOffers(initialOfferFilters);
     }
   }, [user?.id, currentView]);
 
@@ -419,7 +416,7 @@ function App() {
     setHrApplicationActionMessage('');
 
     try {
-      const response = await fetch(`${apiUrl}/api/applications/${application.id}/cv`, { credentials: 'include' });
+      const response = await apiFetch(`/api/applications/${application.id}/cv`);
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.message || 'Téléchargement impossible.');
@@ -596,8 +593,13 @@ function App() {
     setHrApplicationActionMessage('');
   };
 
-  const openHrApplications = ({ search = '', status = '', sort = 'score' } = {}) => {
-    setHrApplicationFilters({ search, status, sort });
+  const openHrApplications = ({ search = '', status = '', jobOfferId = '', sort = 'date' } = {}) => {
+    setHrApplicationFilters({
+      search,
+      status,
+      jobOfferId: jobOfferId ? String(jobOfferId) : '',
+      sort: jobOfferId && sort === 'score' ? 'score' : 'date',
+    });
     setHrApplicationPagination((current) => ({ ...current, page: 1 }));
     navigate('hr-applications');
   };
@@ -864,6 +866,7 @@ function App() {
       <>
         <HrApplicationList
           applications={hrApplications}
+          offers={offers}
           loading={hrApplicationsLoading}
           error={hrApplicationsError}
           actionMessage={hrApplicationActionMessage}

@@ -3,7 +3,7 @@ import createApp from './app.js';
 import pool from './config/database.js';
 import { createAiAnalysisJobService } from './services/ai-analysis-job.service.js';
 import { createApplicationService } from './services/application.service.js';
-import { createSemanticMatcher } from './services/semantic-matcher.service.js';
+import { createRecruitmentMatcher } from './services/recruitment-matcher.service.js';
 import { createEmailJobService } from './services/email-job.service.js';
 import { createEmailSender } from './services/email-sender.service.js';
 import { createAiAnalysisWorker } from './workers/ai-analysis.worker.js';
@@ -15,7 +15,7 @@ const emailPollIntervalMs = Number(process.env.EMAIL_WORKER_POLL_INTERVAL_MS || 
 const jobService = createAiAnalysisJobService(pool);
 const app = createApp({ analysisJobService: jobService });
 const applicationService = createApplicationService(pool);
-const semanticMatcher = createSemanticMatcher();
+const semanticMatcher = createRecruitmentMatcher();
 const worker = createAiAnalysisWorker({
   jobService,
   async analyze(job) {
@@ -37,6 +37,8 @@ const worker = createAiAnalysisWorker({
       missingSkills: analysis.missingSkills,
       model: analysis.model,
       scoringVersion: analysis.scoringVersion,
+      confidence: analysis.confidence,
+      explanation: analysis.explanation,
     });
     if (!saved) throw new Error('ANALYSIS_SAVE_FAILED');
   },
