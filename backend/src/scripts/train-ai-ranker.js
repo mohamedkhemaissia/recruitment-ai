@@ -17,6 +17,12 @@ function splitForOffer(index) {
   return 'test';
 }
 
+function baselineScoreForFeatures(featureSet) {
+  const semanticScore = featureSet.values.semanticSimilarity * 100;
+  const skillScore = featureSet.values.requiredSkillCoverage * 100;
+  return Math.round(((semanticScore * 0.65) + (skillScore * 0.35)) * 100) / 100;
+}
+
 async function buildSamples({ offers, candidates, judgments }) {
   const semanticMatcher = createSemanticMatcher();
   const skillExtractor = createSkillExtractor();
@@ -48,7 +54,7 @@ async function buildSamples({ offers, candidates, judgments }) {
         relevance: relevanceByPair.get(`${offer.id}:${candidate.id}`) || 0,
         split: splitForOffer(offerIndex),
         features: featureSet.vector,
-        baselineScore: semantic.score,
+        baselineScore: baselineScoreForFeatures(featureSet),
       };
     }));
     samples.push(...offerSamples);

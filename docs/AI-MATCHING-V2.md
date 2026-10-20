@@ -14,7 +14,7 @@ CV + offre
   → normalisation apprise
   → ranker pairwise appris
   → calibration du score
-  → score, confiance, facteurs et preuves textuelles
+  → score de compatibilité, facteurs et preuves textuelles
 ```
 
 ## Dataset

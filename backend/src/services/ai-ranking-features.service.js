@@ -29,6 +29,14 @@ function coverage(expected, actual) {
   return matches / expected.size;
 }
 
+function canonicalSemanticSimilarity(semanticScore) {
+  const similarity = Math.max(0, Math.min(1, Number(semanticScore || 0) / 100));
+  // Les runtimes ONNX peuvent différer de quelques décimales selon l'OS.
+  // Un pas d'un point de pourcentage garde le signal utile tout en rendant
+  // l'entraînement DVC reproductible entre Windows et Linux.
+  return Math.round(similarity * 100) / 100;
+}
+
 export function buildRankingFeatures({
   cvText,
   cvSkills = [],
@@ -44,7 +52,7 @@ export function buildRankingFeatures({
   const requiredSkillCoverage = offerSkills.length ? matchedSkills.length / offerSkills.length : 0;
   const skillSpecificity = candidateSkills.length ? matchedSkills.length / candidateSkills.length : 0;
   const values = {
-    semanticSimilarity: Math.max(0, Math.min(1, Number(semanticScore || 0) / 100)),
+    semanticSimilarity: canonicalSemanticSimilarity(semanticScore),
     requiredSkillCoverage,
     relatedSkillCoverage: taxonomy.relatedCoverage(candidateSkills, offerSkills),
     titleAlignment: coverage(tokens(offer.title), tokens(cvText)),

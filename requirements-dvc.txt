@@ -1,1 +1,2 @@
 dvc[gdrive]==3.67.1
+PyDrive2==1.21.3

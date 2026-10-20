@@ -32,6 +32,20 @@ test('les caractéristiques de ranking restent explicables', () => {
   assert.deepEqual(features.missingSkills, ['Docker']);
 });
 
+test('la similarité sémantique est canonisée pour rester stable entre runtimes ONNX', () => {
+  const common = {
+    cvText: 'Développeur React.',
+    cvSkills: ['React'],
+    offer: { title: 'Développeur React', skills: ['React'] },
+  };
+
+  const lowerRuntimeValue = buildRankingFeatures({ ...common, semanticScore: 84.49 });
+  const nearbyRuntimeValue = buildRankingFeatures({ ...common, semanticScore: 84.48 });
+
+  assert.equal(lowerRuntimeValue.values.semanticSimilarity, 0.84);
+  assert.equal(nearbyRuntimeValue.values.semanticSimilarity, 0.84);
+});
+
 test('le ranker pairwise apprend à placer le profil pertinent en premier', () => {
   const samples = [
     { offerId: 'one', candidateId: 'best', relevance: 3, baselineScore: 0.9, features: [0.9, 1, 1, 1, 1] },
@@ -54,6 +68,11 @@ test('le ranker pairwise apprend à placer le profil pertinent en premier', () =
   assert.equal(artifact.training.hardNegativePairCount, 3);
   assert.ok(artifact.weights.some((weight) => Math.abs(weight) > 0.01));
   assert.ok(artifact.weights.every((weight) => weight >= 0));
+  assert.ok(artifact.weights.every((weight) => Number(weight.toFixed(6)) === weight));
+  assert.ok(artifact.normalization.mean.every((value) => Number(value.toFixed(6)) === value));
+  assert.ok(artifact.normalization.standardDeviation.every((value) => Number(value.toFixed(6)) === value));
+  assert.equal(Number(artifact.calibration.scale.toFixed(6)), artifact.calibration.scale);
+  assert.equal(Number(artifact.calibration.bias.toFixed(6)), artifact.calibration.bias);
   assert.equal(artifact.constraints.nonNegativeWeights, true);
 });
 

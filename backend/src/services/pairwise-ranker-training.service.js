@@ -10,6 +10,11 @@ function sigmoid(value) {
   return exp / (1 + exp);
 }
 
+function canonicalNumber(value, precision = 6) {
+  const rounded = Math.round(value * (10 ** precision)) / (10 ** precision);
+  return Object.is(rounded, -0) ? 0 : rounded;
+}
+
 function normalizer(samples) {
   const count = samples.length || 1;
   const mean = rankingFeatureNames.map((_, index) => (
@@ -99,7 +104,11 @@ export function trainPairwiseRanker(samples, {
     }
   }
 
-  const statistics = normalizer(samples);
+  const rawStatistics = normalizer(samples);
+  const statistics = {
+    mean: rawStatistics.mean.map((value) => canonicalNumber(value)),
+    standardDeviation: rawStatistics.standardDeviation.map((value) => canonicalNumber(value)),
+  };
   const normalized = new Map(samples.map((sample) => [sample, normalize(sample.features, statistics)]));
   const pairs = buildPairs(samples);
   if (!pairs.length) throw new Error('RANKER_PAIRS_UNAVAILABLE');
@@ -122,17 +131,22 @@ export function trainPairwiseRanker(samples, {
     }
   }
 
-  const calibration = trainCalibration(samples, normalized, weights);
-  const totalAbsoluteWeight = weights.reduce((sum, weight) => sum + Math.abs(weight), 0) || 1;
+  const canonicalWeights = weights.map((weight) => canonicalNumber(weight));
+  const rawCalibration = trainCalibration(samples, normalized, canonicalWeights);
+  const calibration = {
+    scale: canonicalNumber(rawCalibration.scale),
+    bias: canonicalNumber(rawCalibration.bias),
+  };
+  const totalAbsoluteWeight = canonicalWeights.reduce((sum, weight) => sum + Math.abs(weight), 0) || 1;
   return {
     version: 'learned-ranking-v2',
     algorithm: 'pairwise-logistic-ranking',
     featureNames: rankingFeatureNames,
     normalization: statistics,
-    weights,
+    weights: canonicalWeights,
     featureImportance: Object.fromEntries(rankingFeatureNames.map((name, index) => [name, {
-      direction: weights[index] >= 0 ? 'positive' : 'negative',
-      importance: Math.round((Math.abs(weights[index]) / totalAbsoluteWeight) * 10000) / 10000,
+      direction: canonicalWeights[index] >= 0 ? 'positive' : 'negative',
+      importance: Math.round((Math.abs(canonicalWeights[index]) / totalAbsoluteWeight) * 10000) / 10000,
     }])),
     calibration,
     constraints: {
