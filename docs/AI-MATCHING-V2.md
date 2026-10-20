@@ -90,6 +90,8 @@ Le gain de NDCG@5 est de 0,0618 point et la couverture des profils pertinents da
 
 Le rapport complet, incluant chaque classement et l'étude d'ablation, est généré dans `backend/data/ai-ranking-report.json`.
 
+Les noyaux numériques ONNX peuvent produire de très faibles écarts de décimales entre Windows et Linux. Les caractéristiques et paramètres persistés sont donc canonisés. La CI vérifie la reproductibilité binaire avec deux exécutions consécutives dans son environnement Linux, puis contrôle séparément les métriques du ranker. Une différence de hash entre deux systèmes d'exploitation n'est pas interprétée seule comme une régression du modèle.
+
 ## Entraîner et évaluer
 
 Depuis la racine du projet :

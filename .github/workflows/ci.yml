@@ -47,11 +47,14 @@ jobs:
       - name: Vérifier les scripts IA
         run: npm run ai:validate
 
-      - name: Reproduire le dataset DVC
+      - name: Reproduire le pipeline DVC
         run: dvc repro
 
-      - name: Vérifier le verrou DVC
-        run: git diff --exit-code -- dvc.lock
+      - name: Vérifier la reproductibilité DVC sous Linux
+        run: |
+          cp dvc.lock /tmp/dvc-first-repro.lock
+          dvc repro --force
+          diff --unified /tmp/dvc-first-repro.lock dvc.lock
 
       - name: Évaluer le classement IA
         run: npm run ai:evaluate --prefix backend

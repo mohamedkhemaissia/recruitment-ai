@@ -141,7 +141,7 @@ npm run ai:validate
 npm run db:check --prefix backend
 ```
 
-La CI reproduit le pipeline DVC, vérifie `dvc.lock`, évalue le ranker, exécute les tests et construit le frontend.
+La CI reproduit le pipeline DVC deux fois dans le même environnement Linux et vérifie que `dvc.lock` reste identique entre ces deux exécutions. Elle évalue ensuite le ranker, exécute les tests et construit le frontend.
 
 ## Déploiement et supervision
 
