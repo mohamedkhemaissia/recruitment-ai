@@ -1,0 +1,4217 @@
+{
+  "version": 3,
+  "protocol": "disjoint-offers-and-cvs-v1",
+  "provenance": {
+    "data": "synthetic",
+    "trainingLabels": "rule-based, not human-validated",
+    "validationLabels": "provisional synthetic reference",
+    "testLabels": "pending human annotation",
+    "note": "Existing V2 metrics must not be reused as results for this corpus."
+  },
+  "offers": [
+    {
+      "id": "frontend",
+      "title": "Développeur frontend React",
+      "description": "Concevoir des interfaces web modernes, accessibles et responsives.",
+      "requirements": "React, JavaScript, TypeScript, HTML, CSS, Git et API REST.",
+      "split": "train"
+    },
+    {
+      "id": "data",
+      "title": "Data analyst",
+      "description": "Analyser les données et construire des tableaux de bord métier.",
+      "requirements": "Python, SQL, PostgreSQL, Power BI, Excel et communication.",
+      "split": "train"
+    },
+    {
+      "id": "backend",
+      "title": "Développeur backend Java",
+      "description": "Développer des services backend fiables et sécurisés.",
+      "requirements": "Java, Spring Boot, PostgreSQL, Docker, Git et API REST.",
+      "split": "train"
+    },
+    {
+      "id": "devops",
+      "title": "Ingénieur DevOps Cloud",
+      "description": "Automatiser les déploiements et maintenir des infrastructures cloud fiables.",
+      "requirements": "Docker, Kubernetes, Linux, AWS, Azure, Git et pratiques Agile.",
+      "split": "train"
+    },
+    {
+      "id": "mobile",
+      "title": "Développeur mobile React Native",
+      "description": "Concevoir et maintenir des applications mobiles multiplateformes.",
+      "requirements": "React Native, JavaScript, TypeScript, API REST, Git et tests fonctionnels.",
+      "split": "train"
+    },
+    {
+      "id": "ai-nlp",
+      "title": "Ingénieur intelligence artificielle NLP",
+      "description": "Développer des solutions de traitement automatique du langage naturel.",
+      "requirements": "Python, Machine Learning, NLP, PyTorch, TensorFlow, SQL et Git.",
+      "split": "train"
+    },
+    {
+      "id": "dotnet",
+      "title": "Développeur backend .NET",
+      "description": "Construire des applications métier et des API sécurisées avec Microsoft .NET.",
+      "requirements": "C#, .NET, SQL, PostgreSQL, Azure, Git et API REST.",
+      "split": "train"
+    },
+    {
+      "id": "ux",
+      "title": "Designer UI/UX",
+      "description": "Concevoir des parcours utilisateurs simples et des interfaces cohérentes.",
+      "requirements": "Figma, UI/UX, HTML, CSS, communication et travail en équipe.",
+      "split": "train"
+    },
+    {
+      "id": "fullstack",
+      "title": "Développeur full stack JavaScript",
+      "description": "Développer une plateforme web de bout en bout avec une architecture simple.",
+      "requirements": "React, Node.js, Express, JavaScript, PostgreSQL, API REST et Git.",
+      "split": "train"
+    },
+    {
+      "id": "project",
+      "title": "Chef de projet logiciel Agile",
+      "description": "Coordonner une équipe produit et assurer la livraison des projets logiciels.",
+      "requirements": "Agile, Scrum, leadership, communication, Git et résolution de problèmes.",
+      "split": "train"
+    },
+    {
+      "id": "benchmark-offer-01",
+      "title": "Ingénieur QA automatisation",
+      "description": "Vérifier une application web et automatiser les tests de non-régression.",
+      "requirements": "JavaScript, tests fonctionnels, API REST, Git, communication.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-02",
+      "title": "Développeur backend Python",
+      "description": "Maintenir des services de gestion et fiabiliser les traitements de données.",
+      "requirements": "Python, SQL, PostgreSQL, API REST, Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-03",
+      "title": "Analyste reporting Power BI",
+      "description": "Produire et expliquer des indicateurs pour le service commercial.",
+      "requirements": "Power BI, Excel, SQL, communication.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-04",
+      "title": "Développeur frontend Angular",
+      "description": "Construire un portail de services accessible et maintenir ses composants.",
+      "requirements": "Angular, TypeScript, HTML, CSS, API REST, Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-05",
+      "title": "Administrateur PostgreSQL",
+      "description": "Maintenir les bases métier et diagnostiquer les requêtes lentes.",
+      "requirements": "PostgreSQL, SQL, Linux, sauvegarde, communication.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-06",
+      "title": "Ingénieur pipelines de données",
+      "description": "Construire des alimentations de données contrôlées et documentées.",
+      "requirements": "Python, SQL, PostgreSQL, Git, qualité des données.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-offer-07",
+      "title": "Responsable tests API et interfaces",
+      "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+      "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-08",
+      "title": "Développeur API Node.js TypeScript",
+      "description": "Développer les services métier d’une application de gestion.",
+      "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-09",
+      "title": "Développeur interfaces Vue.js",
+      "description": "Créer des écrans métier réactifs et accessibles.",
+      "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-10",
+      "title": "Développeur mobile Flutter",
+      "description": "Réaliser une application mobile de suivi des interventions.",
+      "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-11",
+      "title": "Analyste données SQL commercial",
+      "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+      "requirements": "SQL, PostgreSQL, Excel, Power BI, communication.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-12",
+      "title": "Ingénieur Machine Learning vision",
+      "description": "Construire et évaluer des modèles de classification d’images.",
+      "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-13",
+      "title": "Designer UX recherche utilisateur",
+      "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+      "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-offer-14",
+      "title": "Chef de projet produit logiciel",
+      "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+      "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes.",
+      "split": "test"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "frontend-target",
+      "label": "CV frontend confirmé",
+      "text": "Développeur frontend spécialisé dans les interfaces web accessibles et responsives. Expérience avec React, JavaScript, TypeScript, HTML, CSS, Git et API REST. Tests de composants et travail Agile.",
+      "split": "train"
+    },
+    {
+      "id": "frontend-junior",
+      "label": "CV frontend junior",
+      "text": "Développeur web junior ayant réalisé des interfaces avec React, JavaScript, HTML et CSS. Utilisation de Git dans des projets universitaires.",
+      "split": "train"
+    },
+    {
+      "id": "frontend-adjacent",
+      "label": "CV intégrateur web",
+      "text": "Intégrateur web spécialisé en HTML, CSS et accessibilité. Notions de JavaScript, Figma et conception UI/UX.",
+      "split": "train"
+    },
+    {
+      "id": "data-target",
+      "label": "CV data analyst confirmé",
+      "text": "Data analyst expérimenté en analyse de données et tableaux de bord. Maîtrise de Python, SQL, PostgreSQL, Power BI et Excel. Présentation claire des indicateurs aux équipes métier.",
+      "split": "train"
+    },
+    {
+      "id": "data-junior",
+      "label": "CV data analyst junior",
+      "text": "Analyste junior utilisant Excel, SQL et Power BI pour nettoyer les données et produire des indicateurs simples.",
+      "split": "train"
+    },
+    {
+      "id": "data-adjacent",
+      "label": "CV analyste métier",
+      "text": "Analyste métier chargé du recueil des besoins, de la communication avec les utilisateurs et du suivi des indicateurs sous Excel.",
+      "split": "train"
+    },
+    {
+      "id": "backend-target",
+      "label": "CV backend Java confirmé",
+      "text": "Développeur backend Java expérimenté dans les applications métier. Maîtrise de Spring Boot, PostgreSQL, Docker, Git et API REST. Conception de services sécurisés.",
+      "split": "train"
+    },
+    {
+      "id": "backend-junior",
+      "label": "CV backend Java junior",
+      "text": "Développeur Java junior avec Spring Boot, SQL, Git et création de petites API REST.",
+      "split": "train"
+    },
+    {
+      "id": "backend-adjacent",
+      "label": "CV backend Node.js",
+      "text": "Développeur backend Node.js et Express. Conception d API REST avec PostgreSQL, Docker et Git.",
+      "split": "train"
+    },
+    {
+      "id": "devops-target",
+      "label": "CV DevOps confirmé",
+      "text": "Ingénieur DevOps responsable des déploiements et de la fiabilité des infrastructures cloud. Expérience avec Docker, Kubernetes, Linux, AWS, Azure, Git et équipes Agile.",
+      "split": "train"
+    },
+    {
+      "id": "devops-junior",
+      "label": "CV DevOps junior",
+      "text": "Administrateur Linux junior utilisant Docker, Git et quelques services AWS pour déployer des applications.",
+      "split": "train"
+    },
+    {
+      "id": "devops-adjacent",
+      "label": "CV administrateur système",
+      "text": "Administrateur système chargé des serveurs Linux, de la supervision, du support et de la résolution des incidents.",
+      "split": "train"
+    },
+    {
+      "id": "mobile-target",
+      "label": "CV mobile confirmé",
+      "text": "Développeur mobile spécialisé dans les applications multiplateformes avec React Native, JavaScript et TypeScript. Intégration d API REST, Git et tests fonctionnels.",
+      "split": "train"
+    },
+    {
+      "id": "mobile-junior",
+      "label": "CV mobile junior",
+      "text": "Développeur React Native junior ayant publié une application mobile et consommé plusieurs API REST en JavaScript.",
+      "split": "train"
+    },
+    {
+      "id": "mobile-adjacent",
+      "label": "CV frontend React",
+      "text": "Développeur React créant des interfaces web responsives en JavaScript, TypeScript, HTML et CSS.",
+      "split": "train"
+    },
+    {
+      "id": "ai-nlp-target",
+      "label": "CV ingénieur NLP confirmé",
+      "text": "Ingénieur intelligence artificielle spécialisé en NLP et traitement du langage naturel. Développement de modèles Machine Learning en Python avec PyTorch, TensorFlow, SQL et Git.",
+      "split": "train"
+    },
+    {
+      "id": "ai-nlp-junior",
+      "label": "CV machine learning junior",
+      "text": "Diplômé en intelligence artificielle avec projets Python, Machine Learning, TensorFlow et analyse de données.",
+      "split": "train"
+    },
+    {
+      "id": "ai-nlp-adjacent",
+      "label": "CV data scientist",
+      "text": "Data scientist utilisant Python, SQL, analyse de données et Machine Learning pour construire des modèles prédictifs.",
+      "split": "train"
+    },
+    {
+      "id": "dotnet-target",
+      "label": "CV .NET confirmé",
+      "text": "Développeur backend C# et .NET spécialisé dans les applications métier. Création d API REST avec SQL, PostgreSQL, Azure et Git.",
+      "split": "train"
+    },
+    {
+      "id": "dotnet-junior",
+      "label": "CV .NET junior",
+      "text": "Développeur C# junior avec .NET, SQL et création de services web simples.",
+      "split": "train"
+    },
+    {
+      "id": "dotnet-adjacent",
+      "label": "CV Java entreprise",
+      "text": "Développeur Java et Spring Boot pour applications métier, API REST, PostgreSQL et Git.",
+      "split": "train"
+    },
+    {
+      "id": "ux-target",
+      "label": "CV designer UI/UX confirmé",
+      "text": "Designer UI/UX spécialisé dans la recherche utilisateur, les parcours et les prototypes Figma. Bonnes bases HTML et CSS, communication et travail en équipe.",
+      "split": "train"
+    },
+    {
+      "id": "ux-junior",
+      "label": "CV designer UI junior",
+      "text": "Designer junior réalisant des maquettes et prototypes avec Figma. Connaissances UI/UX et CSS.",
+      "split": "train"
+    },
+    {
+      "id": "ux-adjacent",
+      "label": "CV graphiste",
+      "text": "Graphiste créant des identités visuelles et supports de communication avec une sensibilité aux interfaces numériques.",
+      "split": "train"
+    },
+    {
+      "id": "fullstack-target",
+      "label": "CV full stack confirmé",
+      "text": "Développeur full stack JavaScript avec React, Node.js et Express. Conception d API REST, bases PostgreSQL, Git et interfaces web maintenables.",
+      "split": "train"
+    },
+    {
+      "id": "fullstack-junior",
+      "label": "CV full stack junior",
+      "text": "Développeur JavaScript junior ayant créé des projets React et Node.js avec une base SQL.",
+      "split": "train"
+    },
+    {
+      "id": "fullstack-adjacent",
+      "label": "CV backend JavaScript",
+      "text": "Développeur Node.js et Express spécialisé dans les API REST, PostgreSQL, Docker et Git.",
+      "split": "train"
+    },
+    {
+      "id": "project-target",
+      "label": "CV chef de projet confirmé",
+      "text": "Chef de projet logiciel encadrant des équipes Agile et Scrum. Leadership, communication, suivi des livraisons Git et résolution de problèmes.",
+      "split": "train"
+    },
+    {
+      "id": "project-junior",
+      "label": "CV Scrum master junior",
+      "text": "Scrum master junior facilitant les cérémonies Agile, la communication et le travail en équipe.",
+      "split": "train"
+    },
+    {
+      "id": "project-adjacent",
+      "label": "CV responsable fonctionnel",
+      "text": "Responsable fonctionnel chargé des besoins métier, de la coordination des utilisateurs et du suivi des délais.",
+      "split": "train"
+    },
+    {
+      "id": "benchmark-cv-001",
+      "label": "Profil de démonstration 1",
+      "text": "Administrateur de bases PostgreSQL. Gestion des sauvegardes et restaurations, diagnostic de requêtes SQL lentes, contrôle des accès et suivi des incidents sur Linux.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-002",
+      "label": "Profil de démonstration 2",
+      "text": "Administrateur junior. Installation de PostgreSQL sur Linux, sauvegardes et requêtes SQL d’exploitation sous supervision.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-003",
+      "label": "Profil de démonstration 3",
+      "text": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-004",
+      "label": "Profil de démonstration 4",
+      "text": "Analyste de données. Utilisation de Python pour nettoyer des fichiers et de SQL pour produire des extractions. Ne conçoit pas de services backend.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-005",
+      "label": "Profil de démonstration 5",
+      "text": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-006",
+      "label": "Profil de démonstration 6",
+      "text": "Analyste reporting, responsable de tableaux de bord Power BI alimentés par SQL. Contrôles de cohérence sous Excel et restitution mensuelle des écarts aux responsables commerciaux.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-007",
+      "label": "Profil de démonstration 7",
+      "text": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-008",
+      "label": "Profil de démonstration 8",
+      "text": "Assistant reporting. Mise à jour de tableaux Excel, préparation de visualisations Power BI et requêtes SQL simples. Présentation des chiffres en réunion.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-009",
+      "label": "Profil de démonstration 9",
+      "text": "Chargé de support applicatif. Reproduction des incidents signalés par les utilisateurs, rédaction de procédures et communication avec les développeurs. Aucun projet d’automatisation de tests.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-010",
+      "label": "Profil de démonstration 10",
+      "text": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-011",
+      "label": "Profil de démonstration 11",
+      "text": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-012",
+      "label": "Profil de démonstration 12",
+      "text": "Data analyst orienté visualisation. Analyse de jeux de données existants avec Excel et Power BI, quelques requêtes SQL. Pas de construction de pipelines.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-013",
+      "label": "Profil de démonstration 13",
+      "text": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-014",
+      "label": "Profil de démonstration 14",
+      "text": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-015",
+      "label": "Profil de démonstration 15",
+      "text": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-016",
+      "label": "Profil de démonstration 16",
+      "text": "Développeur applicatif. Écriture de requêtes SQL et utilisation de PostgreSQL dans des applications. Pas de responsabilité d’administration ou de restauration.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-017",
+      "label": "Profil de démonstration 17",
+      "text": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-018",
+      "label": "Profil de démonstration 18",
+      "text": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-019",
+      "label": "Profil de démonstration 19",
+      "text": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-020",
+      "label": "Profil de démonstration 20",
+      "text": "Développeur débutant. Scripts Python d’import CSV vers PostgreSQL, transformations SQL et tests de cohérence. Versionnement Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-021",
+      "label": "Profil de démonstration 21",
+      "text": "Développeur frontend Angular et TypeScript. Réalisation d’un portail de services, composants HTML et CSS accessibles, intégration d’API REST et gestion des revues Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-022",
+      "label": "Profil de démonstration 22",
+      "text": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-023",
+      "label": "Profil de démonstration 23",
+      "text": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-024",
+      "label": "Profil de démonstration 24",
+      "text": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-025",
+      "label": "Profil de démonstration 25",
+      "text": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-026",
+      "label": "Profil de démonstration 26",
+      "text": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-027",
+      "label": "Profil de démonstration 27",
+      "text": "Développeur Python backend. Trois années consacrées à des API REST de facturation, requêtes SQL PostgreSQL, migrations et optimisation de traitements. Revue de code et livraison des corrections dans Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-028",
+      "label": "Profil de démonstration 28",
+      "text": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-029",
+      "label": "Profil de démonstration 29",
+      "text": "Développeur web débutant. Projet Angular en TypeScript, formulaires HTML et CSS, intégration de deux API REST et gestion du code avec Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-030",
+      "label": "Profil de démonstration 30",
+      "text": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-031",
+      "label": "Profil de démonstration 31",
+      "text": "Diplômé ayant développé une API REST Python et une base PostgreSQL pour un projet universitaire. Maîtrise des requêtes SQL courantes et de Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-032",
+      "label": "Profil de démonstration 32",
+      "text": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-033",
+      "label": "Profil de démonstration 33",
+      "text": "Gestionnaire administratif. Suivi des commandes dans Excel et échanges avec les commerciaux. Pas de pratique de SQL ni de Power BI.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-034",
+      "label": "Profil de démonstration 34",
+      "text": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-035",
+      "label": "Profil de démonstration 35",
+      "text": "Ingénieur de données. Développement de pipelines Python et SQL alimentant PostgreSQL, contrôles de qualité, reprise des traitements et revue des modifications dans Git.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-036",
+      "label": "Profil de démonstration 36",
+      "text": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-037",
+      "label": "Profil de démonstration 37",
+      "text": "Ingénieur qualité logiciel, quatre ans sur une plateforme de réservation. Conception de scénarios API REST et de tests fonctionnels JavaScript, qualification des anomalies et suivi des corrections avec Git. Présentation des résultats à l’équipe produit.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-038",
+      "label": "Profil de démonstration 38",
+      "text": "Intégrateur web. Création de pages HTML et CSS responsives et maquettes Figma. Pas d’expérience avec un framework frontend.",
+      "split": "validation"
+    },
+    {
+      "id": "benchmark-cv-039",
+      "label": "Profil de démonstration 39",
+      "text": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-040",
+      "label": "Profil de démonstration 40",
+      "text": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-041",
+      "label": "Profil de démonstration 41",
+      "text": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs.",
+      "split": "test"
+    },
+    {
+      "id": "benchmark-cv-042",
+      "label": "Profil de démonstration 42",
+      "text": "Testeur junior. Rédaction de cas de test, exécution de tests fonctionnels et signalement d’anomalies. Quelques scripts JavaScript et utilisation quotidienne de Git.",
+      "split": "validation"
+    }
+  ],
+  "judgments": [
+    {
+      "offerId": "frontend",
+      "candidateId": "frontend-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "frontend-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "frontend-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "frontend",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "data-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "data-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "data-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "data",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "backend-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "backend-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "backend-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "backend",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "devops-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "devops-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "devops-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "devops",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "mobile-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "mobile-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "mobile-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "mobile",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ai-nlp-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ai-nlp",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "dotnet-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "dotnet-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "dotnet",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ux-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ux-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "ux-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "ux",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "fullstack-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "fullstack-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "project-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "project-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "fullstack",
+      "candidateId": "project-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "frontend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "frontend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "frontend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "data-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "data-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "data-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "backend-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "backend-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "backend-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "devops-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "devops-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "devops-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "mobile-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "mobile-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "mobile-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ai-nlp-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ai-nlp-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ai-nlp-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "dotnet-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "dotnet-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "dotnet-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ux-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ux-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "ux-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "fullstack-target",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "fullstack-junior",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "fullstack-adjacent",
+      "relevance": 0,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "project-target",
+      "relevance": 3,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "project-junior",
+      "relevance": 2,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "project",
+      "candidateId": "project-adjacent",
+      "relevance": 1,
+      "source": "synthetic-rule"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-01",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-02",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-03",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-04",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-05",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-001",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-002",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-004",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-006",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-008",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-009",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-012",
+      "relevance": 1,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-016",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-020",
+      "relevance": 2,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-021",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-027",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-029",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-031",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-033",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-035",
+      "relevance": 3,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-037",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-038",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-06",
+      "candidateId": "benchmark-cv-042",
+      "relevance": 0,
+      "source": "synthetic-provisional"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-003",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-005",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-007",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-010",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-011",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-013",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-014",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-015",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-017",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-018",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-019",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-022",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-023",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-024",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-025",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-026",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-028",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-030",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-032",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-034",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-036",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-039",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-040",
+      "relevance": null,
+      "source": "pending-human"
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-041",
+      "relevance": null,
+      "source": "pending-human"
+    }
+  ]
+}

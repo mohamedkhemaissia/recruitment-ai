@@ -1,0 +1,2320 @@
+{
+  "version": 1,
+  "datasetFingerprint": "sha256-json-v1:0ee14f45abd094ab94e2e0f87323b164361451a27ed67f79b796edd07e92a5f5",
+  "reviewerType": "ai-assisted",
+  "reviewer": "Codex (assistant IA)",
+  "reviewedAt": "2026-10-21T07:28:06.020150+00:00",
+  "method": "Lecture du contenu des offres et des CV par un assistant IA, avec une note de pertinence et une justification par couple. Aucun score du benchmark consulté. Le même assistant a préparé le corpus fictif ; ces notes ne constituent pas une référence indépendante ni une validation humaine.",
+  "rubric": {
+    "0": "Hors sujet ou aucune aptitude pertinente démontrée.",
+    "1": "Correspondance faible : activité voisine, exigences principales non démontrées.",
+    "2": "Correspondance partielle : compétences utiles, plusieurs exigences à vérifier.",
+    "3": "Correspondance forte : exigences principales étayées par le parcours décrit."
+  },
+  "judgments": [
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’analyse commerciale avec SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior d’analyse des ventes en SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 1,
+      "reason": "La coordination d’équipes et la communication métier sont transférables au rôle de responsable, mais aucune campagne de tests ni automatisation JavaScript/API n’est décrite.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 1,
+      "reason": "Le suivi de tâches Scrum et la communication sont utiles à la qualification, mais le CV ne démontre ni conception de tests ni vérifications API.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 1,
+      "reason": "L’intégration HTML/CSS apporte une connaissance des interfaces ; les prototypes ne démontrent pas l’automatisation JavaScript ni les tests API REST attendus.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 1,
+      "reason": "Les tests de parcours utilisateurs apportent une expérience de validation, mais ils ne remplacent pas les campagnes fonctionnelles et API automatisées de l’offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 1,
+      "reason": "Les tests de prototypes et la restitution des observations sont utiles, mais les vérifications techniques JavaScript, API REST et Git ne sont pas démontrées.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 2,
+      "reason": "Le CV décrit des tests, des API REST, du développement JavaScript/TypeScript et des revues Git. La responsabilité d’une campagne de qualification complète reste à vérifier.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 1,
+      "reason": "TypeScript, la consommation d’API et Git sont présents ; la conception de tests ou la responsabilité qualité ne sont pas décrites.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 1,
+      "reason": "Le candidat vérifie des parcours mobiles et utilise des API REST et Git, mais aucune automatisation JavaScript ni campagne de qualification web n’est décrite.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 1,
+      "reason": "JavaScript, les interfaces et les API REST correspondent au contexte technique ; le CV ne décrit pas de tests fonctionnels ou de responsabilité qualité.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 1,
+      "reason": "Les projets apportent JavaScript, des formulaires et des API REST ; les compétences de test et l’organisation d’une qualification restent non démontrées.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 1,
+      "reason": "La pratique d’API REST et de Git est utile, mais le stage décrit du développement backend et pas la conception de tests ou la qualification de versions.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 2,
+      "reason": "Les tests fonctionnels d’une application et les API REST sont étayés, avec Git. JavaScript et la qualification d’interfaces web restent à vérifier.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 0,
+      "reason": "Le CV porte sur des scripts de gestion Python et SQL sans expérience en apprentissage automatique. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 1,
+      "reason": "Le parcours web JavaScript et API REST est voisin du domaine à tester ; aucune campagne de tests ou automatisation de contrôle n’est mentionnée.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas la qualification fonctionnelle et l’automatisation de tests API en JavaScript, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 3,
+      "reason": "Le CV décrit directement la préparation de campagnes fonctionnelles, les vérifications API REST automatisées en JavaScript, Git et la coordination des validations métier.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 1,
+      "reason": "La reproduction d’incidents constitue une base de diagnostic, mais le CV précise l’absence de campagne de tests et d’automatisation API.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-07",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 2,
+      "reason": "Les tests fonctionnels, les vérifications API et les scripts JavaScript sont démontrés. L’organisation globale des campagnes, Git et la coordination de validation restent à préciser.",
+      "offer": {
+        "title": "Responsable tests API et interfaces",
+        "description": "Qualifier les versions d’une plateforme web avant leur livraison.",
+        "requirements": "Tests fonctionnels, API REST, JavaScript, Git, communication."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 1,
+      "reason": "SQL et PostgreSQL sont démontrés, mais leur usage relève de l’analyse des ventes ; Node.js, Express, TypeScript et le développement d’API ne sont pas décrits.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 1,
+      "reason": "Le projet apporte SQL et PostgreSQL, sans démonstration de services Node.js/Express, de TypeScript ou de conception d’API REST.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination de projets logiciels Agile et Scrum. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination junior de réunions Scrum et du planning. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 0,
+      "reason": "Le CV porte sur la conception de maquettes Figma et l’intégration HTML/CSS statique. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior de recherche utilisateur, de prototypes Figma et de tests de parcours. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 0,
+      "reason": "Le CV porte sur la recherche UX, les entretiens utilisateurs et le prototypage Figma. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 3,
+      "reason": "Le CV étaye les services Node.js/Express, TypeScript, les API REST, les transactions PostgreSQL, les tests et les revues Git demandés.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 1,
+      "reason": "TypeScript, Git et la consommation d’API sont présents. Le CV distingue explicitement le frontend du backend et ne démontre pas Node.js, Express ou PostgreSQL.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 1,
+      "reason": "L’intégration d’API REST et Git est démontrée côté mobile, mais la réalisation de services Node.js/Express et la gestion PostgreSQL ne le sont pas.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 1,
+      "reason": "JavaScript, API REST et Git sont utilisés côté frontend. Node.js, Express, TypeScript backend et PostgreSQL restent non démontrés.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 1,
+      "reason": "Les projets montrent JavaScript, des API REST et Git côté interface ; ils n’étayent pas le développement des services ou de la base demandés.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 2,
+      "reason": "Le stage couvre Node.js, Express, TypeScript, PostgreSQL, API REST et Git. La validation d’entrées, les transactions et la fiabilité des services sont à approfondir.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 1,
+      "reason": "Les API REST et Git sont présents dans une application mobile ; le CV ne démontre pas le développement de ces API en Node.js/Express avec PostgreSQL.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 1,
+      "reason": "Python et SQL apportent une expérience de programmation et de données, mais aucune pratique du backend JavaScript, d’Express ou de TypeScript n’est décrite.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 1,
+      "reason": "Le parcours montre JavaScript et la consommation d’API depuis React, sans expérience explicitée des services Node.js/Express ou de PostgreSQL.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 1,
+      "reason": "Les tests d’API en JavaScript et les revues Git sont pertinents, mais la conception de services Node.js/Express, TypeScript et PostgreSQL n’est pas démontrée.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’assistance utilisateurs et la reproduction de tickets. Il ne démontre pas le développement de services Node.js/Express en TypeScript avec PostgreSQL, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-08",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 1,
+      "reason": "Les vérifications API et les scripts JavaScript apportent une base technique, sans démonstration du développement backend et des transactions PostgreSQL.",
+      "offer": {
+        "title": "Développeur API Node.js TypeScript",
+        "description": "Développer les services métier d’une application de gestion.",
+        "requirements": "Node.js, Express, TypeScript, PostgreSQL, API REST, Git."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’analyse commerciale avec SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior d’analyse des ventes en SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination de projets logiciels Agile et Scrum. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination junior de réunions Scrum et du planning. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 1,
+      "reason": "HTML et CSS sont démontrés et les prototypes sont utiles aux interfaces. Le CV précise l’absence de composants réactifs et ne démontre pas Vue.js ou JavaScript.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 1,
+      "reason": "La conception de parcours et de prototypes Figma est voisine du frontend, mais Vue.js, JavaScript, HTML/CSS et l’intégration d’API ne sont pas étayés.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 1,
+      "reason": "La conception UX et les prototypes facilitent la collaboration produit, mais les compétences de programmation Vue.js et d’intégration technique ne sont pas démontrées.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 1,
+      "reason": "JavaScript/TypeScript, les API et Git sont maîtrisés côté backend ; le CV ne décrit pas Vue.js, HTML/CSS ou la réalisation d’écrans.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 2,
+      "reason": "Le développement d’interfaces React en TypeScript, la consommation d’API et Git sont transférables au frontend. Vue.js et la pratique explicite d’HTML/CSS restent à vérifier.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 1,
+      "reason": "La réalisation d’écrans et l’intégration d’API sont démontrées en Flutter/Dart, mais pas dans la pile web Vue.js, JavaScript, HTML et CSS.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 3,
+      "reason": "Le CV couvre directement Vue.js, les composants JavaScript, HTML/CSS, l’adaptation des écrans, les API REST et les revues Git.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 2,
+      "reason": "Deux applications Vue.js avec formulaires JavaScript, HTML/CSS, API REST et Git sont décrites. L’accessibilité et la maintenance d’écrans métier restent à vérifier.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 1,
+      "reason": "TypeScript, les API et Git sont utilisés en backend, mais aucun développement d’écrans Vue.js ou de composants HTML/CSS n’est présenté.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 1,
+      "reason": "Les écrans mobiles et les API REST apportent une expérience d’interface ; Flutter/Dart ne démontre pas la pile Vue.js et HTML/CSS attendue.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 0,
+      "reason": "Le CV porte sur des scripts de gestion Python et SQL sans expérience en apprentissage automatique. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 2,
+      "reason": "Les interfaces React responsives en JavaScript et la consommation d’API correspondent à une grande partie du travail frontend. La pratique de Vue.js reste absente.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 1,
+      "reason": "Les vérifications d’interfaces et d’API en JavaScript sont utiles, mais le CV décrit la qualité logicielle et pas le développement de composants Vue.js.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’assistance utilisateurs et la reproduction de tickets. Il ne démontre pas la réalisation d’interfaces Vue.js avec JavaScript, HTML et CSS, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-09",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 1,
+      "reason": "Les tests de portail et les scripts JavaScript sont proches du domaine ; la création de composants Vue.js, HTML/CSS et leur maintenance ne sont pas démontrées.",
+      "offer": {
+        "title": "Développeur interfaces Vue.js",
+        "description": "Créer des écrans métier réactifs et accessibles.",
+        "requirements": "Vue.js, JavaScript, HTML, CSS, API REST, Git."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’analyse commerciale avec SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior d’analyse des ventes en SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination de projets logiciels Agile et Scrum. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination junior de réunions Scrum et du planning. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 0,
+      "reason": "Le CV porte sur la conception de maquettes Figma et l’intégration HTML/CSS statique. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior de recherche utilisateur, de prototypes Figma et de tests de parcours. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 0,
+      "reason": "Le CV porte sur la recherche UX, les entretiens utilisateurs et le prototypage Figma. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 1,
+      "reason": "Les services API REST et Git apportent une compétence utile à l’intégration mobile, mais le développement Flutter/Dart et les tests sur appareils ne sont pas décrits.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 1,
+      "reason": "Le développement d’interfaces et la consommation d’API sont transférables, mais React/TypeScript web ne démontre pas Flutter ou Dart.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 2,
+      "reason": "Le projet Flutter/Dart, les écrans, l’authentification API REST et Git sont pertinents. Les tests fonctionnels structurés et l’expérience de maintenance restent à préciser.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 1,
+      "reason": "La réalisation d’interfaces et l’intégration d’API sont démontrées sur le web, sans pratique de Flutter/Dart ou de tests sur appareils.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 1,
+      "reason": "Les projets d’interface et les API REST apportent une base transférable, mais aucune application Flutter/Dart n’est décrite.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 1,
+      "reason": "Les API REST et Git sont utiles au contexte, mais le stage backend Node.js ne démontre pas la construction d’écrans mobiles Flutter/Dart.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 3,
+      "reason": "Le parcours décrit Flutter/Dart, une application de suivi des interventions publiée, la synchronisation API REST, les tests fonctionnels sur appareils et Git.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 0,
+      "reason": "Le CV porte sur des scripts de gestion Python et SQL sans expérience en apprentissage automatique. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 1,
+      "reason": "Le CV montre des interfaces React et des API REST, mais précise l’absence de développement Flutter ou Dart ; l’exigence principale reste à acquérir.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas le développement mobile Flutter/Dart et les tests de l’application, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 1,
+      "reason": "Les tests fonctionnels, les API et Git apportent une expérience de validation ; la réalisation de l’application en Flutter/Dart n’est pas démontrée.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 1,
+      "reason": "La reproduction de problèmes applicatifs est utile au diagnostic, mais le CV ne démontre pas la programmation Flutter/Dart ni les tests mobiles structurés.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-10",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 1,
+      "reason": "Les tests fonctionnels et les API REST sont pertinents pour la validation, sans démonstration de programmation Flutter/Dart ou de réalisation mobile.",
+      "offer": {
+        "title": "Développeur mobile Flutter",
+        "description": "Réaliser une application mobile de suivi des interventions.",
+        "requirements": "Flutter, Dart, API REST, Git, tests fonctionnels."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 3,
+      "reason": "Le CV couvre l’analyse des ventes en SQL/PostgreSQL, les tableaux Power BI, les contrôles Excel et l’explication des écarts aux responsables métier.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 2,
+      "reason": "Le projet de ventes démontre SQL/PostgreSQL, Excel et Power BI. La formulation de recommandations et la restitution aux responsables métier restent à vérifier.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 1,
+      "reason": "Le suivi commercial dans Excel apporte le contexte métier, mais le CV précise l’absence de SQL et d’analyse de données spécialisée ; PostgreSQL et Power BI restent absents.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination de projets logiciels Agile et Scrum. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination junior de réunions Scrum et du planning. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 0,
+      "reason": "Le CV porte sur la conception de maquettes Figma et l’intégration HTML/CSS statique. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior de recherche utilisateur, de prototypes Figma et de tests de parcours. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 0,
+      "reason": "Le CV porte sur la recherche UX, les entretiens utilisateurs et le prototypage Figma. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 1,
+      "reason": "PostgreSQL et les transactions sont utilisés dans des services backend ; l’analyse commerciale, Excel, Power BI et la communication de recommandations ne sont pas étayés.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement d’interfaces React et TypeScript. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet mobile Flutter et Dart avec API REST. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement frontend Vue.js, JavaScript, HTML et CSS. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 0,
+      "reason": "Le CV porte sur deux projets juniors Vue.js avec formulaires JavaScript. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 1,
+      "reason": "Le stage apporte une pratique PostgreSQL, mais pas l’analyse de ventes, les tableaux Excel/Power BI ou la restitution d’indicateurs métier.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement mobile Flutter/Dart avec tests fonctionnels. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 1,
+      "reason": "SQL et la programmation sont utiles au traitement des données, mais aucun tableau Power BI, contrôle Excel ou travail d’analyse commerciale n’est décrit.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement web React et JavaScript, sans pratique de Flutter. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 1,
+      "reason": "La préparation de données et le calcul de métriques apportent une base analytique, mais le CV ne démontre pas SQL/PostgreSQL, Excel, Power BI ou l’analyse de ventes.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 1,
+      "reason": "L’analyse de données et l’évaluation de modèles sont transférables, mais le parcours vision ne démontre pas les outils SQL/PostgreSQL, Excel et Power BI de l’offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 0,
+      "reason": "Le CV porte sur la responsabilité qualité, les tests API REST et JavaScript et la coordination métier. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’assistance utilisateurs et la reproduction de tickets. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-11",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 0,
+      "reason": "Le CV porte sur les tests fonctionnels et API REST avec quelques scripts JavaScript. Il ne démontre pas l’analyse commerciale avec SQL/PostgreSQL, Excel et Power BI, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Analyste données SQL commercial",
+        "description": "Analyser les ventes et communiquer des recommandations aux responsables métier.",
+        "requirements": "SQL, PostgreSQL, Excel, Power BI, communication."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 1,
+      "reason": "L’analyse de données est démontrée, mais les outils SQL et BI ne suffisent pas à établir la pratique Python, des réseaux de vision ou des frameworks demandés.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 1,
+      "reason": "Le projet analytique apporte une base de traitement de données, sans entraînement de modèles d’images ni pratique Python/PyTorch/TensorFlow démontrée.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination de projets logiciels Agile et Scrum. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 0,
+      "reason": "Le CV porte sur la coordination junior de réunions Scrum et du planning. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 0,
+      "reason": "Le CV porte sur la conception de maquettes Figma et l’intégration HTML/CSS statique. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior de recherche utilisateur, de prototypes Figma et de tests de parcours. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 0,
+      "reason": "Le CV porte sur la recherche UX, les entretiens utilisateurs et le prototypage Figma. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement backend Node.js, Express, TypeScript et PostgreSQL. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement d’interfaces React et TypeScript. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet mobile Flutter et Dart avec API REST. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement frontend Vue.js, JavaScript, HTML et CSS. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 0,
+      "reason": "Le CV porte sur deux projets juniors Vue.js avec formulaires JavaScript. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 0,
+      "reason": "Le CV porte sur un stage backend Node.js, Express, TypeScript et PostgreSQL. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement mobile Flutter/Dart avec tests fonctionnels. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 1,
+      "reason": "Python constitue une base pertinente, mais le CV précise l’absence d’entraînement et d’évaluation de modèles Machine Learning ; la vision et les frameworks restent absents.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement web React et JavaScript, sans pratique de Flutter. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 2,
+      "reason": "Le projet d’images couvre Python/TensorFlow, la séparation entraînement/test, les métriques et des notions de PyTorch et Git. La comparaison à une baseline et l’analyse d’erreurs sont à préciser.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 3,
+      "reason": "Le CV décrit la préparation d’images, l’entraînement Python/PyTorch, TensorFlow, la comparaison à une baseline, l’analyse des erreurs et Git.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 0,
+      "reason": "Le CV porte sur la responsabilité qualité, les tests API REST et JavaScript et la coordination métier. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’assistance utilisateurs et la reproduction de tickets. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-12",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 0,
+      "reason": "Le CV porte sur les tests fonctionnels et API REST avec quelques scripts JavaScript. Il ne démontre pas l’entraînement et l’évaluation de modèles de vision en Python avec PyTorch ou TensorFlow, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Ingénieur Machine Learning vision",
+        "description": "Construire et évaluer des modèles de classification d’images.",
+        "requirements": "Python, Machine Learning, PyTorch, TensorFlow, Git."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 1,
+      "reason": "La restitution d’observations aux métiers apporte une compétence de communication, mais les entretiens utilisateurs, les parcours UX et les prototypes Figma ne sont pas démontrés.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior d’analyse des ventes en SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 1,
+      "reason": "Les ateliers et la communication produit sont utiles à la collaboration, mais le CV ne décrit pas de recherche UX, de tests utilisateurs ou de prototypage Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 1,
+      "reason": "La coordination et la communication en équipe sont pertinentes, mais la recherche utilisateur, l’analyse UX et les maquettes Figma restent non démontrées.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 2,
+      "reason": "Le CV montre des prototypes Figma et une activité de design d’interfaces. Les entretiens, les tests utilisateurs et la synthèse d’observations restent à vérifier.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 3,
+      "reason": "Le projet décrit explicitement la recherche utilisateur par entretiens, les maquettes Figma, les tests de parcours et la collaboration avec les développeurs, qui couvrent les exigences principales.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 3,
+      "reason": "Le CV étaye directement les entretiens utilisateurs, les tests de prototypes, la synthèse des observations, les parcours Figma et la communication avec l’équipe produit.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement backend Node.js, Express, TypeScript et PostgreSQL. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 1,
+      "reason": "La construction d’interfaces React apporte une connaissance des contraintes d’interface, mais pas de preuve de recherche utilisateur ou de prototypage Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 1,
+      "reason": "Les écrans et formulaires mobiles apportent une expérience de réalisation d’interfaces ; les entretiens utilisateurs et la conception UX sur Figma ne sont pas démontrés.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 1,
+      "reason": "L’adaptation des interfaces et leur réalisation frontend sont utiles, mais la recherche utilisateur, les tests de prototypes et Figma ne sont pas décrits.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 1,
+      "reason": "Les projets d’interface sont voisins du domaine UX, mais les études utilisateurs et les prototypes Figma demandés ne sont pas étayés.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 0,
+      "reason": "Le CV porte sur un stage backend Node.js, Express, TypeScript et PostgreSQL. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 1,
+      "reason": "La réalisation d’une application apporte une connaissance des parcours techniques ; les tests fonctionnels ne démontrent pas une recherche UX ou une conception Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 0,
+      "reason": "Le CV porte sur la participation technique à une équipe Agile sans coordination. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 0,
+      "reason": "Le CV porte sur des scripts de gestion Python et SQL sans expérience en apprentissage automatique. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 1,
+      "reason": "Les interfaces React responsives apportent une expérience web utile, mais aucune recherche utilisateur, maquette Figma ou synthèse de tests UX n’est décrite.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 1,
+      "reason": "La création visuelle apporte une base de design, mais le CV précise l’absence de recherche utilisateur et de prototypage de parcours ; Figma n’est pas démontré.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas la recherche utilisateur et la conception de parcours et prototypes Figma, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 1,
+      "reason": "La coordination de validations et les tests d’interfaces sont transférables, mais les tests techniques ne démontrent pas des entretiens utilisateurs ou du prototypage Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 1,
+      "reason": "Les tickets et les échanges utilisateurs donnent accès à des problèmes d’usage, sans démontrer une démarche de recherche UX, des parcours ou des prototypes Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-13",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 1,
+      "reason": "La validation de parcours techniques apporte une expérience de contrôle, mais pas de recherche utilisateur ni de conception de prototypes Figma.",
+      "offer": {
+        "title": "Designer UX recherche utilisateur",
+        "description": "Étudier les besoins et concevoir les parcours d’un service numérique.",
+        "requirements": "UI/UX, Figma, recherche utilisateur, communication, travail en équipe."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-003",
+      "relevance": 1,
+      "reason": "La communication d’indicateurs aux métiers est pertinente, mais aucune coordination d’équipe logicielle, animation Scrum ou responsabilité de livraison n’est décrite.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Analyste commercial utilisant SQL et PostgreSQL pour étudier les ventes. Construit des tableaux Power BI, contrôle les extractions Excel et explique les écarts aux responsables métier."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-005",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet junior d’analyse des ventes en SQL, PostgreSQL, Excel et Power BI. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Analyste débutant. Requêtes SQL sur une base PostgreSQL, tableaux croisés Excel et visualisations Power BI pour un projet de ventes."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-007",
+      "relevance": 0,
+      "reason": "Le CV porte sur la saisie et le suivi commercial sous Excel. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Assistant commercial. Saisie des ventes et tableaux de suivi Excel. Pas de requêtes SQL ou d’analyse de données spécialisée."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-010",
+      "relevance": 3,
+      "reason": "Le CV couvre la coordination d’équipe, Agile/Scrum, les priorités et dépendances, les livraisons, la communication métier et la résolution de blocages.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Chef de projet logiciel. Coordination d’une équipe produit en Agile et Scrum, gestion des priorités et des dépendances, suivi des livraisons et communication avec les métiers. Résolution de blocages et animation d’ateliers."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-011",
+      "relevance": 2,
+      "reason": "La préparation de réunions Scrum, le suivi de tâches Agile et les alertes de planning sont étayés. Le pilotage autonome, les arbitrages et le leadership restent à confirmer.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Coordinateur junior. Prépare les réunions Scrum, suit les tâches Agile et communique les alertes de planning au responsable. Expérience d’un projet universitaire en équipe."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-013",
+      "relevance": 0,
+      "reason": "Le CV porte sur la conception de maquettes Figma et l’intégration HTML/CSS statique. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Designer d’interfaces. Prototypes Figma et intégration HTML CSS statique. Ne programme pas de composants réactifs."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-014",
+      "relevance": 1,
+      "reason": "Le travail en équipe avec des développeurs est démontré, sans preuve de gestion de priorités, de suivi de livraison ou d’animation Agile/Scrum.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Designer junior. Projet de recherche utilisateur avec entretiens, maquettes Figma et tests de parcours. Travail en équipe avec des développeurs."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-015",
+      "relevance": 1,
+      "reason": "La collaboration produit et la communication de décisions sont pertinentes, mais le CV ne décrit pas le pilotage d’une équipe, Scrum ou le suivi des livraisons.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Designer UX. Entretiens utilisateurs, tests de prototypes et synthèse des observations. Conception de parcours et de maquettes Figma avec les équipes produit, communication des décisions UI/UX."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-017",
+      "relevance": 1,
+      "reason": "Les revues de code apportent une expérience de collaboration technique, mais elles ne démontrent pas la coordination d’équipe, les arbitrages ou le pilotage Agile/Scrum.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur backend de services de paiement en Node.js et Express. Validation des entrées en TypeScript, API REST, transactions PostgreSQL, tests et revues de code Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-018",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement d’interfaces React et TypeScript. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur d’interfaces React en TypeScript. Consomme des API REST et utilise Git. Ne développe pas les services backend."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-019",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet mobile Flutter et Dart avec API REST. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur débutant. Projet Flutter en Dart avec authentification API REST, écrans de listes et formulaires. Utilise Git et vérifie les parcours sur émulateur."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-022",
+      "relevance": 1,
+      "reason": "Les revues Git montrent une collaboration technique, sans responsabilité explicite de planification, de coordination ou de livraison de produit.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur frontend Vue.js sur un outil de gestion de stocks. Composition de composants JavaScript, adaptation HTML et CSS aux petits écrans, intégration API REST et revues Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-023",
+      "relevance": 0,
+      "reason": "Le CV porte sur deux projets juniors Vue.js avec formulaires JavaScript. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur junior avec deux applications Vue.js. Formulaires JavaScript, HTML et CSS, affichage de données API REST et versionnement Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-024",
+      "relevance": 0,
+      "reason": "Le CV porte sur un stage backend Node.js, Express, TypeScript et PostgreSQL. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur junior issu d’un stage. A construit un service Express en Node.js avec TypeScript et PostgreSQL. Pratique des endpoints API REST et de Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-025",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement mobile Flutter/Dart avec tests fonctionnels. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur mobile Flutter et Dart. Publication d’une application de suivi des interventions, synchronisation API REST, tests fonctionnels sur appareils et gestion du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-026",
+      "relevance": 1,
+      "reason": "La participation aux réunions Agile est pertinente, mais le CV précise l’absence de responsabilité de coordination et de planification attendue pour ce rôle.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur participant aux réunions Agile. Réalise ses tâches techniques et échange avec le chef de projet, sans responsabilité de coordination ou de planification."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-028",
+      "relevance": 0,
+      "reason": "Le CV porte sur des scripts de gestion Python et SQL sans expérience en apprentissage automatique. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur Python orienté scripts de gestion et SQL. N’a pas entraîné ou évalué de modèle Machine Learning."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-030",
+      "relevance": 0,
+      "reason": "Le CV porte sur le développement web React et JavaScript, sans pratique de Flutter. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Développeur web JavaScript. Interfaces React responsives et consommation d’API REST. Aucun développement Flutter ou Dart."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-032",
+      "relevance": 0,
+      "reason": "Le CV porte sur un projet de classification d’images Python/TensorFlow avec évaluation. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Diplômé en IA. Projet de classification d’images Python avec TensorFlow, séparation entraînement et test, calcul de métriques. Notions de PyTorch et Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-034",
+      "relevance": 0,
+      "reason": "Le CV porte sur le graphisme imprimé et les identités visuelles. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Graphiste spécialisé dans les supports imprimés et identités visuelles. Utilise des outils de dessin, sans recherche utilisateur ou prototypage de parcours."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-036",
+      "relevance": 0,
+      "reason": "Le CV porte sur l’apprentissage automatique pour la vision, avec Python, PyTorch et TensorFlow. Il ne démontre pas la coordination d’une équipe produit, le suivi des livraisons et les pratiques Agile/Scrum, qui constitue le cœur de cette offre.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Ingénieur Machine Learning spécialisé en vision. Préparation de données d’images, entraînement de modèles Python avec PyTorch, comparaison à une baseline et analyse des erreurs. Expérience TensorFlow et suivi du code Git."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-039",
+      "relevance": 2,
+      "reason": "La responsabilité qualité et la coordination des validations métier démontrent une activité de suivi et de communication. La planification globale du produit et Agile/Scrum restent à vérifier.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Responsable assurance qualité d’un logiciel de transport. Prépare les campagnes de tests fonctionnels, automatise les vérifications API REST en JavaScript et documente les anomalies dans les revues Git. Coordonne les validations avec le métier."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-040",
+      "relevance": 1,
+      "reason": "Le traitement des tickets apporte une expérience de suivi opérationnel et d’échanges utilisateurs, mais aucun pilotage d’équipe produit ou cadre Agile/Scrum n’est démontré.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Technicien d’assistance utilisateurs. Analyse les tickets et reproduit les problèmes d’affichage. Aucune campagne de tests ou automatisation API réalisée."
+    },
+    {
+      "offerId": "benchmark-offer-14",
+      "candidateId": "benchmark-cv-041",
+      "relevance": 1,
+      "reason": "Le suivi des corrections avec les développeurs apporte une collaboration opérationnelle, mais aucune responsabilité de planning, de coordination ou de livraison n’est décrite.",
+      "offer": {
+        "title": "Chef de projet produit logiciel",
+        "description": "Coordonner une équipe et suivre la livraison d’un produit métier.",
+        "requirements": "Agile, Scrum, leadership, communication, résolution de problèmes."
+      },
+      "cvText": "Testeur ayant un an d’expérience. Exécute les tests fonctionnels d’un portail, vérifie les réponses API REST et écrit de courts scripts JavaScript. Suit les corrections avec les développeurs."
+    }
+  ]
+}
