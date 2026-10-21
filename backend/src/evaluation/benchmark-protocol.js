@@ -68,6 +68,7 @@ export function buildReviewPacket(dataset, datasetFingerprint) {
   return {
     version: 1,
     datasetFingerprint,
+    reviewerType: 'human',
     reviewer: '',
     reviewedAt: '',
     rubric: {
@@ -91,9 +92,10 @@ export function buildReviewPacket(dataset, datasetFingerprint) {
   };
 }
 
-export function applyHumanReview(dataset, review, expectedFingerprint) {
+export function applyReview(dataset, review, expectedFingerprint) {
   auditBenchmark(dataset);
   requireCondition(review?.version === 1 && review.datasetFingerprint === expectedFingerprint, 'BENCHMARK_REVIEW_DATASET_MISMATCH');
+  requireCondition(['human', 'ai-assisted'].includes(review.reviewerType), 'BENCHMARK_REVIEW_TYPE_REQUIRED');
   requireCondition(typeof review.reviewer === 'string' && review.reviewer.trim(), 'BENCHMARK_REVIEWER_REQUIRED');
   requireCondition(typeof review.reviewedAt === 'string' && Number.isFinite(Date.parse(review.reviewedAt)), 'BENCHMARK_REVIEW_DATE_REQUIRED');
   const offers = new Map(dataset.offers.map((row) => [row.id, row]));
@@ -114,6 +116,12 @@ export function applyHumanReview(dataset, review, expectedFingerprint) {
   }
   return dataset.judgments.map((row) => {
     const annotation = annotations.get(keyFor(row.offerId, row.candidateId));
-    return annotation ? { offerId: row.offerId, candidateId: row.candidateId, relevance: annotation.relevance, source: 'human-review', reason: annotation.reason } : { ...row };
+    return annotation ? { offerId: row.offerId, candidateId: row.candidateId, relevance: annotation.relevance, source: review.reviewerType === 'human' ? 'human-review' : 'ai-assisted-review', reason: annotation.reason } : { ...row };
   });
+}
+
+// Compatibility entry point: AI labels must never be presented as human judgments.
+export function applyHumanReview(dataset, review, expectedFingerprint) {
+  requireCondition(review?.reviewerType === 'human', 'BENCHMARK_HUMAN_REVIEW_REQUIRED');
+  return applyReview(dataset, review, expectedFingerprint);
 }

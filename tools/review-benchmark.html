@@ -48,11 +48,14 @@ get('file').addEventListener('change', async (event) => {
     const loaded = JSON.parse(await file.text());
     if (loaded.version !== 1 || typeof loaded.datasetFingerprint !== 'string' || !Array.isArray(loaded.judgments) || !loaded.judgments.length) throw new Error('Format de revue non reconnu.');
     if (!loaded.judgments.every((row) => row && row.offer && ['title', 'description', 'requirements'].every((key) => typeof row.offer[key] === 'string') && typeof row.cvText === 'string' && (row.relevance === null || (Number.isInteger(row.relevance) && row.relevance >= 0 && row.relevance <= 3)))) throw new Error('Le fichier contient des couples invalides.');
+    // Legacy empty templates were intended for human entry. Preserve explicit AI provenance.
+    loaded.reviewerType ??= 'human';
+    if (!['human', 'ai-assisted'].includes(loaded.reviewerType)) throw new Error('Origine des annotations non reconnue.');
     packet = loaded;
     position = Math.max(0, packet.judgments.findIndex((row) => row.relevance === null || !row.reason?.trim()));
     get('reviewer').value = packet.reviewer || '';
     get('workspace').hidden = false;
-    get('message').textContent = 'Fichier chargé. Les modifications restent dans cette page jusqu’au téléchargement.';
+    get('message').textContent = (packet.reviewerType === 'ai-assisted' ? 'Annotations produites par IA, sans validation humaine. ' : 'Saisie de la revue humaine. ') + 'Les modifications restent dans cette page jusqu’au téléchargement.';
     display();
   } catch (error) { get('message').textContent = error.message; }
 });

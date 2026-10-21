@@ -18,7 +18,8 @@
     "test": "node --test",
     "ai:benchmark:prepare": "node src/scripts/benchmark-ai.js prepare",
     "ai:benchmark:train": "node src/scripts/benchmark-ai.js train",
-    "ai:benchmark:test": "node src/scripts/benchmark-ai.js test"
+    "ai:benchmark:test": "node src/scripts/benchmark-ai.js test",
+    "ai:benchmark:test:assisted": "node src/scripts/benchmark-ai.js test src/evaluation/ai-benchmark-review-assisted.json"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.1",

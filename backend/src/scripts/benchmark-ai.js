@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { auditBenchmark, buildReviewPacket, applyHumanReview } from '../evaluation/benchmark-protocol.js';
+import { auditBenchmark, buildReviewPacket, applyReview } from '../evaluation/benchmark-protocol.js';
 import { buildRankingFeatures } from '../services/ai-ranking-features.service.js';
 import { evaluateRankingSamples } from '../services/ranking-evaluation.service.js';
 import { trainPairwiseRanker, scoreWithArtifact } from '../services/pairwise-ranker-training.service.js';
@@ -99,7 +99,7 @@ async function main() {
   const rawReview = await readFile(process.argv[3] || reviewUrl, 'utf8');
   const review = JSON.parse(rawReview);
   // Fail before inference if a single judgment or justification is missing.
-  const judgments = applyHumanReview(dataset, review, datasetFingerprint);
+  const judgments = applyReview(dataset, review, datasetFingerprint);
   const rawArtifact = await readFile(modelUrl, 'utf8');
   const artifact = JSON.parse(rawArtifact);
   if (artifact.datasetFingerprint !== datasetFingerprint || artifact.benchmarkProtocol !== dataset.protocol) throw new Error('BENCHMARK_MODEL_DATASET_MISMATCH');
@@ -124,7 +124,7 @@ async function main() {
     datasetFingerprint,
     artifactFingerprint: hash(rawArtifact),
     reviewFingerprint: hash(rawReview),
-    annotation: { reviewer: review.reviewer, reviewedAt: review.reviewedAt, count: samples.length },
+    annotation: { reviewerType: review.reviewerType, reviewer: review.reviewer, reviewedAt: review.reviewedAt, method: review.method || null, count: samples.length },
     dataProvenance: dataset.provenance,
     counts: audit.counts,
     metrics: { baseline, learnedRanker },
@@ -132,7 +132,9 @@ async function main() {
     errorsToInspect: comparisonByOffer.filter((row) => row.rankerBestRank > 1 || row.difference < 0),
     limitations: [
       'Synthetic CVs and offers; no claim of production performance.',
-      'One human review is not inter-rater agreement or an expert consensus.',
+      review.reviewerType === 'ai-assisted'
+        ? 'AI-generated annotations, not human validation; the assistant also prepared the synthetic corpus. No claim of an independent reference.'
+        : 'One human review is not inter-rater agreement or an expert consensus.',
       'Eight test offers give a limited estimate of generalization.',
       'Train and validation labels remain provisional synthetic references.',
       'A lower V2 score is an observed result, not a reason to discard the test.',
@@ -143,7 +145,7 @@ async function main() {
   const destination = new URL(Date.now() + '-' + report.artifactFingerprint.slice(0, 12) + '.json', directory);
   await writeFile(destination, JSON.stringify(report, null, 2) + '\n', { encoding: 'utf8', flag: 'wx' });
   console.log('Rapport expérimental : ' + fileURLToPath(destination));
-  console.log(JSON.stringify({ baselineNdcgAt5: baseline.ndcgAt5, rankerNdcgAt5: learnedRanker.ndcgAt5, offers: learnedRanker.offerCount }, null, 2));
+  console.log(JSON.stringify({ annotationType: review.reviewerType, baselineNdcgAt5: baseline.ndcgAt5, rankerNdcgAt5: learnedRanker.ndcgAt5, offers: learnedRanker.offerCount }, null, 2));
 }
 
 main().catch((error) => {

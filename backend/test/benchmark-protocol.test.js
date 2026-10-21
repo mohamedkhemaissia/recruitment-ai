@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { auditBenchmark, buildReviewPacket, applyHumanReview } from '../src/evaluation/benchmark-protocol.js';
+import { createHash } from 'node:crypto';
+import { auditBenchmark, buildReviewPacket, applyHumanReview, applyReview } from '../src/evaluation/benchmark-protocol.js';
 
 const original = JSON.parse(readFileSync(new URL('../data/ai-benchmark-dataset.json', import.meta.url), 'utf8'));
 const clone = (value) => JSON.parse(JSON.stringify(value));
@@ -89,4 +90,31 @@ test('une revue complète est appliquée sans modifier le corpus source', () => 
   const labels = applyHumanReview(original, completedFixture(), fingerprint);
   assert.equal(labels.filter((row) => row.source === 'human-review').length, 192);
   assert.equal(original.judgments.filter((row) => row.relevance === null).length, 192);
+});
+
+test('les notes IA restent identifiées et sont refusées par le circuit humain', () => {
+  const packet = completedFixture();
+  packet.reviewerType = 'ai-assisted';
+  assert.throws(() => applyHumanReview(original, packet, fingerprint), /HUMAN_REVIEW_REQUIRED/);
+  const labels = applyReview(original, packet, fingerprint);
+  assert.equal(labels.filter((row) => row.source === 'ai-assisted-review').length, 192);
+  assert.equal(labels.filter((row) => row.source === 'human-review').length, 0);
+});
+test('une origine non renseignée ne devient pas une validation humaine', () => {
+  const packet = completedFixture();
+  delete packet.reviewerType;
+  assert.throws(() => applyReview(original, packet, fingerprint), /REVIEW_TYPE_REQUIRED/);
+});
+
+test('les 192 annotations IA fournies correspondent au corpus exact et restent distinctes des notes humaines', () => {
+  const raw = readFileSync(new URL('../data/ai-benchmark-dataset.json', import.meta.url));
+  const expected = createHash('sha256').update(raw).digest('hex');
+  const review = JSON.parse(readFileSync(new URL('../src/evaluation/ai-benchmark-review-assisted.json', import.meta.url), 'utf8'));
+  const labels = applyReview(original, review, expected);
+  assert.equal(review.reviewerType, 'ai-assisted');
+  assert.equal(review.judgments.length, 192);
+  assert.equal(labels.filter((row) => row.source === 'ai-assisted-review').length, 192);
+  assert.equal(labels.filter((row) => row.source === 'human-review').length, 0);
+  assert.ok(review.judgments.every((row) => row.reason.trim().length > 30));
+  assert.throws(() => applyHumanReview(original, review, expected), /HUMAN_REVIEW_REQUIRED/);
 });
