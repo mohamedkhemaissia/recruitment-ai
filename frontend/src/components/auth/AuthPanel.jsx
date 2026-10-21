@@ -16,25 +16,14 @@ function AuthPanel({ mode, setMode, form, onChange, onSubmit, loading, message, 
       <section className="auth-hero" aria-labelledby="product-title">
         <Brand inverse />
         <div className="auth-hero__content">
-          <p className="auth-hero__eyebrow"><Sparkles size={15} aria-hidden="true" /> Plateforme de recrutement</p>
           <h1 id="product-title">Chaque talent mérite une décision <em>éclairée.</em></h1>
-          <p>
-            Pilotez vos recrutements, comparez les profils avec une IA explicable et gardez l’humain au centre de chaque décision.
-          </p>
+          
 
         </div>
 
-        <div className="auth-ai-preview" aria-hidden="true">
-          <div className="auth-ai-preview__topline">
-            <span><BrainCircuit size={16} /> Analyse de correspondance</span>
-          </div>
-          <div className="auth-ai-preview__candidate">
-            <span className="auth-ai-preview__avatar">SK</span>
-            <span><strong>Profil candidat</strong><small>Développeuse Full Stack</small></span>
-            <b>91%</b>
-          </div>
-          <div className="auth-ai-preview__bar"><span /></div>
-        </div>
+          
+          
+         
       </section>
 
       <section className="auth-workspace" aria-label="Accès au compte">
