@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
+import { datasetFingerprints } from '../src/evaluation/benchmark-fingerprint.js';
 import { auditBenchmark, buildReviewPacket, applyHumanReview, applyReview } from '../src/evaluation/benchmark-protocol.js';
 
 const original = JSON.parse(readFileSync(new URL('../data/ai-benchmark-dataset.json', import.meta.url), 'utf8'));
@@ -108,7 +108,7 @@ test('une origine non renseignée ne devient pas une validation humaine', () => 
 
 test('les 192 annotations IA fournies correspondent au corpus exact et restent distinctes des notes humaines', () => {
   const raw = readFileSync(new URL('../data/ai-benchmark-dataset.json', import.meta.url));
-  const expected = createHash('sha256').update(raw).digest('hex');
+  const expected = datasetFingerprints(raw.toString('utf8')).canonical;
   const review = JSON.parse(readFileSync(new URL('../src/evaluation/ai-benchmark-review-assisted.json', import.meta.url), 'utf8'));
   const labels = applyReview(original, review, expected);
   assert.equal(review.reviewerType, 'ai-assisted');

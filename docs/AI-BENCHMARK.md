@@ -65,3 +65,10 @@ Les rapports portent les empreintes du corpus, du modèle et des annotations. Il
 Présenter ce travail à sa date réelle. Documenter le corpus fictif, le protocole, les résultats réellement calculés et les limites. Ne pas réutiliser les anciens scores sur deux offres comme s’ils provenaient des huit nouvelles offres. Ne pas présenter les annotations générées ou les fixtures des tests logiciels comme une validation humaine.
 
 Le corpus, le protocole, les outils et les 192 annotations assistées par IA sont disponibles. Aucune validation humaine n’est revendiquée. L’entraînement et les mesures restent à réaliser tant que les fichiers correspondants n’ont pas été effectivement produits et vérifiés.
+
+
+## Empreintes et Windows
+
+Les nouvelles empreintes utilisent `sha256-json-v1` : les clés des objets JSON sont ordonnées avant le calcul. Les fins de ligne du fichier, le BOM UTF-8, l’indentation et l’ordre des clés ne modifient pas cette identité. Les valeurs, les textes des CV et l’ordre des tableaux restent protégés.
+
+Les anciennes empreintes des modèles et revues sont acceptées uniquement si elles correspondent exactement au fichier actuel ou à ses variantes LF/CRLF. Une modification réelle du corpus reste bloquée. Un modèle déjà entraîné sous Windows peut donc être conservé lorsque seule la présentation du fichier diffère.

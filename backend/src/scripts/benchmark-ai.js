@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { datasetFingerprints, matchesDatasetFingerprint } from '../evaluation/benchmark-fingerprint.js';
 import { auditBenchmark, buildReviewPacket, applyReview } from '../evaluation/benchmark-protocol.js';
 import { buildRankingFeatures } from '../services/ai-ranking-features.service.js';
 import { evaluateRankingSamples } from '../services/ranking-evaluation.service.js';
@@ -50,9 +51,10 @@ async function main() {
   const phase = process.argv[2];
   if (!['prepare', 'train', 'test'].includes(phase)) throw new Error('Usage: node src/scripts/benchmark-ai.js prepare|train|test [fichier-annotations.json]');
   const rawDataset = await readFile(datasetUrl, 'utf8');
-  const dataset = JSON.parse(rawDataset);
+  const fingerprints = datasetFingerprints(rawDataset);
+  const dataset = fingerprints.dataset;
   const audit = auditBenchmark(dataset);
-  const datasetFingerprint = hash(rawDataset);
+  const datasetFingerprint = fingerprints.canonical;
   await mkdir(dataDirectory, { recursive: true });
 
   if (phase === 'prepare') {
@@ -99,10 +101,12 @@ async function main() {
   const rawReview = await readFile(process.argv[3] || reviewUrl, 'utf8');
   const review = JSON.parse(rawReview);
   // Fail before inference if a single judgment or justification is missing.
-  const judgments = applyReview(dataset, review, datasetFingerprint);
+  if (!matchesDatasetFingerprint(fingerprints, review.datasetFingerprint)) throw new Error('BENCHMARK_REVIEW_DATASET_MISMATCH');
+  // Only rebind a legacy review after verifying its exact LF/CRLF fingerprint.
+  const judgments = applyReview(dataset, { ...review, datasetFingerprint }, datasetFingerprint);
   const rawArtifact = await readFile(modelUrl, 'utf8');
   const artifact = JSON.parse(rawArtifact);
-  if (artifact.datasetFingerprint !== datasetFingerprint || artifact.benchmarkProtocol !== dataset.protocol) throw new Error('BENCHMARK_MODEL_DATASET_MISMATCH');
+  if (!matchesDatasetFingerprint(fingerprints, artifact.datasetFingerprint) || artifact.benchmarkProtocol !== dataset.protocol) throw new Error('BENCHMARK_MODEL_DATASET_MISMATCH');
   for (const split of ['train', 'validation', 'test']) {
     const expected = {
       offerIds: dataset.offers.filter((row) => row.split === split).map((row) => row.id),
