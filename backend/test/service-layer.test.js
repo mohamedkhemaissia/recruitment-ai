@@ -78,6 +78,26 @@ test('la liste RH globale reste chronologique même si un tri IA est demandé', 
   assert.doesNotMatch(calls[1].sql, /final_score DESC/);
 });
 
+test('la liste RH sépare les scores nuls, faibles et alignés selon le score affiché', async () => {
+  const calls = [];
+  const service = createApplicationService({
+    async query(sql, values) {
+      calls.push({ sql, values });
+      if (calls.length === 1) {
+        return { rows: [{ all_applications: 9, zero_applications: 2, low_applications: 3, aligned_applications: 3, unavailable_applications: 1 }] };
+      }
+      return { rows: [{ id: 8 }] };
+    },
+  });
+
+  const result = await service.listForHr(12, { matchBand: 'low' });
+
+  assert.equal(result.total, 3);
+  assert.deepEqual(result.matchingSummary, { all: 9, zero: 2, low: 3, aligned: 3, unavailable: 1 });
+  assert.match(calls[1].sql, /ROUND\(COALESCE\(a\.final_score, a\.semantic_score\)\) > 0/);
+  assert.match(calls[1].sql, /ROUND\(COALESCE\(a\.final_score, a\.semantic_score\)\) < 50/);
+});
+
 test('la suppression d une candidature reste limitée à son propriétaire', async () => {
   let parameters;
   const service = createApplicationService({

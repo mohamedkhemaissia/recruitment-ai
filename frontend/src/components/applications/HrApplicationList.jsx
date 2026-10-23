@@ -22,7 +22,22 @@ const interviewStatusLabels = {
   cancelled: 'Annulé',
 };
 
-function HrApplicationList({ applications, offers = [], loading, error, actionMessage, actionTone, updatingId, downloadingId, interviewUpdatingId, interviewUpdatingStatus, pagination, filters, onFilterChange, onFilterSubmit, onPageChange, onRetry, onStatusChange, onDownloadCv, onScheduleInterview, onInterviewStatusChange, onEvaluateInterview }) {
+const matchBandOptions = [
+  { value: '', label: 'Toutes', summaryKey: 'all' },
+  { value: 'zero', label: 'Score 0 %', summaryKey: 'zero' },
+  { value: 'low', label: 'Faible 1–49 %', summaryKey: 'low' },
+  { value: 'aligned', label: 'Compatible ≥ 50 %', summaryKey: 'aligned' },
+  { value: 'unavailable', label: 'Non analysées', summaryKey: 'unavailable' },
+];
+
+const emptyMatchMessages = {
+  zero: ['Aucun score à 0 %', 'Aucune candidature analysée ne présente actuellement un score nul.'],
+  low: ['Aucune compatibilité faible', 'Aucune candidature analysée ne se situe entre 1 et 49 %.'],
+  aligned: ['Aucune candidature compatible', 'Aucune candidature analysée n’atteint actuellement 50 %.'],
+  unavailable: ['Toutes les analyses sont disponibles', 'Aucune candidature ne nécessite une vérification technique.'],
+};
+
+function HrApplicationList({ applications, offers = [], loading, error, actionMessage, actionTone, updatingId, downloadingId, interviewUpdatingId, interviewUpdatingStatus, pagination, filters, matchingSummary = {}, onFilterChange, onFilterSubmit, onMatchBandChange, onPageChange, onRetry, onStatusChange, onDownloadCv, onScheduleInterview, onInterviewStatusChange, onEvaluateInterview }) {
   const extractionLabels = {
     completed: 'Texte extrait',
     no_text: 'PDF sans texte',
@@ -35,6 +50,8 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
     failed: 'Analyse indisponible',
     unavailable: 'CV non exploitable',
   };
+  const emptyMessage = emptyMatchMessages[filters.matchBand]
+    || ['Aucune candidature reçue', 'Les candidatures déposées sur vos offres apparaîtront ici.'];
 
   return (
     <div className="content-page">
@@ -45,6 +62,21 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
           <p>Consultez les profils et suivez leur avancement.</p>
         </div>
       </section>
+
+      <div className="match-filter-tabs" role="group" aria-label="Filtrer par compatibilité IA">
+        {matchBandOptions.map((option) => (
+          <button
+            type="button"
+            key={option.summaryKey}
+            className={(filters.matchBand || '') === option.value ? 'is-active' : ''}
+            aria-pressed={(filters.matchBand || '') === option.value}
+            onClick={() => onMatchBandChange(option.value)}
+          >
+            <span>{option.label}</span>
+            <strong>{matchingSummary[option.summaryKey] ?? 0}</strong>
+          </button>
+        ))}
+      </div>
 
       <form className="application-filters" onSubmit={onFilterSubmit}>
         <input name="search" value={filters.search} onChange={onFilterChange} placeholder="Rechercher un candidat ou une offre" aria-label="Rechercher un candidat ou une offre" />
@@ -78,8 +110,8 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
       ) : applications.length === 0 ? (
         <section className="card empty-state" aria-labelledby="empty-hr-applications-title">
           <span className="empty-state__icon" aria-hidden="true"><ClipboardList size={24} /></span>
-          <h2 id="empty-hr-applications-title">Aucune candidature reçue</h2>
-          <p>Les candidatures déposées sur vos offres apparaîtront ici.</p>
+          <h2 id="empty-hr-applications-title">{emptyMessage[0]}</h2>
+          <p>{emptyMessage[1]}</p>
         </section>
       ) : (
         <section className="card offer-list-card" aria-labelledby="hr-application-list-title">
@@ -97,7 +129,7 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
             </div>
           )}
 
-          <div className="table-scroll">
+          <div className="table-scroll table-scroll--hr-applications">
             <table className="offer-table hr-application-table">
               <thead>
                 <tr>
@@ -145,12 +177,6 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
                           const semanticScore = application.semanticScore;
                           const skillScore = application.skillScore;
                           const roundedScore = Math.round(Number(score) || 0);
-                          const factors = Array.isArray(application.aiExplanation?.factors)
-                            ? application.aiExplanation.factors
-                            : [];
-                          const evidence = Array.isArray(application.aiExplanation?.evidence)
-                            ? application.aiExplanation.evidence
-                            : [];
 
                           return (
                         <div className="ai-analysis" style={{ '--ai-score': `${Math.max(0, Math.min(100, roundedScore)) * 3.6}deg` }}>
@@ -159,8 +185,6 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
                             <span>
                               <span className="ai-analysis__label">Aide à la décision</span>
                               <span className="ai-analysis__model">
-                                {application.scoringVersion === 'learned-ranking-v2' ? 'Ranker appris' : 'Score hybride'}
-                                {application.scoringVersion ? ` · ${application.scoringVersion}` : ''}
                               </span>
                             </span>
                           </div>
@@ -175,35 +199,6 @@ function HrApplicationList({ applications, offers = [], loading, error, actionMe
                               Sémantique : {Math.round(Number(semanticScore))}% · Compétences : {Math.round(Number(skillScore))}%
                             </small>
                           )}
-                          {factors.length > 0 && (
-                            <div className="ai-factors" aria-label="Facteurs principaux du score">
-                              {factors.map((factor) => (
-                                <small key={factor.name}>
-                                  {factor.label} : {factor.effect === 'negative' ? 'impact défavorable' : 'impact favorable'}
-                                  {' '}({Math.round(Number(factor.value) * 100)}% observé)
-                                </small>
-                              ))}
-                            </div>
-                          )}
-                          <small className="ai-skills ai-skills--matched">
-                            Correspondantes : {application.matchedSkills.length ? application.matchedSkills.join(', ') : 'Aucune'}
-                          </small>
-                          <small className="ai-skills ai-skills--missing">
-                            Manquantes : {application.missingSkills.length ? application.missingSkills.join(', ') : 'Aucune'}
-                          </small>
-                          {evidence.length > 0 && (
-                            <details className="ai-evidence">
-                              <summary>Voir les preuves extraites du CV</summary>
-                              {evidence.map((item) => (
-                                <small key={`${item.criterion}-${item.excerpt}`}>
-                                  <strong>{item.criterion}</strong> — {item.excerpt}
-                                </small>
-                              ))}
-                            </details>
-                          )}
-                          <small className="ai-analysis__notice">
-                            Indicateur comparatif pour cette offre, sans mesure de certitude. La décision reste humaine.
-                          </small>
                         </div>
                           );
                         })()

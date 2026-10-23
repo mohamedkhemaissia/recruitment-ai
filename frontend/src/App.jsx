@@ -42,6 +42,15 @@ const initialHrApplicationFilters = {
   status: '',
   jobOfferId: '',
   sort: 'date',
+  matchBand: '',
+};
+
+const initialMatchingSummary = {
+  all: 0,
+  zero: 0,
+  low: 0,
+  aligned: 0,
+  unavailable: 0,
 };
 
 const initialInterviewForm = {
@@ -78,6 +87,7 @@ function App() {
   const [hrApplications, setHrApplications] = useState([]);
   const [hrApplicationPagination, setHrApplicationPagination] = useState({ page: 1, limit: 20, total: 0, totalPages: 0 });
   const [hrApplicationFilters, setHrApplicationFilters] = useState(initialHrApplicationFilters);
+  const [hrApplicationMatchingSummary, setHrApplicationMatchingSummary] = useState(initialMatchingSummary);
   const [hrApplicationsLoading, setHrApplicationsLoading] = useState(false);
   const [hrApplicationsError, setHrApplicationsError] = useState('');
   const [hrApplicationActionMessage, setHrApplicationActionMessage] = useState('');
@@ -268,9 +278,11 @@ function App() {
       if (filters.status) params.set('status', filters.status);
       if (filters.jobOfferId) params.set('jobOfferId', filters.jobOfferId);
       if (filters.sort) params.set('sort', filters.sort);
+      if (filters.matchBand) params.set('matchBand', filters.matchBand);
       const data = await apiRequest(`/api/applications/hr?${params.toString()}`);
       setHrApplications(data.applications);
       setHrApplicationPagination(data.pagination || { page, limit: hrApplicationPagination.limit, total: data.applications.length, totalPages: 1 });
+      setHrApplicationMatchingSummary(data.matchingSummary || initialMatchingSummary);
     } catch (error) {
       setHrApplicationsError(error.message);
     } finally {
@@ -290,6 +302,13 @@ function App() {
   const submitHrApplicationFilters = (event) => {
     event.preventDefault();
     loadHrApplications(1, hrApplicationFilters);
+  };
+
+  const changeHrApplicationMatchBand = (matchBand) => {
+    const nextFilters = { ...hrApplicationFilters, matchBand };
+    setHrApplicationFilters(nextFilters);
+    setHrApplicationPagination((current) => ({ ...current, page: 1 }));
+    loadHrApplications(1, nextFilters);
   };
 
   useEffect(() => {
@@ -593,12 +612,13 @@ function App() {
     setHrApplicationActionMessage('');
   };
 
-  const openHrApplications = ({ search = '', status = '', jobOfferId = '', sort = 'date' } = {}) => {
+  const openHrApplications = ({ search = '', status = '', jobOfferId = '', sort = 'date', matchBand = '' } = {}) => {
     setHrApplicationFilters({
       search,
       status,
       jobOfferId: jobOfferId ? String(jobOfferId) : '',
       sort: jobOfferId && sort === 'score' ? 'score' : 'date',
+      matchBand,
     });
     setHrApplicationPagination((current) => ({ ...current, page: 1 }));
     navigate('hr-applications');
@@ -883,8 +903,10 @@ function App() {
           onEvaluateInterview={openInterviewEvaluation}
           pagination={hrApplicationPagination}
           filters={hrApplicationFilters}
+          matchingSummary={hrApplicationMatchingSummary}
           onFilterChange={updateHrApplicationFilter}
           onFilterSubmit={submitHrApplicationFilters}
+          onMatchBandChange={changeHrApplicationMatchBand}
           onPageChange={(page) => loadHrApplications(page, hrApplicationFilters)}
         />
         <InterviewSchedulerModal

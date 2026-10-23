@@ -12,6 +12,10 @@ const dashboard = {
     shortlistedApplications: 2,
     rejectedApplications: 1,
     analyzedApplications: 7,
+    zeroMatchApplications: 1,
+    lowMatchApplications: 2,
+    alignedApplications: 4,
+    unavailableMatchApplications: 1,
     upcomingInterviews: 1,
     completedInterviews: 2,
   },
@@ -39,7 +43,6 @@ function renderDashboard(overrides = {}) {
     onRetry: vi.fn(),
     onViewOffers: vi.fn(),
     onViewApplications: vi.fn(),
-    onSelectRankingOffer: vi.fn(),
     ...overrides,
   };
   render(<HrDashboard {...props} />);
@@ -65,11 +68,13 @@ describe('HrDashboard', () => {
     expect(props.onViewApplications).toHaveBeenCalledWith({ status: 'reviewed' });
   });
 
-  it('change le classement lorsque le RH sélectionne une offre', () => {
+  it('ouvre les listes de candidatures signalées par le tri IA', () => {
     const props = renderDashboard();
-    fireEvent.change(screen.getByLabelText('Offre analysée'), { target: { value: '8' } });
-    expect(props.onSelectRankingOffer).toHaveBeenCalledWith(8);
-    expect(screen.getByText('Le score IA est une aide à la décision. La validation finale appartient au responsable RH.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Score 0 %/ }));
+    expect(props.onViewApplications).toHaveBeenCalledWith({ matchBand: 'zero' });
+
+    fireEvent.click(screen.getByRole('button', { name: /Faible compatibilité/ }));
+    expect(props.onViewApplications).toHaveBeenCalledWith({ matchBand: 'low' });
   });
 
   it('présente les états de chargement et d’erreur', () => {
@@ -80,10 +85,9 @@ describe('HrDashboard', () => {
       onRetry: vi.fn(),
       onViewOffers: vi.fn(),
       onViewApplications: vi.fn(),
-      onSelectRankingOffer: vi.fn(),
     }} />);
     expect(screen.getByText('Chargement du tableau de bord…')).toBeInTheDocument();
-    rerender(<HrDashboard dashboard={null} loading={false} error="Chargement impossible" onRetry={vi.fn()} onViewOffers={vi.fn()} onViewApplications={vi.fn()} onSelectRankingOffer={vi.fn()} />);
+    rerender(<HrDashboard dashboard={null} loading={false} error="Chargement impossible" onRetry={vi.fn()} onViewOffers={vi.fn()} onViewApplications={vi.fn()} />);
     expect(screen.getByRole('alert')).toHaveTextContent('Chargement impossible');
   });
 });

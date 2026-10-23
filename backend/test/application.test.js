@@ -466,6 +466,10 @@ test('le RH consulte les candidatures reçues et télécharge leur CV', async (c
   assert.equal(body.applications[0].finalScore, 84.5);
   assert.deepEqual(body.applications[0].matchedSkills, ['React', 'JavaScript', 'SQL']);
   assert.equal(body.applications[0].offer.title, 'Développeur React');
+  assert.deepEqual(body.matchingSummary, { all: 1, zero: 0, low: 0, aligned: 1, unavailable: 0 });
+
+  const invalidFilterResponse = await fetch(`${baseUrl}/api/applications/hr?matchBand=invalid`, { headers: { Cookie: hrCookie } });
+  assert.equal(invalidFilterResponse.status, 400);
 
   const cvResponse = await fetch(`${baseUrl}/api/applications/1/cv`, { headers: { Cookie: hrCookie } });
   assert.equal(cvResponse.status, 200);

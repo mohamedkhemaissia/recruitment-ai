@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   BrainCircuit,
-  BriefcaseBusiness,
   CalendarDays,
   ClipboardCheck,
   Clock3,
@@ -48,7 +47,6 @@ function HrDashboard({
   onRetry,
   onViewOffers,
   onViewApplications,
-  onSelectRankingOffer,
 }) {
   if (loading) {
     return <div className="content-page"><section className="card dashboard-state"><LoadingState label="Chargement du tableau de bord…" /></section></div>;
@@ -70,8 +68,6 @@ function HrDashboard({
 
   const pipeline = dashboard.pipeline || [];
   const priorities = dashboard.priorityApplications || [];
-  const offers = dashboard.offers || [];
-  const ranking = dashboard.ranking || [];
   const upcomingInterviews = dashboard.upcomingInterviews || [];
   const pipelineMaximum = Math.max(summary.totalApplications, 1);
 
@@ -83,17 +79,9 @@ function HrDashboard({
           <h1>Tableau de bord RH</h1>
           <p>Identifiez rapidement les candidatures à traiter et les prochaines échéances.</p>
         </div>
-        <div className="dashboard-heading__actions">
-          <Button type="button" variant="secondary" icon={BriefcaseBusiness} onClick={onViewOffers}>Gérer les offres</Button>
-          <Button type="button" icon={UsersRound} onClick={() => onViewApplications()}>Voir les candidatures</Button>
-        </div>
       </section>
 
       <section className="dashboard-metrics" aria-label="Indicateurs de recrutement">
-        <article className="card metric-card">
-          <span className="metric-card__icon"><BriefcaseBusiness size={20} aria-hidden="true" /></span>
-          <div><strong>{summary.publishedOffers}</strong><span>Offres publiées</span><small>{summary.totalOffers} offre{summary.totalOffers > 1 ? 's' : ''} au total</small></div>
-        </article>
         <article className="card metric-card metric-card--attention">
           <span className="metric-card__icon"><Clock3 size={20} aria-hidden="true" /></span>
           <div><strong>{summary.submittedApplications}</strong><span>Nouvelles à traiter</span><small>Action RH nécessaire</small></div>
@@ -183,35 +171,27 @@ function HrDashboard({
           )}
         </section>
 
-        <section className="card dashboard-panel dashboard-ranking" aria-labelledby="ranking-title">
-          <header className="dashboard-panel__header dashboard-panel__header--ranking">
-            <div><p className="overline">Aide à la présélection</p><h2 id="ranking-title">Correspondances par offre</h2></div>
-            {offers.length > 0 && (
-              <label className="dashboard-offer-select">
-                <span>Offre analysée</span>
-                <select value={dashboard.selectedOfferId || ''} onChange={(event) => onSelectRankingOffer(Number(event.target.value))}>
-                  {offers.map((offer) => <option key={offer.id} value={offer.id}>{offer.title} ({offer.applicationCount})</option>)}
-                </select>
-              </label>
-            )}
+        <section className="card dashboard-panel dashboard-match-triage" aria-labelledby="match-triage-title">
+          <header className="dashboard-panel__header">
+            <div><p className="overline">Analyse IA</p><h2 id="match-triage-title">À vérifier</h2></div>
+            <BrainCircuit size={21} aria-hidden="true" />
           </header>
-          {offers.length === 0 ? (
-            <div className="dashboard-empty"><BriefcaseBusiness size={22} aria-hidden="true" /><p>Créez une offre pour obtenir un classement.</p></div>
-          ) : ranking.length === 0 ? (
-            <div className="dashboard-empty"><BrainCircuit size={22} aria-hidden="true" /><p>Aucune candidature analysée pour cette offre.</p></div>
-          ) : (
-            <ol className="ranking-list">
-              {ranking.map((application, index) => (
-                <li key={application.id}>
-                  <span className="rank-badge">#{index + 1}</span>
-                  <div className="ranking-list__identity"><strong>{application.candidateName}</strong><small>{application.offerTitle}</small></div>
-                  <span className={`status-badge status-badge--${application.status}`}>{applicationStatusLabels[application.status]}</span>
-                  <div className="ranking-list__score"><strong>{Math.round(application.score)}%</strong><span><i style={{ width: `${application.score}%` }} /></span></div>
-                </li>
-              ))}
-            </ol>
-          )}
-          <p className="dashboard-ai-notice">Le score IA est une aide à la décision. La validation finale appartient au responsable RH.</p>
+          <div className="match-triage-list">
+            <button type="button" onClick={() => onViewApplications({ matchBand: 'zero' })}>
+              <span><strong>Score 0 %</strong><small>Alignement nul détecté</small></span>
+              <b>{summary.zeroMatchApplications || 0}</b>
+            </button>
+            <button type="button" onClick={() => onViewApplications({ matchBand: 'low' })}>
+              <span><strong>Faible compatibilité</strong><small>Score entre 1 et 49 %</small></span>
+              <b>{summary.lowMatchApplications || 0}</b>
+            </button>
+            {(summary.unavailableMatchApplications || 0) > 0 && (
+              <button type="button" onClick={() => onViewApplications({ matchBand: 'unavailable' })}>
+                <span><strong>Analyse indisponible</strong><small>Vérification manuelle nécessaire</small></span>
+                <b>{summary.unavailableMatchApplications}</b>
+              </button>
+            )}
+          </div>
         </section>
       </div>
 

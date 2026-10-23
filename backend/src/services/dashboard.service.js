@@ -11,6 +11,20 @@ export function createDashboardService(databasePool) {
              COUNT(DISTINCT a.id) FILTER (WHERE a.status = 'shortlisted')::int AS shortlisted_applications,
              COUNT(DISTINCT a.id) FILTER (WHERE a.status = 'rejected')::int AS rejected_applications,
              COUNT(DISTINCT a.id) FILTER (WHERE a.ai_status = 'completed')::int AS analyzed_applications,
+             COUNT(DISTINCT a.id) FILTER (
+               WHERE a.ai_status = 'completed' AND ROUND(COALESCE(a.final_score, a.semantic_score)) = 0
+             )::int AS zero_match_applications,
+             COUNT(DISTINCT a.id) FILTER (
+               WHERE a.ai_status = 'completed'
+                 AND ROUND(COALESCE(a.final_score, a.semantic_score)) > 0
+                 AND ROUND(COALESCE(a.final_score, a.semantic_score)) < 50
+             )::int AS low_match_applications,
+             COUNT(DISTINCT a.id) FILTER (
+               WHERE a.ai_status = 'completed' AND ROUND(COALESCE(a.final_score, a.semantic_score)) >= 50
+             )::int AS aligned_applications,
+             COUNT(DISTINCT a.id) FILTER (
+               WHERE a.ai_status <> 'completed' OR COALESCE(a.final_score, a.semantic_score) IS NULL
+             )::int AS unavailable_match_applications,
              COUNT(DISTINCT i.id) FILTER (WHERE i.status = 'scheduled' AND i.scheduled_at >= NOW())::int AS upcoming_interviews,
              COUNT(DISTINCT i.id) FILTER (WHERE i.status = 'completed')::int AS completed_interviews
            FROM job_offers o
@@ -84,6 +98,10 @@ export function createDashboardService(databasePool) {
           shortlistedApplications: summary.shortlisted_applications,
           rejectedApplications: summary.rejected_applications,
           analyzedApplications: summary.analyzed_applications,
+          zeroMatchApplications: summary.zero_match_applications || 0,
+          lowMatchApplications: summary.low_match_applications || 0,
+          alignedApplications: summary.aligned_applications || 0,
+          unavailableMatchApplications: summary.unavailable_match_applications || 0,
           upcomingInterviews: summary.upcoming_interviews,
           completedInterviews: summary.completed_interviews,
         },

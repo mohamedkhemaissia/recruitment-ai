@@ -101,9 +101,7 @@ function AppShell({
               <strong>{user.firstName} {user.lastName}</strong>
               <small>{roleLabel}</small>
             </span>
-            <Button type="button" variant="ghost" icon={LogOut} onClick={onLogout} loading={loading} className="logout-button" aria-label="Se déconnecter" title="Se déconnecter">
-              Déconnexion
-            </Button>
+            <Button type="button" variant="ghost" icon={LogOut} onClick={onLogout} loading={loading} className="logout-button" aria-label="Se déconnecter" title="Se déconnecter" />
           </div>
         </header>
 

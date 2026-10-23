@@ -1,5 +1,23 @@
 const pdfSignature = Buffer.from('%PDF-');
 const applicationStatuses = new Set(['submitted', 'reviewed', 'shortlisted', 'rejected']);
+const applicationMatchBands = new Set(['zero', 'low', 'aligned', 'unavailable']);
+
+function summarizeMatches(applications) {
+  return applications.reduce((summary, application) => {
+    summary.all += 1;
+    const rawScore = application.final_score ?? application.semantic_score;
+    if (application.ai_status !== 'completed' || rawScore === null || rawScore === undefined) {
+      summary.unavailable += 1;
+      return summary;
+    }
+
+    const score = Math.round(Number(rawScore));
+    if (score === 0) summary.zero += 1;
+    else if (score < 50) summary.low += 1;
+    else summary.aligned += 1;
+    return summary;
+  }, { all: 0, zero: 0, low: 0, aligned: 0, unavailable: 0 });
+}
 
 async function recordAuditSafely(auditService, data) {
   if (!auditService) return;
@@ -125,6 +143,10 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
         const limit = Math.min(100, Math.max(1, Number.parseInt(request.query.limit, 10) || 20));
         const status = typeof request.query.status === 'string' ? request.query.status : '';
         const search = typeof request.query.search === 'string' ? request.query.search.trim().slice(0, 100) : '';
+        const matchBand = typeof request.query.matchBand === 'string' ? request.query.matchBand : '';
+        if (matchBand && !applicationMatchBands.has(matchBand)) {
+          return response.status(400).json({ message: 'Le filtre de compatibilité IA est invalide.' });
+        }
         const requestedOfferId = request.query.jobOfferId;
         const jobOfferId = requestedOfferId === undefined || requestedOfferId === ''
           ? null
@@ -140,6 +162,7 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
           search,
           sort,
           jobOfferId,
+          matchBand,
         });
         const applications = Array.isArray(result) ? result : result.rows;
         const pagination = Array.isArray(result)
@@ -150,9 +173,13 @@ export function createApplicationController(applicationService, cvStorage, pdfTe
             total: result.total,
             totalPages: result.total ? Math.ceil(result.total / result.limit) : 0,
           };
+        const matchingSummary = Array.isArray(result)
+          ? summarizeMatches(applications)
+          : result.matchingSummary;
         return response.json({
           applications: applications.map(serializeHrApplication),
           pagination,
+          matchingSummary,
           appliedSort: sort,
         });
       } catch (error) {

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import HrApplicationList from './HrApplicationList.jsx';
 
@@ -30,7 +30,8 @@ const application = {
 };
 
 describe('HrApplicationList — matching appris', () => {
-  it('affiche les facteurs orientés et les preuves du modèle V2 sans fausse confiance', () => {
+  it('affiche le score simplifié et permet de choisir une catégorie IA', () => {
+    const onMatchBandChange = vi.fn();
     render(<HrApplicationList
       applications={[application]}
       loading={false}
@@ -43,9 +44,11 @@ describe('HrApplicationList — matching appris', () => {
       interviewUpdatingStatus=""
       pagination={{ total: 1, page: 1, totalPages: 1 }}
       offers={[{ id: 8, title: 'Développeur frontend' }]}
-      filters={{ search: '', status: '', jobOfferId: '8', sort: 'score' }}
+      filters={{ search: '', status: '', jobOfferId: '8', sort: 'score', matchBand: '' }}
+      matchingSummary={{ all: 6, zero: 2, low: 1, aligned: 3, unavailable: 0 }}
       onFilterChange={vi.fn()}
       onFilterSubmit={vi.fn()}
+      onMatchBandChange={onMatchBandChange}
       onPageChange={vi.fn()}
       onRetry={vi.fn()}
       onStatusChange={vi.fn()}
@@ -55,10 +58,11 @@ describe('HrApplicationList — matching appris', () => {
       onEvaluateInterview={vi.fn()}
     />);
 
-    expect(screen.getByText(/Ranker appris/)).toBeInTheDocument();
-    expect(screen.queryByText(/Confiance du modèle/)).not.toBeInTheDocument();
-    expect(screen.getByText(/Compétences demandées : impact favorable/)).toBeInTheDocument();
-    expect(screen.getByText('Voir les preuves extraites du CV')).toBeInTheDocument();
-    expect(screen.getByText(/Développement de plusieurs applications React/)).toBeInTheDocument();
+    expect(screen.getByText('84%')).toBeInTheDocument();
+    expect(screen.getByText(/Sémantique : 79%/)).toBeInTheDocument();
+    expect(screen.queryByText(/Ranker appris/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /Score 0 %2/ }));
+    expect(onMatchBandChange).toHaveBeenCalledWith('zero');
   });
 });

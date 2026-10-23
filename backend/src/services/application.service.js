@@ -7,6 +7,7 @@ export function createApplicationService(databasePool) {
       search = '',
       sort = 'date',
       jobOfferId = null,
+      matchBand = '',
     } = {}) {
       const offset = (page - 1) * limit;
       const values = [hrUserId];
@@ -32,18 +33,41 @@ export function createApplicationService(databasePool) {
         filters.push(`o.id = $${values.length}`);
       }
 
-      const whereClause = filters.join(' AND ');
+      const scoreExpression = 'ROUND(COALESCE(a.final_score, a.semantic_score))';
+      const matchBandFilters = {
+        zero: `a.ai_status = 'completed' AND ${scoreExpression} = 0`,
+        low: `a.ai_status = 'completed' AND ${scoreExpression} > 0 AND ${scoreExpression} < 50`,
+        aligned: `a.ai_status = 'completed' AND ${scoreExpression} >= 50`,
+        unavailable: `(a.ai_status <> 'completed' OR COALESCE(a.final_score, a.semantic_score) IS NULL)`,
+      };
+      const baseWhereClause = filters.join(' AND ');
+      const whereClause = matchBandFilters[matchBand]
+        ? `${baseWhereClause} AND (${matchBandFilters[matchBand]})`
+        : baseWhereClause;
       // Le ranker est appris par offre : comparer les scores de deux offres
       // différentes ne constitue pas un classement valide.
       const orderBy = sort === 'score' && jobOfferId
         ? 'CASE WHEN a.ai_status = \'completed\' THEN 0 ELSE 1 END, a.final_score DESC NULLS LAST, a.semantic_score DESC NULLS LAST, a.created_at DESC, a.id DESC'
         : 'a.created_at DESC, a.id DESC';
-      const countResult = await databasePool.query(
-        `SELECT COUNT(*)::integer AS total
+      const summaryResult = await databasePool.query(
+        `SELECT
+           COUNT(*)::integer AS all_applications,
+           COUNT(*) FILTER (
+             WHERE a.ai_status = 'completed' AND ${scoreExpression} = 0
+           )::integer AS zero_applications,
+           COUNT(*) FILTER (
+             WHERE a.ai_status = 'completed' AND ${scoreExpression} > 0 AND ${scoreExpression} < 50
+           )::integer AS low_applications,
+           COUNT(*) FILTER (
+             WHERE a.ai_status = 'completed' AND ${scoreExpression} >= 50
+           )::integer AS aligned_applications,
+           COUNT(*) FILTER (
+             WHERE a.ai_status <> 'completed' OR COALESCE(a.final_score, a.semantic_score) IS NULL
+           )::integer AS unavailable_applications
          FROM applications a
          JOIN job_offers o ON o.id = a.job_offer_id
          JOIN users u ON u.id = a.candidate_user_id
-         WHERE ${whereClause}`,
+         WHERE ${baseWhereClause}`,
         values,
       );
       const result = await databasePool.query(
@@ -74,11 +98,21 @@ export function createApplicationService(databasePool) {
         [...values, limit, offset],
       );
 
+      const summary = summaryResult.rows[0] || {};
+      const matchingSummary = {
+        all: Number(summary.all_applications ?? summary.total ?? 0),
+        zero: Number(summary.zero_applications ?? 0),
+        low: Number(summary.low_applications ?? 0),
+        aligned: Number(summary.aligned_applications ?? 0),
+        unavailable: Number(summary.unavailable_applications ?? 0),
+      };
+
       return {
         rows: result.rows,
-        total: countResult.rows[0].total,
+        total: matchBandFilters[matchBand] ? matchingSummary[matchBand] : matchingSummary.all,
         page,
         limit,
+        matchingSummary,
       };
     },
 
